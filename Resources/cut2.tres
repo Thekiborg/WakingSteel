@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Injury" format=3 uid="uid://dy76la61fvit0"]
+
+[ext_resource type="Script" uid="uid://buf4mn4ho1wod" path="res://Scripts/Items/HealingItem.gd" id="1_rru0r"]
+[ext_resource type="Texture2D" uid="uid://cd3o18dqukbvu" path="res://icon.svg" id="2_0h1m4"]
+[ext_resource type="Resource" uid="uid://reo86o1bvffb" path="res://Resources/Bandage.tres" id="2_vlabu"]
+[ext_resource type="Script" uid="uid://cptf1swc5khgd" path="res://Scripts/Injury.gd" id="3_vlabu"]
+
+[resource]
+script = ExtResource("3_vlabu")
+icon = ExtResource("2_0h1m4")
+internal = true
+name = "Cut"
+description = "An internal cut"
+damage = 1.0
+healed_with = Array[ExtResource("1_rru0r")]([ExtResource("2_vlabu")])
+metadata/_custom_type_script = "uid://cptf1swc5khgd"

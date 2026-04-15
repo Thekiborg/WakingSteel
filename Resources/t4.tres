@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ComboStep" format=3 uid="uid://bfv37xdx78ldu"]
+
+[ext_resource type="Script" uid="uid://dc30vehjsikia" path="res://Scripts/Animations/AnimationSet.gd" id="1_fyi4h"]
+[ext_resource type="Script" uid="uid://4vjrmljyg6xx" path="res://Scripts/Animations/AnimationStep.gd" id="2_8dro7"]
+[ext_resource type="Texture2D" uid="uid://cd3o18dqukbvu" path="res://icon.svg" id="3_0t7ti"]
+[ext_resource type="Script" uid="uid://cxmeloilt00ss" path="res://Scripts/Weapon/ComboStep.gd" id="4_xohx3"]
+
+[sub_resource type="Resource" id="Resource_8fm8c"]
+script = ExtResource("2_8dro7")
+sprite = ExtResource("3_0t7ti")
+time = 0.5
+metadata/_custom_type_script = "uid://4vjrmljyg6xx"
+
+[sub_resource type="Resource" id="Resource_0jtro"]
+script = ExtResource("1_fyi4h")
+name = "rmbtest1"
+steps = Array[ExtResource("2_8dro7")]([SubResource("Resource_8fm8c")])
+metadata/_custom_type_script = "uid://dc30vehjsikia"
+
+[resource]
+script = ExtResource("4_xohx3")
+animation = SubResource("Resource_0jtro")
+metadata/_custom_type_script = "uid://cxmeloilt00ss"

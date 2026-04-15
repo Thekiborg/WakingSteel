@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bkdxhfyy4xjm1"]
+
+[ext_resource type="Script" uid="uid://b5br6staxrm8n" path="res://Scripts/CharacterComponents/HealthManager.gd" id="1_h7ndv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lkv7d"]
+height = 1.3144531
+
+[node name="HealthManager" type="Node3D" unique_id=2144929829]
+script = ExtResource("1_h7ndv")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1733798006]
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=927555227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67537546, 0)
+shape = SubResource("CapsuleShape3D_lkv7d")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://csrs6ogs6p1r2"]
+
+[ext_resource type="Script" uid="uid://c6ahmmayyvsg1" path="res://Scripts/Hitbox.gd" id="1_i7vqw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8dk53"]
+resource_local_to_scene = true
+
+[node name="Hitbox" type="Area3D" unique_id=108516236]
+script = ExtResource("1_i7vqw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=417610461]
+shape = SubResource("BoxShape3D_8dk53")
+debug_color = Color(1, 0, 0, 0.69803923)

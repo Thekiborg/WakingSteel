@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bahlgx8g2nyav"]
+
+[ext_resource type="Script" uid="uid://m55v8t03g22i" path="res://Scripts/Weapon/ComboSet.gd" id="1_2tqdd"]
+[ext_resource type="Script" uid="uid://cxmeloilt00ss" path="res://Scripts/Weapon/ComboStep.gd" id="1_vhg6v"]
+[ext_resource type="Script" uid="uid://c3ut4hiqcib1d" path="res://Scripts/Weapon/WeaponData.gd" id="3_3nj2v"]
+[ext_resource type="Resource" uid="uid://bnhbwe802fn7u" path="res://Resources/t1.tres" id="3_ruyur"]
+[ext_resource type="Resource" uid="uid://qj14yjgjnswx" path="res://Resources/t2.tres" id="4_4xjwt"]
+[ext_resource type="Script" uid="uid://bbrcbjsymsl2i" path="res://Scripts/Weapon/Weapon.gd" id="4_h7oef"]
+[ext_resource type="Resource" uid="uid://b82fqrriimmns" path="res://Resources/t3.tres" id="5_im37r"]
+[ext_resource type="Resource" uid="uid://bfv37xdx78ldu" path="res://Resources/t4.tres" id="6_vhg6v"]
+[ext_resource type="Resource" uid="uid://cosumibwehc2x" path="res://Resources/t5.tres" id="7_dx7uk"]
+
+[sub_resource type="Resource" id="Resource_beris"]
+script = ExtResource("1_2tqdd")
+steps = Array[ExtResource("1_vhg6v")]([ExtResource("3_ruyur"), ExtResource("4_4xjwt"), ExtResource("5_im37r")])
+primary = true
+metadata/_custom_type_script = "uid://m55v8t03g22i"
+
+[sub_resource type="Resource" id="Resource_i6hgh"]
+script = ExtResource("1_2tqdd")
+steps = Array[ExtResource("1_vhg6v")]([ExtResource("6_vhg6v"), ExtResource("7_dx7uk")])
+metadata/_custom_type_script = "uid://m55v8t03g22i"
+
+[sub_resource type="Resource" id="Resource_rqfs4"]
+script = ExtResource("3_3nj2v")
+lmbCombo = SubResource("Resource_beris")
+rmbCombo = SubResource("Resource_i6hgh")
+metadata/_custom_type_script = "uid://c3ut4hiqcib1d"
+
+[resource]
+script = ExtResource("4_h7oef")
+name = "Dummy"
+data = SubResource("Resource_rqfs4")
+metadata/_custom_type_script = "uid://bbrcbjsymsl2i"

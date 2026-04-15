@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="ComboStep" format=3 uid="uid://bnhbwe802fn7u"]
+
+[ext_resource type="Script" uid="uid://dc30vehjsikia" path="res://Scripts/Animations/AnimationSet.gd" id="1_j2dl1"]
+[ext_resource type="Script" uid="uid://4vjrmljyg6xx" path="res://Scripts/Animations/AnimationStep.gd" id="2_pjibb"]
+[ext_resource type="Texture2D" uid="uid://bl5myr50r0imr" path="res://dummy_player_3-4_punch_1.png" id="3_rk28s"]
+[ext_resource type="Texture2D" uid="uid://d0h5ym0f0b4l8" path="res://dummy_player_3-4_punch_2.png" id="4_ylfqt"]
+[ext_resource type="Script" uid="uid://di7fappbql510" path="res://Scripts/Weapon/WeaponHitboxData.gd" id="5_eyrok"]
+[ext_resource type="Script" uid="uid://cptf1swc5khgd" path="res://Scripts/Injury.gd" id="6_rk28s"]
+[ext_resource type="Script" uid="uid://6lruw53qpkh0" path="res://Scripts/Animations/AnimationStepHitbox.gd" id="6_wde8s"]
+[ext_resource type="Texture2D" uid="uid://08x4gkq5utgu" path="res://dummy_player_3-4_punch_3.png" id="7_fhhtn"]
+[ext_resource type="Resource" uid="uid://d4lag0ceha4ow" path="res://Resources/cut.tres" id="7_ylfqt"]
+[ext_resource type="Script" uid="uid://cxmeloilt00ss" path="res://Scripts/Weapon/ComboStep.gd" id="8_yem83"]
+
+[sub_resource type="Resource" id="Resource_i6hgh"]
+script = ExtResource("2_pjibb")
+sprite = ExtResource("3_rk28s")
+time = 0.25
+metadata/_custom_type_script = "uid://4vjrmljyg6xx"
+
+[sub_resource type="Resource" id="Resource_i1bf2"]
+script = ExtResource("2_pjibb")
+sprite = ExtResource("4_ylfqt")
+time = 0.25
+metadata/_custom_type_script = "uid://4vjrmljyg6xx"
+
+[sub_resource type="Resource" id="Resource_63650"]
+script = ExtResource("5_eyrok")
+position = Vector3(0, 1, 2)
+size = Vector3(3, 3, 3)
+injuries = Array[ExtResource("6_rk28s")]([ExtResource("7_ylfqt")])
+metadata/_custom_type_script = "uid://di7fappbql510"
+
+[sub_resource type="Resource" id="Resource_3e258"]
+script = ExtResource("6_wde8s")
+hitboxes = Array[ExtResource("5_eyrok")]([SubResource("Resource_63650")])
+sprite = ExtResource("7_fhhtn")
+time = 0.25
+metadata/_custom_type_script = "uid://6lruw53qpkh0"
+
+[sub_resource type="Resource" id="Resource_muupa"]
+script = ExtResource("1_j2dl1")
+name = "lmbTest"
+steps = Array[ExtResource("2_pjibb")]([SubResource("Resource_i6hgh"), SubResource("Resource_i1bf2"), SubResource("Resource_3e258")])
+metadata/_custom_type_script = "uid://dc30vehjsikia"
+
+[resource]
+script = ExtResource("8_yem83")
+animation = SubResource("Resource_muupa")
+metadata/_custom_type_script = "uid://cxmeloilt00ss"

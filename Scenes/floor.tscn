@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ope4pkboc2lk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nvnu3"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ik5og"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Floor" type="Node3D"]
+transform = Transform3D(4.6949897, 0, 0, 0, 2.00144, 0, 0, 0, 6.003742, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1.02, 0, 0, 0, 0.4, 0, 0, 0, 1.02, 0, 0, 0)
+mesh = SubResource("BoxMesh_nvnu3")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.02, 0, 0, 0, 0.4, 0, 0, 0, 1.02, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_ik5og")

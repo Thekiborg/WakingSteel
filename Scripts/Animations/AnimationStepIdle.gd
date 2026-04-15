@@ -1,0 +1,2 @@
+extends AnimationStep
+class_name AnimationStepIdle

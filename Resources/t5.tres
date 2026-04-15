@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="ComboStep" format=3 uid="uid://cosumibwehc2x"]
+
+[ext_resource type="Script" uid="uid://dc30vehjsikia" path="res://Scripts/Animations/AnimationSet.gd" id="1_n3reg"]
+[ext_resource type="Script" uid="uid://4vjrmljyg6xx" path="res://Scripts/Animations/AnimationStep.gd" id="2_rnvy5"]
+[ext_resource type="Script" uid="uid://di7fappbql510" path="res://Scripts/Weapon/WeaponHitboxData.gd" id="3_e4017"]
+[ext_resource type="Script" uid="uid://cptf1swc5khgd" path="res://Scripts/Injury.gd" id="4_e4017"]
+[ext_resource type="Script" uid="uid://6lruw53qpkh0" path="res://Scripts/Animations/AnimationStepHitbox.gd" id="4_rwesk"]
+[ext_resource type="Texture2D" uid="uid://1g13p1vkbmh" path="res://dummy_player_3-4_walk.png" id="5_fs8yl"]
+[ext_resource type="Resource" uid="uid://d4lag0ceha4ow" path="res://Resources/cut.tres" id="5_rwesk"]
+[ext_resource type="Script" uid="uid://cxmeloilt00ss" path="res://Scripts/Weapon/ComboStep.gd" id="6_f541e"]
+
+[sub_resource type="Resource" id="Resource_bk51o"]
+script = ExtResource("3_e4017")
+position = Vector3(0, 1, 2)
+size = Vector3(4, 4, 4)
+injuries = Array[ExtResource("4_e4017")]([ExtResource("5_rwesk")])
+metadata/_custom_type_script = "uid://di7fappbql510"
+
+[sub_resource type="Resource" id="Resource_pxb2l"]
+script = ExtResource("4_rwesk")
+hitboxes = Array[ExtResource("3_e4017")]([SubResource("Resource_bk51o")])
+sprite = ExtResource("5_fs8yl")
+time = 0.5
+metadata/_custom_type_script = "uid://6lruw53qpkh0"
+
+[sub_resource type="Resource" id="Resource_jnjuf"]
+script = ExtResource("1_n3reg")
+name = "rmbTest2"
+steps = Array[ExtResource("2_rnvy5")]([SubResource("Resource_pxb2l")])
+metadata/_custom_type_script = "uid://dc30vehjsikia"
+
+[resource]
+script = ExtResource("6_f541e")
+animation = SubResource("Resource_jnjuf")
+metadata/_custom_type_script = "uid://cxmeloilt00ss"

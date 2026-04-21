@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://gq4r6rcldske"]
+
+[ext_resource type="Script" uid="uid://ccclq21mvdv0v" path="res://scripts/character/combat_manager.gd" id="1_hbadi"]
+
+[node name="CombatManager" type="Node" unique_id=1485315924]
+script = ExtResource("1_hbadi")
+metadata/_custom_type_script = "uid://ccclq21mvdv0v"
+
+[node name="ComboResetTimer" type="Timer" parent="." unique_id=716951464]

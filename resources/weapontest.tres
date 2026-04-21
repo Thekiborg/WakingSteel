@@ -1,0 +1,86 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://jkkjqba7m6ru"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_2v4jb"]
+[ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="1_qwae7"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_16a6d"]
+[ext_resource type="Texture2D" uid="uid://dspr7jgcl7jeu" path="res://assets/character/player/dummy_player_3-4_punch_1.png" id="3_hcpm4"]
+[ext_resource type="Texture2D" uid="uid://b2rdt2dcx3xwh" path="res://assets/character/player/dummy_player_3-4_punch_2.png" id="4_1hv3a"]
+[ext_resource type="Script" uid="uid://g8ec7h3hkg4h" path="res://scripts/weapon/weapon_hitbox_data.gd" id="5_0alxg"]
+[ext_resource type="Resource" uid="uid://b6p2etvaffjax" path="res://resources/hitboxtest.tres" id="6_2v4jb"]
+[ext_resource type="Script" uid="uid://d4cbwg3fwfgk4" path="res://scripts/animation/steps/step_hitbox.gd" id="7_51ejm"]
+[ext_resource type="Texture2D" uid="uid://blfok3inp88v1" path="res://assets/character/player/dummy_player_3-4_punch_3.png" id="8_1dggb"]
+[ext_resource type="Script" uid="uid://0sno5ifqeksg" path="res://scripts/weapon/combo_set.gd" id="9_bx4e1"]
+[ext_resource type="Texture2D" uid="uid://lputhf26ymty" path="res://assets/ui/main_menu_label.svg" id="10_wypeg"]
+[ext_resource type="Texture2D" uid="uid://bcvtnk2nw12qc" path="res://assets/character/player/dummy_player_3-4_walk.png" id="11_0e6hu"]
+[ext_resource type="Script" uid="uid://c3ci8sfelltm0" path="res://scripts/weapon/weapon_data.gd" id="12_cmq6s"]
+
+[sub_resource type="Resource" id="Resource_el1o5"]
+script = ExtResource("2_16a6d")
+sprite = ExtResource("3_hcpm4")
+time = 0.25
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_2jfad"]
+script = ExtResource("2_16a6d")
+sprite = ExtResource("4_1hv3a")
+time = 0.25
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_3drni"]
+script = ExtResource("7_51ejm")
+hitboxes = Array[ExtResource("5_0alxg")]([ExtResource("6_2v4jb")])
+sprite = ExtResource("8_1dggb")
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
+
+[sub_resource type="Resource" id="Resource_x7iej"]
+script = ExtResource("1_2v4jb")
+name = "Fist_LMB"
+steps = Array[ExtResource("2_16a6d")]([SubResource("Resource_el1o5"), SubResource("Resource_2jfad"), SubResource("Resource_3drni")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_febnh"]
+script = ExtResource("9_bx4e1")
+animations = Array[ExtResource("1_2v4jb")]([SubResource("Resource_x7iej")])
+is_lmb_combo = true
+metadata/_custom_type_script = "uid://0sno5ifqeksg"
+
+[sub_resource type="Resource" id="Resource_2ug5n"]
+script = ExtResource("2_16a6d")
+sprite = ExtResource("10_wypeg")
+time = 0.25
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_4cooh"]
+script = ExtResource("1_2v4jb")
+name = "Fist_RMB_1"
+steps = Array[ExtResource("2_16a6d")]([SubResource("Resource_2ug5n")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_ulk0s"]
+script = ExtResource("2_16a6d")
+sprite = ExtResource("11_0e6hu")
+time = 0.5
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_p8niw"]
+script = ExtResource("1_2v4jb")
+name = "Fist_RMB_2"
+steps = Array[ExtResource("2_16a6d")]([SubResource("Resource_ulk0s")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_p3tbc"]
+script = ExtResource("9_bx4e1")
+animations = Array[ExtResource("1_2v4jb")]([SubResource("Resource_4cooh"), SubResource("Resource_p8niw")])
+metadata/_custom_type_script = "uid://0sno5ifqeksg"
+
+[sub_resource type="Resource" id="Resource_mrnoy"]
+script = ExtResource("12_cmq6s")
+lmbCombo = SubResource("Resource_febnh")
+rmbCombo = SubResource("Resource_p3tbc")
+metadata/_custom_type_script = "uid://c3ci8sfelltm0"
+
+[resource]
+script = ExtResource("1_qwae7")
+name = "Fists"
+data = SubResource("Resource_mrnoy")
+metadata/_custom_type_script = "uid://oil2083y1evj"

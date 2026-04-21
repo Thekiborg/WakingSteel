@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://c2sm6ueaxc4ak"]
-
-[ext_resource type="Script" uid="uid://bxj2ntxgflydf" path="res://Scripts/CharacterComponents/InventoryManager.gd" id="1_t4xr6"]
-
-[node name="Node" type="Node" unique_id=2119541911]
-script = ExtResource("1_t4xr6")

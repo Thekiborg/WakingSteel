@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://csrs6ogs6p1r2"]
+[gd_scene format=3 uid="uid://munweqfbbg5f"]
 
-[ext_resource type="Script" uid="uid://c6ahmmayyvsg1" path="res://Scripts/Hitbox.gd" id="1_i7vqw"]
+[ext_resource type="Script" uid="uid://bebw2jq07hjk1" path="res://scripts/hitbox.gd" id="1_ldxio"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8dk53"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ldxio"]
 resource_local_to_scene = true
 
-[node name="Hitbox" type="Area3D" unique_id=108516236]
-script = ExtResource("1_i7vqw")
+[node name="Hurtbox" type="Area3D" unique_id=429612402]
+script = ExtResource("1_ldxio")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=417610461]
-shape = SubResource("BoxShape3D_8dk53")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=197322267]
+shape = SubResource("BoxShape3D_ldxio")
 debug_color = Color(1, 0, 0, 0.69803923)

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://kwa3sx5r2c74"]
+
+[ext_resource type="Script" uid="uid://c6c43vg7u2jn1" path="res://scripts/character/player_aimer.gd" id="1_8yq3f"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8yq3f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80t1y"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cbp5q"]
+material = SubResource("StandardMaterial3D_80t1y")
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8yq3f"]
+properties/0/path = NodePath("rotation_node:rotation")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="PlayerAimer" type="Area3D" unique_id=1236189717]
+collision_layer = 2147483648
+collision_mask = 0
+script = ExtResource("1_8yq3f")
+metadata/_custom_type_script = "uid://c6c43vg7u2jn1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1559052103]
+shape = SubResource("WorldBoundaryShape3D_8yq3f")
+debug_fill = false
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1925284323]
+exclude_parent = false
+collision_mask = 2147483648
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="rotation_node" type="Node3D" parent="." unique_id=821375199]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="rotation_node" unique_id=583262906]
+transform = Transform3D(-4.371139e-08, 0, 0.07, 0, 0.079, 0, -1, 0, -3.059797e-09, -0.011, 0.8359692, 0.527)
+mesh = SubResource("BoxMesh_cbp5q")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=572303071]
+replication_config = SubResource("SceneReplicationConfig_8yq3f")

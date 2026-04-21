@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cvb8dtr4qpttl"]
+
+[ext_resource type="Script" uid="uid://cf6n2l2rwddtk" path="res://scripts/character/health_manager.gd" id="1_rxql4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rxql4"]
+height = 1.314
+
+[node name="HealthManager" type="Node3D" unique_id=1663641551]
+script = ExtResource("1_rxql4")
+metadata/_custom_type_script = "uid://cf6n2l2rwddtk"
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1390592655]
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1134652248]
+shape = SubResource("CapsuleShape3D_rxql4")

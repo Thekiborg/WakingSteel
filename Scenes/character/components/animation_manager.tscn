@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://kd3pvne7p3k2"]
+
+[ext_resource type="Script" uid="uid://h73s3jxgct6p" path="res://scripts/character/animation_manager.gd" id="1_apfjm"]
+[ext_resource type="Texture2D" uid="uid://c4e7afhwxoe83" path="res://assets/character/player/dummy_player_3-4_idle.png" id="2_apfjm"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_nuf36"]
+properties/0/path = NodePath("Sprite3D:frame")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="AnimationManager" type="Node3D" unique_id=822681886]
+script = ExtResource("1_apfjm")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=592263774]
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_apfjm")
+
+[node name="AnimationTimer" type="Timer" parent="." unique_id=823385448]
+one_shot = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=54354729]
+replication_config = SubResource("SceneReplicationConfig_nuf36")

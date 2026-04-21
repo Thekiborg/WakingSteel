@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dnjinlo880oot"]
+
+[ext_resource type="Script" uid="uid://df3l72uajeeqb" path="res://scripts/character_body_3d.gd" id="1_56udc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lbhrr"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lnu2h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56udc"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6r27q"]
+material = SubResource("StandardMaterial3D_56udc")
+size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_56udc"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1245386576]
+script = ExtResource("1_56udc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=551087166]
+shape = SubResource("CapsuleShape3D_lbhrr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1467552642]
+mesh = SubResource("CapsuleMesh_lnu2h")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1762736784]
+transform = Transform3D(1, 0, 0, 0, 0.9654908, 0.2604371, 0, -0.2604371, 0.9654908, 0, 1.8220718, 2.949182)
+
+[node name="nose" type="MeshInstance3D" parent="." unique_id=230816841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5437485, -0.2446897)
+mesh = SubResource("BoxMesh_6r27q")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=827890974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2628196, 0)
+billboard = 2
+text = "Peer ID"
+font_size = 64
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1120128630]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=915895552]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer" unique_id=858466769]
+layout_mode = 2
+text = "Leave Game"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=458516185]
+replication_config = SubResource("SceneReplicationConfig_56udc")

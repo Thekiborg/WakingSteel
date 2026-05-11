@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BodyPart" format=3 uid="uid://d4d0ys44iu22h"]
+
+[ext_resource type="Script" uid="uid://cjsq7x6g6bsig" path="res://scripts/body/body_part.gd" id="1_yfd4y"]
+
+[sub_resource type="Resource" id="Resource_yfd4y"]
+script = ExtResource("1_yfd4y")
+max_health = 30.0
+name = "RightForearm"
+height = 1
+metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
+
+[resource]
+script = ExtResource("1_yfd4y")
+max_health = 30.0
+name = "RightArm"
+height = 1
+children = Array[ExtResource("1_yfd4y")]([SubResource("Resource_yfd4y")])
+metadata/_custom_type_script = "uid://cjsq7x6g6bsig"

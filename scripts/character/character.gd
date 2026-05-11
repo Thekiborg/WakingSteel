@@ -11,7 +11,7 @@ class_name Character
 @onready var combat_manager: CombatManager = $CombatManager
 @onready var animation_manager: AnimationManager = $AnimationManager
 @onready var health_manager: HealthManager = $HealthManager
-#@onready var inventory_manager: InventoryManager = %InventoryManager
+@onready var inventory_manager: InventoryManager = $InventoryManager
 
 
 var can_input:bool

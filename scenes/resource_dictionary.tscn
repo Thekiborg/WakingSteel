@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b6bt6lonqeoln"]
+
+[ext_resource type="Script" uid="uid://bo4xn5d1dx0yl" path="res://scripts/autoload-singleton/resource_dictionary.gd" id="1_1xwit"]
+[ext_resource type="Resource" uid="uid://cn2mt512dwgv4" path="res://resources/injurytest.tres" id="2_4iib6"]
+[ext_resource type="Script" uid="uid://byayv4msk2775" path="res://scripts/injury/injury.gd" id="2_jb8dv"]
+[ext_resource type="Script" uid="uid://b236tc1owehkq" path="res://scripts/item/item.gd" id="4_vrvf0"]
+[ext_resource type="Resource" uid="uid://yyy2tpi303ea" path="res://resources/bandage.tres" id="5_a3vsx"]
+[ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="6_a3vsx"]
+[ext_resource type="Resource" uid="uid://ce2dtk07dghoi" path="res://resources/weapon_fist.tres" id="7_2lb7d"]
+
+[node name="ResourceDictionary" type="Node" unique_id=245447730]
+script = ExtResource("1_1xwit")
+injuries = Dictionary[String, ExtResource("2_jb8dv")]({
+"Injurytest": ExtResource("2_4iib6")
+})
+items = Dictionary[String, ExtResource("4_vrvf0")]({
+"bandagetest": ExtResource("5_a3vsx")
+})
+weapons = Dictionary[String, ExtResource("6_a3vsx")]({
+"Fist": ExtResource("7_2lb7d")
+})
+metadata/_custom_type_script = "uid://bo4xn5d1dx0yl"

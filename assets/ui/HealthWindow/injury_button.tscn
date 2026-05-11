@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dmwbq0a1p8aay"]
+
+[ext_resource type="Script" uid="uid://b8tuc6kf5efo2" path="res://Scripts/UI/InjuryButton.gd" id="1_gxer2"]
+
+[node name="Button" type="Button" unique_id=360602866]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_gxer2")

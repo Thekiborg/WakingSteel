@@ -3,6 +3,8 @@ class_name Player
 
 @onready var _aimer: PlayerAimer = $Aimer
 @onready var camera: Camera3D = $Camera3D
+@onready var player_uis: PlayerUIBridge = $player_uis
+@onready var main_menu: AspectRatioContainer = $ESCmenu
 var peer_id: int
 
 func _ready() -> void:
@@ -12,11 +14,15 @@ func _ready() -> void:
 	if not is_multiplayer_authority():
 		set_process(false)
 		set_physics_process(false)
-		print("Someone exited")
 		return
 	
+	player_uis.show()
 	camera.current = true
-
+	player_uis.player = self
+	
+	inventory_manager.put(load("res://resources/bandage.tres"))
+	inventory_manager.put(load("res://resources/bandage.tres"))
+	inventory_manager.put(load("res://resources/bandage.tres"))
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(int(name))
@@ -62,6 +68,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	if (event.is_action_pressed("RMB")):
 		combat_manager.rmb()
 
+func _input(event: InputEvent) -> void:
+	if not is_multiplayer_authority():
+		return
+		
+	if event.is_action_released("open-esc-menu"):
+		main_menu.show()
 
 func get_aimer() -> Node:
 	return _aimer.rotation_node

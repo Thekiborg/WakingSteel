@@ -12,7 +12,7 @@ var data:WeaponHitboxData:
 	set(value): _data = value
 var canSelfHit:bool:
 	get: return data.canSelfHit
-var injuries:Array[Injury]:
+var injuries:Array[String]:
 	get: return data.injuries
 var height:Globals.BodyPartHeight:
 	get: return data.height

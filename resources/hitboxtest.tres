@@ -1,19 +1,10 @@
 [gd_resource type="Resource" script_class="WeaponHitboxData" format=3 uid="uid://b6p2etvaffjax"]
 
-[ext_resource type="Script" uid="uid://byayv4msk2775" path="res://scripts/injury/injury.gd" id="1_dhtek"]
-[ext_resource type="Script" uid="uid://cpnroa718irsw" path="res://scripts/item/healing_item.gd" id="2_7e7y8"]
 [ext_resource type="Script" uid="uid://g8ec7h3hkg4h" path="res://scripts/weapon/weapon_hitbox_data.gd" id="2_ijf5k"]
-
-[sub_resource type="Resource" id="Resource_26ios"]
-script = ExtResource("1_dhtek")
-name = "A hit"
-description = "Very painful"
-damage = 50.0
-metadata/_custom_type_script = "uid://byayv4msk2775"
 
 [resource]
 script = ExtResource("2_ijf5k")
 position = Vector3(0, 1, 1)
 size = Vector3(1, 3, 1)
-injuries = Array[ExtResource("1_dhtek")]([SubResource("Resource_26ios")])
+injuries = Array[String](["Injurytest"])
 metadata/_custom_type_script = "uid://g8ec7h3hkg4h"

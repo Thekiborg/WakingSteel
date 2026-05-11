@@ -37,11 +37,20 @@ func add_injury(injury: Injury) -> void:
 	check_should_destroy()
 
 
-func heal_injury(injury: Injury) -> void:
-	if injury.internal:
-		internal_injuries.erase(injury)
+func heal_injury(external: bool, injury: String) -> void:
+	var index
+	if external:
+		for i in len(external_injuries):
+			if external_injuries.get(i).name == injury:
+				index = i
+				break
+		external_injuries.remove_at(index)
 	else:
-		external_injuries.erase(injury)
+		for i in len(internal_injuries):
+			if internal_injuries.get(i).name == injury:
+				index = i
+				break
+		internal_injuries.remove_at(index)
 
 
 func _damage(amount: float) -> void:

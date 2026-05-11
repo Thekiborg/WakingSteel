@@ -2,7 +2,7 @@ extends Node
 
 var spawned_hitboxes: Dictionary[NodePath, Array]
 
-@rpc("any_peer", "call_remote")
+@rpc("any_peer", "call_local")
 func clear_hitboxes(parent_path: NodePath):
 	var createdHitboxes: Array = spawned_hitboxes.get(parent_path, [])
 	if not createdHitboxes.is_empty():
@@ -11,7 +11,7 @@ func clear_hitboxes(parent_path: NodePath):
 		createdHitboxes.clear()
 
 
-@rpc("any_peer", "call_remote")
+@rpc("any_peer", "call_local")
 func spawn_hitboxes(parent_path: NodePath, lmb_combo: bool, animation_index: int, step_index: int):
 	var player:Player = get_node(parent_path)
 	

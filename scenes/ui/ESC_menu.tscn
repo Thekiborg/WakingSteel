@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b7oy74hh74vd1"]
+
+[ext_resource type="Script" uid="uid://bebhy7rp32sd6" path="res://scripts/ui/esc_menu.gd" id="1_e5ckr"]
+[ext_resource type="Texture2D" uid="uid://lputhf26ymty" path="res://assets/ui/main_menu_label.svg" id="2_nnd1p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sl1te"]
+bg_color = Color(0.21, 0.21, 0.21, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="ESCmenu" type="AspectRatioContainer" unique_id=626963176]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+ratio = 1.7778
+script = ExtResource("1_e5ckr")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=138300565]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sl1te")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1529863275]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=797908986]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=997969512]
+layout_mode = 2
+texture = ExtResource("2_nnd1p")
+
+[node name="ButtonReturnToGame" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1783144363]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Volver al juego"
+
+[node name="ButtonExitToMenu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1648466530]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Salir al menú"

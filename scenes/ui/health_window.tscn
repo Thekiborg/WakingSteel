@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://q1x8faatrit7"]
+
+[ext_resource type="Script" uid="uid://budwnkfdel1mi" path="res://scripts/ui/health_window.gd" id="1_8gfkb"]
+[ext_resource type="StyleBox" uid="uid://ctm0qipgnpwvq" path="res://assets/ui/HealthWindow/HealthWindowTheme.tres" id="2_1ep73"]
+[ext_resource type="Texture2D" uid="uid://bk77mhk7l5vih" path="res://assets/ui/HealthWindow/Outline.png" id="3_1ep73"]
+[ext_resource type="Texture2D" uid="uid://be21f6dtkgwxx" path="res://assets/ui/HealthWindow/Torso.png" id="3_5idxg"]
+[ext_resource type="Script" uid="uid://tncbo8h7ospk" path="res://scripts/ui/body_part_button.gd" id="4_3f0lq"]
+[ext_resource type="Texture2D" uid="uid://ehmya0ma4ylk" path="res://assets/ui/HealthWindow/Head.png" id="5_sf82n"]
+[ext_resource type="Texture2D" uid="uid://cbr67ckrpy6df" path="res://assets/ui/HealthWindow/LeftThigh.png" id="6_y8hh8"]
+[ext_resource type="Texture2D" uid="uid://b2704ap55tfg" path="res://assets/ui/HealthWindow/LeftCalf.png" id="7_uq8px"]
+[ext_resource type="Texture2D" uid="uid://bvpnhyg6a4224" path="res://assets/ui/HealthWindow/LeftLowerArm.png" id="8_auh8u"]
+[ext_resource type="Texture2D" uid="uid://bcweimeggbp4s" path="res://assets/ui/HealthWindow/LeftUpperArm.png" id="9_161xm"]
+[ext_resource type="Texture2D" uid="uid://bihll0w4xupwd" path="res://assets/ui/HealthWindow/RightUpperArm.png" id="10_iqblj"]
+[ext_resource type="Texture2D" uid="uid://bkinwwyi06jfu" path="res://assets/ui/HealthWindow/RightLowerArm.png" id="11_ebinx"]
+[ext_resource type="Texture2D" uid="uid://c2j8wv7ktr3a4" path="res://assets/ui/HealthWindow/RightThigh.png" id="12_e8758"]
+[ext_resource type="Texture2D" uid="uid://k862csg8co4q" path="res://assets/ui/HealthWindow/RightCalf.png" id="13_t00pq"]
+
+[node name="HealthWindow" type="AspectRatioContainer" unique_id=1853771099]
+offset_right = 1154.0
+offset_bottom = 646.0
+mouse_filter = 2
+stretch_mode = 1
+script = ExtResource("1_8gfkb")
+
+[node name="HealthWindowPanelContainer" type="PanelContainer" parent="." unique_id=1473651325]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_1ep73")
+
+[node name="Outline" type="TextureRect" parent="HealthWindowPanelContainer" unique_id=2041023594]
+layout_mode = 2
+texture = ExtResource("3_1ep73")
+expand_mode = 3
+
+[node name="Torso" type="TextureRect" parent="HealthWindowPanelContainer" unique_id=284607424]
+layout_mode = 2
+texture = ExtResource("3_5idxg")
+expand_mode = 3
+script = ExtResource("4_3f0lq")
+body_part_name = "Torso"
+
+[node name="Head" type="TextureRect" parent="HealthWindowPanelContainer" unique_id=1222082721]
+layout_mode = 2
+texture = ExtResource("5_sf82n")
+expand_mode = 3
+script = ExtResource("4_3f0lq")
+body_part_name = "Head"
+
+[node name="LeftThigh" type="TextureRect" parent="HealthWindowPanelContainer" unique_id=996813994]
+layout_mode = 2
+texture = ExtResource("6_y8hh8")
+expand_mode = 3
+script = ExtResource("4_3f0lq")
+body_part_name = "LeftThigh"
+
+[node name="LeftCalf" type="TextureRect" parent="HealthWindowPanelContainer" unique_id=1924328774]
+layout_mode = 2
+texture = ExtResource("7_uq8px")
+expand_mode = 3
+script = ExtResource("4_3f0lq")
+body_part_name = "LeftCalf"
+
+[node name="LowerLeftArm" type="TextureRect" parent="HealthWindowPanelContainer" unique_id=1045701131]
+layout_mode = 2
+texture = ExtResource("8_auh8u")
+expand_mode = 3
+script = ExtResource("4_3f0lq")
+body_part_name = "LeftForearm"
+
+[node name="UpperLeftArm" type="TextureRect" parent="HealthWindowPanelContainer" unique_id=1152474141]
+layout_mode = 2
+texture = ExtResource("9_161xm")
+expand_mode = 3
+script = ExtResource("4_3f0lq")
+body_part_name = "LeftArm"
+
+[node name="RightUpperArm" type="TextureRect" parent="HealthWindowPanelContainer" unique_id=1688082763]
+layout_mode = 2
+texture = ExtResource("10_iqblj")
+expand_mode = 3
+script = ExtResource("4_3f0lq")
+body_part_name = "RightArm"
+
+[node name="RightLowerArm" type="TextureRect" parent="HealthWindowPanelContainer" unique_id=436431073]
+layout_mode = 2
+texture = ExtResource("11_ebinx")
+expand_mode = 3
+script = ExtResource("4_3f0lq")
+body_part_name = "RightForearm"
+
+[node name="RightThigh" type="TextureRect" parent="HealthWindowPanelContainer" unique_id=1940518045]
+layout_mode = 2
+texture = ExtResource("12_e8758")
+expand_mode = 3
+script = ExtResource("4_3f0lq")
+body_part_name = "RightThigh"
+
+[node name="RightCalf" type="TextureRect" parent="HealthWindowPanelContainer" unique_id=811884247]
+layout_mode = 2
+texture = ExtResource("13_t00pq")
+expand_mode = 3
+script = ExtResource("4_3f0lq")
+body_part_name = "RightCalf"
+
+[node name="InjuriesPanelContainer" type="PanelContainer" parent="." unique_id=451386772]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/panel = ExtResource("2_1ep73")
+
+[node name="VScrollBar" type="VScrollBar" parent="InjuriesPanelContainer" unique_id=1859614053]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="InjuriesScrollContainer" type="ScrollContainer" parent="InjuriesPanelContainer" unique_id=1127045557]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+
+[node name="InjuryContainer" type="VBoxContainer" parent="InjuriesPanelContainer/InjuriesScrollContainer" unique_id=1609479670]
+layout_mode = 2

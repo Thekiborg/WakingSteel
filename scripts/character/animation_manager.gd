@@ -20,7 +20,7 @@ signal animation_finished(animation_set: AnimationSet)
 
 func _ready() -> void:
 	character = get_parent()
-	print("ASSIGN TEXTURE OF SPRITE 3D ON READY FROM CHARACTER")
+	sprite.texture = character.idle_animation.steps[0].sprite
 	animationTimer.timeout.connect(_on_timer_timeout)
 
 

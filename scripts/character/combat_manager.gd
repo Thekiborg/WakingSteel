@@ -18,15 +18,19 @@ var facing_right: bool:
 
 func _ready() -> void:
 	character = get_parent()
-	lmbCombo = character.equippedWeapon.data.lmbCombo
-	rmbCombo = character.equippedWeapon.data.rmbCombo
-	print("MAKE METHOD TO REASSIGN EQUIPPED COMBOS TO COMBAT MANAGER")
-	print("MAKE NO WEAPON DEFAULT TO FISTS")
+	refresh_combos()
+	print("MAKE NO WEAPON DEFAULT TO FISTS
+	THE DEFAULT FIST IS DONE IT NEEDS ASSETS AND A WAY FOR THE PLAYER TO PICK ITEMS")
 	comboResetTimer.timeout.connect(_reset_combo_step)
 	
 	# I need the character to have it's onready variables before connecting
 	await character.ready
 	character.animation_manager.animation_finished.connect(_on_animation_finished)
+
+
+func refresh_combos() -> void:
+	lmbCombo = character.equippedWeapon.data.lmbCombo
+	rmbCombo = character.equippedWeapon.data.rmbCombo
 
 
 func lmb():

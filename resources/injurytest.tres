@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Injury" format=3 uid="uid://cn2mt512dwgv4"]
+
+[ext_resource type="Texture2D" uid="uid://lputhf26ymty" path="res://assets/ui/main_menu_label.svg" id="2_lr2xw"]
+[ext_resource type="Script" uid="uid://byayv4msk2775" path="res://scripts/injury/injury.gd" id="3_g4sni"]
+
+[resource]
+script = ExtResource("3_g4sni")
+icon = ExtResource("2_lr2xw")
+name = "A hit"
+description = "Very painful"
+damage = 50.0
+healed_with = Array[String](["bandagetest"])
+metadata/_custom_type_script = "uid://byayv4msk2775"

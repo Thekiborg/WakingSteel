@@ -5,15 +5,20 @@ const IP_ADDRESS = '127.0.0.1'
 
 var enet_peer := ENetMultiplayerPeer.new()
 
-func start_server() -> void:
-	enet_peer.create_server(PORT)
-	multiplayer.multiplayer_peer = enet_peer
-	multiplayer.peer_connected.connect(_peer_connected)
-	multiplayer.peer_disconnected.connect(_peer_disconnected)
+func start_server() -> Error:
+	var err = enet_peer.create_server(PORT)
+	if err == OK:
+		multiplayer.multiplayer_peer = enet_peer
+		multiplayer.peer_connected.connect(_peer_connected)
+		multiplayer.peer_disconnected.connect(_peer_disconnected)
+		_on_connected_to_server()
+		return OK
+	else:
+		return err
 
 
-func join_server() -> void:
-	enet_peer.create_client(IP_ADDRESS, PORT)
+func join_server(ip: String, port: int) -> void:
+	enet_peer.create_client(ip, port)
 	multiplayer.peer_connected.connect(_peer_connected)
 	multiplayer.peer_disconnected.connect(_peer_disconnected)
 	multiplayer.connected_to_server.connect(_on_connected_to_server)
@@ -21,9 +26,13 @@ func join_server() -> void:
 
 
 func _peer_connected(peer_id: int) -> void:
-	print(peer_id, " connected")
 	if peer_id == 1:
-		return
+		print("Host connected and game started.")
+	else:
+		print( peer_id, " connected")
+	
+	var baseplate = Preloads.FLOOR.instantiate()
+	get_tree().current_scene.add_child.call_deferred(baseplate)
 
 	var new_player = Preloads.PLAYER.instantiate()
 	new_player.name = str(peer_id)
@@ -34,7 +43,11 @@ func _peer_connected(peer_id: int) -> void:
 
 
 func _peer_disconnected(peer_id: int) -> void:
-	print(peer_id, " disconnected")
+	if peer_id == 1:
+		print("Shutting off server.")
+	else:
+		print(peer_id, " disconnected")
+
 	if peer_id == 1:
 		leave_server()
 	
@@ -58,4 +71,5 @@ func _on_connected_to_server() -> void:
 func clean_up_signals() -> void:
 	multiplayer.peer_connected.disconnect(_peer_connected)
 	multiplayer.peer_disconnected.disconnect(_peer_disconnected)
-	multiplayer.connected_to_server.disconnect(_on_connected_to_server)
+	if multiplayer.connected_to_server.is_connected(_on_connected_to_server):
+		multiplayer.connected_to_server.disconnect(_on_connected_to_server)

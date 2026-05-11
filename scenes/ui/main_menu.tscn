@@ -44,13 +44,52 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("1_sl1te")
 
-[node name="ButtonJoin" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1246072921]
+[node name="StartErrorLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=30774791]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Error"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonStartGame" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1246072921]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Join"
+text = "Iniciar juego"
+
+[node name="ButtonJoin" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=830940863]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Unirse a partida"
 
 [node name="ButtonQuit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1967290995]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Quit
-"
+text = "Salir"
+
+[node name="IPField" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=675358669]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+placeholder_text = "Dirección IP"
+
+[node name="PortField" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1664967105]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+placeholder_text = "Puerto"
+
+[node name="ButtonJoinAsClient" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1323596996]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+disabled = true
+text = "Unirse"
+
+[node name="ButtonBack" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=283651719]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Atrás"

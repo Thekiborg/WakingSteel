@@ -41,23 +41,15 @@ func _on_area_entered(area: Area3D) -> void:
 		return
 		
 	if hitbox.parentCharacter != parent:
-		print(hitbox.parentCharacter, " hit ", parent)
 		try_take_damage(hitbox)
 	if (hitbox.parentCharacter == parent && hitbox.canSelfHit):
-		print("Self hit")
 		try_take_damage(hitbox)
 		
 	hitbox.register_hit_character(parent)
 
 
 func try_take_damage(origin: Hitbox):
-	print("REVIEW TRY_TAKE_DAMAGE CODE WHY ARE WE GETTING PARENT.HEALTH_MANAGER")
-	var _health_manager: HealthManager = parent.health_manager
-	if not _health_manager:
-		return
-	
 	var hit_pos: Globals.BodyPartPosition = get_hit_position(origin)
-	print(Globals.BodyPartPosition.find_key(hit_pos))
 	var hit_bodyparts = parent.get_potentially_hit_bodyparts(origin.height, hit_pos)
 	
 	# If no bodypart found on that side of the body
@@ -74,10 +66,7 @@ func try_take_damage(origin: Hitbox):
 		var fallback_hit = parent.get_potentially_hit_bodyparts(origin.height, Globals.BodyPartPosition.CENTER)
 		picked_body = fallback_hit.pick_random()
 	
-	print("Picked to hit: ", picked_body.name)
-	for injury in origin.injuries:
-		picked_body.add_injury(injury)
-	print("Dummy: ", _health_manager.health)
+	HealthSyncronizer.add_injuries.rpc(parent.get_path(), picked_body.name, origin.injuries)
 	notify_received_damage()
 
 
@@ -112,6 +101,5 @@ func death() -> void:
 
 
 func _on_part_destroyed(body_part: BodyPart):
-	print(body_part.name, " destroyed")
 	if body_part.lethal:
 		lethal_bodypart_destroyed = true

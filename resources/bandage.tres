@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HealingItem" format=3 uid="uid://yyy2tpi303ea"]
+
+[ext_resource type="Texture2D" uid="uid://lputhf26ymty" path="res://assets/ui/main_menu_label.svg" id="1_3oxg7"]
+[ext_resource type="Script" uid="uid://cpnroa718irsw" path="res://scripts/item/healing_item.gd" id="1_326c6"]
+
+[resource]
+script = ExtResource("1_326c6")
+id = "bandagetest"
+name = "Bandage"
+description = "A bandage to stop bleeding"
+icon = ExtResource("1_3oxg7")
+max_stack = 5
+metadata/_custom_type_script = "uid://cpnroa718irsw"

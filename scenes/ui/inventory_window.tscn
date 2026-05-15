@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cpvgacuhtjl05"]
+
+[ext_resource type="Script" uid="uid://ckwoquolvckt5" path="res://scripts/ui/inventory_window.gd" id="1_6mqyq"]
+[ext_resource type="StyleBox" uid="uid://ctm0qipgnpwvq" path="res://assets/ui/HealthWindow/HealthWindowTheme.tres" id="2_80308"]
+[ext_resource type="Texture2D" uid="uid://lputhf26ymty" path="res://assets/ui/main_menu_label.svg" id="3_7hyj8"]
+
+[node name="InventoryWindow" type="AspectRatioContainer" unique_id=454519245 node_paths=PackedStringArray("action_buttons")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch_mode = 1
+script = ExtResource("1_6mqyq")
+action_buttons = NodePath("MarginContainer/HBoxContainer/ActionButtons")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=696447819]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1856864077]
+layout_mode = 2
+
+[node name="LeftPadding" type="Control" parent="MarginContainer/HBoxContainer" unique_id=30763595]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="InventoryGallery" type="PanelContainer" parent="MarginContainer/HBoxContainer" unique_id=1474312744]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(708, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_80308")
+
+[node name="YAxis" type="VBoxContainer" parent="MarginContainer/HBoxContainer/InventoryGallery" unique_id=1794638217]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ActionButtons" type="PanelContainer" parent="MarginContainer/HBoxContainer" unique_id=1833868326]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_80308")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ActionButtons" unique_id=1812680862]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ActionButtons/MarginContainer" unique_id=245305094]
+layout_mode = 2
+
+[node name="ActionItemLabel" type="Label" parent="MarginContainer/HBoxContainer/ActionButtons/MarginContainer/VBoxContainer" unique_id=90048179]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "ITEM IN QUESTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ActionItemIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/ActionButtons/MarginContainer/VBoxContainer" unique_id=1626348590]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_7hyj8")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ActionButtons/MarginContainer/VBoxContainer" unique_id=446201996]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="ButtonDrop" type="Button" parent="MarginContainer/HBoxContainer/ActionButtons/MarginContainer/VBoxContainer" unique_id=44285348]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "DROP"

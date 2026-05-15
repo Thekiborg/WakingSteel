@@ -5,6 +5,8 @@ class_name Player
 @onready var camera: Camera3D = $Camera3D
 @onready var player_uis: PlayerUIBridge = $player_uis
 @onready var main_menu: AspectRatioContainer = $ESCmenu
+@onready var inventory_window: AspectRatioContainer = $InventoryWindow
+@onready var item_interaction_area: Area3D = $ItemInteractionArea
 var peer_id: int
 
 func _ready() -> void:
@@ -14,19 +16,17 @@ func _ready() -> void:
 	if not is_multiplayer_authority():
 		set_process(false)
 		set_physics_process(false)
+		item_interaction_area.monitorable = false
+		item_interaction_area.monitoring = false
 		return
 	
+	inventory_window.player = self
+	player_uis.player = self
 	player_uis.show()
 	camera.current = true
-	player_uis.player = self
-	
-	inventory_manager.put(load("res://resources/bandage.tres"))
-	inventory_manager.put(load("res://resources/bandage.tres"))
-	inventory_manager.put(load("res://resources/bandage.tres"))
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(int(name))
-
 
 func _physics_process(delta: float) -> void:
 	if not can_move:
@@ -36,8 +36,11 @@ func _physics_process(delta: float) -> void:
 	var hor_velocity = movement_dir * speed * delta;
 
 	velocity += Vector3(hor_velocity.x, 0, hor_velocity.y);
-	if (Input.is_action_just_pressed("jump") && is_on_floor()):
-		velocity += up_direction * 2
+	if (Input.is_action_just_pressed("jump")):
+		if _try_to_pick_item():
+			return
+		elif is_on_floor():
+			velocity += up_direction * 2
 	
 	# In theory if movement_dir isn't 0 means we're moving?
 	if (not movement_dir.is_equal_approx(Vector2.ZERO)):
@@ -68,12 +71,23 @@ func _unhandled_input(event: InputEvent) -> void:
 	if (event.is_action_pressed("RMB")):
 		combat_manager.rmb()
 
+func _try_to_pick_item() -> bool:
+	if item_interaction_area.has_overlapping_areas():
+		var item: NodeItem = item_interaction_area.get_overlapping_areas()[0] as NodeItem
+		inventory_manager.pick_up_item(item)
+		return true
+	return false
+
 func _input(event: InputEvent) -> void:
 	if not is_multiplayer_authority():
 		return
 		
 	if event.is_action_released("open-esc-menu"):
 		main_menu.show()
+	if event.is_action_pressed("open-inventory"):
+		inventory_window.hide_item_actions()
+		inventory_window.display_items(inventory_manager.items)
+		inventory_window.visible = !inventory_window.visible
 
 func get_aimer() -> Node:
 	return _aimer.rotation_node

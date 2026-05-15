@@ -22,6 +22,16 @@ func get_healing_items_for(injury: Injury) -> Array[String]:
 	return res
 
 
+func pick_up_item(item: NodeItem):
+	put(item.data)
+	WorldSyncronizer.despawn.rpc(item.get_path())
+	
+	if parent is Player:
+		var p = parent as Player
+		if p.inventory_window.visible:
+			p.inventory_window.display_items(items)
+
+
 func put(item: Item) -> void:
 	InventorySyncronizer.put_item.rpc(parent.get_path(), item.id)
 

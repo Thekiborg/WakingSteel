@@ -6,6 +6,8 @@
 resource_local_to_scene = true
 
 [node name="Hurtbox" type="Area3D" unique_id=429612402]
+collision_layer = 2147483648
+collision_mask = 2147483648
 script = ExtResource("1_ldxio")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=197322267]

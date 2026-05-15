@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dup3nox635suy"]
 
 [ext_resource type="Script" uid="uid://c6hrsewgij3vq" path="res://scripts/loader.gd" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://j8ejvd2u8bfu" path="res://scenes/node_item.tscn" id="2_lnu2h"]
+[ext_resource type="Resource" uid="uid://yyy2tpi303ea" path="res://resources/bandage.tres" id="3_lbhrr"]
 
 [node name="Game" type="Node" unique_id=988431014]
 
@@ -13,3 +15,13 @@ shadow_enabled = true
 
 [node name="Loader" type="Node" parent="." unique_id=1176622617]
 script = ExtResource("1_uwrxv")
+
+[node name="WorldSpawner" type="MultiplayerSpawner" parent="." unique_id=1541580138]
+_spawnable_scenes = PackedStringArray("uid://j8ejvd2u8bfu")
+spawn_path = NodePath("../SpawnedItems")
+
+[node name="SpawnedItems" type="Node" parent="." unique_id=1156184171]
+
+[node name="NodeItem" parent="SpawnedItems" unique_id=1788213066 instance=ExtResource("2_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9316187, 0)
+data = ExtResource("3_lbhrr")

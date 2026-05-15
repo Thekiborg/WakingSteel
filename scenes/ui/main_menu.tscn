@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwrl35jyhfvfe"]
 
 [ext_resource type="Script" uid="uid://cj7qq2siyi7dj" path="res://scripts/ui/main_menu.gd" id="1_fe2o3"]
-[ext_resource type="Texture2D" uid="uid://lputhf26ymty" path="res://assets/ui/main_menu_label.svg" id="1_sl1te"]
+[ext_resource type="Texture2D" uid="uid://ccygri5bmkfvx" path="res://assets/ui/MenuTitle.png" id="2_fe2o3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sl1te"]
 bg_color = Color(0.21, 0.21, 0.21, 1)
@@ -42,7 +42,11 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=222654709]
 layout_mode = 2
-texture = ExtResource("1_sl1te")
+texture = ExtResource("2_fe2o3")
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=235694069]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
 
 [node name="StartErrorLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=30774791]
 unique_name_in_owner = true

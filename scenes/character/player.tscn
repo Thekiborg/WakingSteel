@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cvb8dtr4qpttl" path="res://scenes/character/components/health_manager.tscn" id="14_7r6u0"]
 [ext_resource type="PackedScene" uid="uid://cvg4i64j5k6af" path="res://scenes/ui/player_uis.tscn" id="14_e5n5u"]
 [ext_resource type="PackedScene" uid="uid://b7oy74hh74vd1" path="res://scenes/ui/ESC_menu.tscn" id="16_ba010"]
+[ext_resource type="PackedScene" uid="uid://cpvgacuhtjl05" path="res://scenes/ui/inventory_window.tscn" id="17_jb4us"]
 
 [sub_resource type="Resource" id="Resource_vhx6d"]
 script = ExtResource("5_e5n5u")
@@ -40,7 +41,6 @@ steps = Array[ExtResource("4_7r6u0")]([SubResource("Resource_x06ku")])
 metadata/_custom_type_script = "uid://8b4gvdp20r65"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmtbp"]
-height = 1.314
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vreni"]
 properties/0/path = NodePath(".:position")
@@ -50,8 +50,13 @@ properties/1/path = NodePath(".:visible")
 properties/1/spawn = true
 properties/1/replication_mode = 1
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jb4us"]
+height = 2.8
+radius = 1.5
+
 [node name="Player" type="CharacterBody3D" unique_id=1366285704]
 script = ExtResource("1_vt0b6")
+speed = 60.0
 equippedWeapon = ExtResource("2_1y732")
 walking_animation = SubResource("Resource_2smwq")
 idle_animation = SubResource("Resource_pygui")
@@ -82,3 +87,14 @@ visible = false
 
 [node name="ESCmenu" parent="." unique_id=626963176 instance=ExtResource("16_ba010")]
 visible = false
+
+[node name="InventoryWindow" parent="." unique_id=454519245 instance=ExtResource("17_jb4us")]
+visible = false
+
+[node name="ItemInteractionArea" type="Area3D" parent="." unique_id=129239261]
+collision_layer = 512
+collision_mask = 512
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemInteractionArea" unique_id=1166213953]
+shape = SubResource("CylinderShape3D_jb4us")

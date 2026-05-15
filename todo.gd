@@ -1,12 +1,9 @@
 extends Node
 
 """
-1. Hacer logo
 2. Implementar ventana de inventario a abrir con TAB.
-	- Ver objetos en una galeria
 	- Hacer click para equipar o tirar
-3. Implementar item agarrable en el suelo cuando estes cerca con el espacio.
-	- Tendran billboard sprite
+
 4. Implementar esquive con iframes en espacio y block con iframes en arma.
 5. Implementar barras de cargas del lo kenrai.
 	- Bloquear algunos usos de M2 a coste de carga

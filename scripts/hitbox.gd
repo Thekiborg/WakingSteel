@@ -31,3 +31,6 @@ func has_hit_character(character: CharacterBody3D) -> bool:
 
 func register_hit_character(character: CharacterBody3D) -> void:
 	hitCharacters.append(character)
+	if parentCharacter is Player:
+		var player: Player = parentCharacter as Player
+		player.increase_essence(data.produced_essence)

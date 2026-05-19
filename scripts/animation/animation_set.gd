@@ -9,6 +9,7 @@ var _steps: Array[AnimationStep]
 		_steps = value
 		for step in _steps:
 			step.animation_set = self
+@export var essence_cost: int
 var combo: ComboSet
 
 var steps_count: int:

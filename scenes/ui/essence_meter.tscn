@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://b6iv2rib2gxu6"]
+
+[ext_resource type="Script" uid="uid://6itandfmm5rs" path="res://scripts/ui/essence_meter.gd" id="1_pphlg"]
+[ext_resource type="Texture2D" uid="uid://cwobd3lvbyggn" path="res://assets/ui/EssenceMeter/EssenceMeterFull1.png" id="2_fv74k"]
+[ext_resource type="Texture2D" uid="uid://pg3yalga1d37" path="res://assets/ui/EssenceMeter/EssenceMeterFull2.png" id="3_tbihf"]
+[ext_resource type="Texture2D" uid="uid://c7lnyxvhxu0uw" path="res://assets/ui/EssenceMeter/EssenceMeterFull3.png" id="4_qvldr"]
+[ext_resource type="Texture2D" uid="uid://de78jesynqyl1" path="res://assets/ui/EssenceMeter/EssenceMeterFull4.png" id="5_egyy5"]
+[ext_resource type="Texture2D" uid="uid://dqf7c87hmeq8d" path="res://assets/ui/EssenceMeter/EssenceMeterFull5.png" id="6_ifmpt"]
+[ext_resource type="Texture2D" uid="uid://t1877mp0scb2" path="res://assets/ui/EssenceMeter/EssenceMeterEmpty.png" id="7_2tprb"]
+
+[node name="EssenceMeter" type="AspectRatioContainer" unique_id=789218311]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+ratio = 1.7778
+script = ExtResource("1_pphlg")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2108066449]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Filled1" type="TextureRect" parent="MarginContainer" unique_id=643775557]
+visible = false
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_fv74k")
+stretch_mode = 4
+
+[node name="Filled2" type="TextureRect" parent="MarginContainer" unique_id=1633283104]
+visible = false
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_tbihf")
+
+[node name="Filled3" type="TextureRect" parent="MarginContainer" unique_id=801789335]
+visible = false
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_qvldr")
+
+[node name="Filled4" type="TextureRect" parent="MarginContainer" unique_id=421205261]
+visible = false
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_egyy5")
+
+[node name="Filled5" type="TextureRect" parent="MarginContainer" unique_id=1015429349]
+visible = false
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("6_ifmpt")
+
+[node name="EssenceMeter" type="TextureRect" parent="MarginContainer" unique_id=961207771]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("7_2tprb")

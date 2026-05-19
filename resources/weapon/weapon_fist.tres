@@ -9,8 +9,9 @@
 [ext_resource type="Script" uid="uid://d4cbwg3fwfgk4" path="res://scripts/animation/steps/step_hitbox.gd" id="7_g44yc"]
 [ext_resource type="Texture2D" uid="uid://blfok3inp88v1" path="res://assets/character/player/dummy_player_3-4_punch_3.png" id="8_qokys"]
 [ext_resource type="Script" uid="uid://0sno5ifqeksg" path="res://scripts/weapon/combo_set.gd" id="9_ioc30"]
-[ext_resource type="Texture2D" uid="uid://bcvtnk2nw12qc" path="res://assets/character/player/dummy_player_3-4_walk.png" id="10_6itt7"]
+[ext_resource type="Texture2D" uid="uid://b7lw7dhcnc1e7" path="res://assets/character/player/dummy_player_3-4_RMB1-1.png" id="10_ind36"]
 [ext_resource type="Script" uid="uid://c3ci8sfelltm0" path="res://scripts/weapon/weapon_data.gd" id="11_ku673"]
+[ext_resource type="Texture2D" uid="uid://d1hcscxbjxx32" path="res://assets/character/player/dummy_player_3-4_RMB1-2.png" id="11_mqmg5"]
 [ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="12_2kxvu"]
 
 [sub_resource type="Resource" id="Resource_tlygp"]
@@ -43,16 +44,31 @@ animations = Array[ExtResource("1_ux8m7")]([SubResource("Resource_fafbi")])
 is_lmb_combo = true
 metadata/_custom_type_script = "uid://0sno5ifqeksg"
 
-[sub_resource type="Resource" id="Resource_i1mu3"]
+[sub_resource type="Resource" id="Resource_t3ftm"]
 script = ExtResource("2_ind36")
-sprite = ExtResource("10_6itt7")
-time = 0.1
+sprite = ExtResource("10_ind36")
+time = 0.3
 metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_ind36"]
+script = ExtResource("5_siu6t")
+position = Vector3(0, 0, 1)
+size = Vector3(1, 1, 1.3)
+height = 2
+metadata/_custom_type_script = "uid://g8ec7h3hkg4h"
+
+[sub_resource type="Resource" id="Resource_siu6t"]
+script = ExtResource("7_g44yc")
+hitboxes = Array[ExtResource("5_siu6t")]([SubResource("Resource_ind36")])
+sprite = ExtResource("11_mqmg5")
+time = 0.25
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
 
 [sub_resource type="Resource" id="Resource_pwy5p"]
 script = ExtResource("1_ux8m7")
 name = "Fist_M2"
-steps = Array[ExtResource("2_ind36")]([SubResource("Resource_i1mu3")])
+steps = Array[ExtResource("2_ind36")]([SubResource("Resource_t3ftm"), SubResource("Resource_siu6t")])
+essence_cost = 3
 metadata/_custom_type_script = "uid://8b4gvdp20r65"
 
 [sub_resource type="Resource" id="Resource_h87ue"]

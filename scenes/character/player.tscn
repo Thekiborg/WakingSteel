@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://5orbfqnoq86g" path="res://resources/PlayerBody/Torso.tres" id="9_ba010"]
 [ext_resource type="PackedScene" uid="uid://c8vre0aetv6db" path="res://scenes/character/components/inventory_manager.tscn" id="12_e5n5u"]
 [ext_resource type="PackedScene" uid="uid://cvb8dtr4qpttl" path="res://scenes/character/components/health_manager.tscn" id="14_7r6u0"]
+[ext_resource type="PackedScene" uid="uid://b6iv2rib2gxu6" path="res://scenes/ui/essence_meter.tscn" id="14_ba010"]
 [ext_resource type="PackedScene" uid="uid://cvg4i64j5k6af" path="res://scenes/ui/player_uis.tscn" id="14_e5n5u"]
 [ext_resource type="PackedScene" uid="uid://b7oy74hh74vd1" path="res://scenes/ui/ESC_menu.tscn" id="16_ba010"]
 [ext_resource type="PackedScene" uid="uid://cpvgacuhtjl05" path="res://scenes/ui/inventory_window.tscn" id="17_jb4us"]
@@ -66,6 +67,8 @@ visible = false
 
 [node name="InventoryWindow" parent="." unique_id=454519245 instance=ExtResource("17_jb4us")]
 visible = false
+
+[node name="EssenceMeter" parent="." unique_id=789218311 instance=ExtResource("14_ba010")]
 
 [node name="ItemInteractionArea" type="Area3D" parent="." unique_id=129239261]
 collision_layer = 512

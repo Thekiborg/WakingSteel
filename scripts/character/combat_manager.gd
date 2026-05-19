@@ -36,6 +36,10 @@ func lmb():
 		return
 	
 	var animation:AnimationSet = lmbCombo.animations[min(lmbCombo.animations.size() - 1, curComboIndex)]
+	if character is Player:
+		var player = character as Player
+		if animation.essence_cost > player.essence_count:
+			return
 	_start_attack(animation)
 
 
@@ -44,6 +48,10 @@ func rmb():
 		return
 	
 	var animation:AnimationSet = rmbCombo.animations[min(rmbCombo.animations.size() - 1, curComboIndex)]
+	if character is Player:
+		var player = character as Player
+		if animation.essence_cost > player.essence_count:
+			return
 	_start_attack(animation)
 
 
@@ -59,6 +67,9 @@ func _on_animation_finished(last_anim: AnimationSet):
 		curComboIndex = (curComboIndex + 1) % lmbCombo.animations.size()
 	else:
 		curComboIndex = (curComboIndex + 1) % rmbCombo.animations.size()
+	if character is Player:
+		var player = character as Player
+		player.increase_essence(-last_anim.essence_cost)
 	comboResetTimer.start()
 	character.can_input = true
 

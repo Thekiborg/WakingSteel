@@ -8,3 +8,4 @@ class_name WeaponHitboxData
 @export var canSelfHit:bool
 @export var bypassesDodge:bool
 @export var bypassesBlock:bool
+@export var produced_essence: int

@@ -42,10 +42,11 @@ func _on_area_entered(area: Area3D) -> void:
 		
 	if hitbox.parentCharacter != parent:
 		try_take_damage(hitbox)
+		hitbox.register_hit_character(parent)
 	if (hitbox.parentCharacter == parent && hitbox.canSelfHit):
 		try_take_damage(hitbox)
+		hitbox.register_hit_character(parent)
 		
-	hitbox.register_hit_character(parent)
 
 
 func try_take_damage(origin: Hitbox):

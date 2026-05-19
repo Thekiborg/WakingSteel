@@ -10,6 +10,8 @@ class_name Player
 @onready var inventory_window: AspectRatioContainer = $InventoryWindow
 @onready var item_interaction_area: Area3D = $ItemInteractionArea
 @onready var dash_duration_timer: Timer = $DashDurationTimer
+@onready var essence_meter: EssenceMeter = $EssenceMeter
+var essence_count: int
 var dashing: bool:
 	get: return dash_duration_timer.time_left != 0
 var peer_id: int
@@ -25,6 +27,7 @@ func _ready() -> void:
 		item_interaction_area.monitoring = false
 		return
 	
+	essence_meter.player = self
 	inventory_window.player = self
 	player_uis.player = self
 	player_uis.show()
@@ -120,3 +123,10 @@ func get_aimer() -> Node:
 
 func _dash_duration_ends() -> void:
 	combat_manager.is_dodging = false
+	
+func increase_essence(count: int):
+	InventorySyncronizer.update_essence.rpc_id(
+		int(self.name),
+		self.get_path(),
+		count)
+	

@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("2_ijf5k")
-position = Vector3(0, 1, 1)
-size = Vector3(1, 3, 1)
+position = Vector3(0, 0, 1)
+size = Vector3(0.7, 1.3, 0.7)
 injuries = Array[String](["Injurytest"])
+produced_essence = 1
 metadata/_custom_type_script = "uid://g8ec7h3hkg4h"

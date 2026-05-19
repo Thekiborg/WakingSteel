@@ -34,4 +34,9 @@ func equip_weapon(character_path: NodePath, weapon_id: String):
 		character.idle_animation = weapon.idle_animation
 	character.combat_manager.refresh_combos()
 	
+@rpc("any_peer", "call_local")
+func update_essence(character_path: NodePath, count: int):
+	var character: Player = get_node(character_path)
 	
+	character.essence_count = max(0, min(5, character.essence_count + count))
+	character.essence_meter.update_fullness_level()

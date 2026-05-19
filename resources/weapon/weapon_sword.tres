@@ -1,0 +1,121 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://be6syfks6u31w"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_5ilsl"]
+[ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="1_a4m3r"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_ce377"]
+[ext_resource type="Script" uid="uid://0sno5ifqeksg" path="res://scripts/weapon/combo_set.gd" id="2_yw8mq"]
+[ext_resource type="Texture2D" uid="uid://cukbpic4butsc" path="res://assets/character/player/Sword/sword_player_3-4_LMB_1-1.png" id="3_7bvih"]
+[ext_resource type="Script" uid="uid://c3ci8sfelltm0" path="res://scripts/weapon/weapon_data.gd" id="3_58qbj"]
+[ext_resource type="Script" uid="uid://g8ec7h3hkg4h" path="res://scripts/weapon/weapon_hitbox_data.gd" id="4_x3un8"]
+[ext_resource type="Script" uid="uid://d4cbwg3fwfgk4" path="res://scripts/animation/steps/step_hitbox.gd" id="5_y0keg"]
+[ext_resource type="Texture2D" uid="uid://crvfi6wp36n5o" path="res://assets/character/player/Sword/sword_player_3-4_LMB_1-2.png" id="6_1b5vu"]
+[ext_resource type="Texture2D" uid="uid://dppvhji1y88k4" path="res://assets/character/player/Sword/sword_player_3-4_LMB_2-1.png" id="7_x3un8"]
+[ext_resource type="Script" uid="uid://vkxqsxwvpamw" path="res://scripts/animation/steps/step_block.gd" id="9_1b5vu"]
+[ext_resource type="Texture2D" uid="uid://lqa3akrdwsmb" path="res://assets/character/player/Sword/sword_player_3-4_idle.png" id="9_7bvih"]
+[ext_resource type="Texture2D" uid="uid://bjwaenufgkibl" path="res://assets/character/player/Sword/sword_player_3-4_RMB_1.png" id="10_k0rv6"]
+[ext_resource type="Texture2D" uid="uid://br5yxf525rk2u" path="res://assets/character/player/Sword/sword_player_3-4_walk.png" id="11_x3un8"]
+[ext_resource type="Script" uid="uid://s6cpynqg2j31" path="res://scripts/animation/steps/step_idle.gd" id="12_oge4u"]
+[ext_resource type="Script" uid="uid://dt1bajx5rqdol" path="res://scripts/animation/steps/step_walk.gd" id="15_7gi15"]
+
+[sub_resource type="Resource" id="Resource_oge4u"]
+script = ExtResource("2_ce377")
+sprite = ExtResource("3_7bvih")
+time = 0.25
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_7gi15"]
+script = ExtResource("4_x3un8")
+position = Vector3(0, 0, 1)
+size = Vector3(1.5, 2, 1.5)
+metadata/_custom_type_script = "uid://g8ec7h3hkg4h"
+
+[sub_resource type="Resource" id="Resource_ao7ol"]
+script = ExtResource("5_y0keg")
+hitboxes = Array[ExtResource("4_x3un8")]([SubResource("Resource_7gi15")])
+sprite = ExtResource("6_1b5vu")
+time = 0.2
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
+
+[sub_resource type="Resource" id="Resource_q8xe3"]
+script = ExtResource("1_5ilsl")
+name = "SwordLMB1"
+steps = Array[ExtResource("2_ce377")]([SubResource("Resource_oge4u"), SubResource("Resource_ao7ol")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_51hlv"]
+script = ExtResource("4_x3un8")
+position = Vector3(0, 0, 1)
+size = Vector3(2.5, 1.5, 1.5)
+metadata/_custom_type_script = "uid://g8ec7h3hkg4h"
+
+[sub_resource type="Resource" id="Resource_qclky"]
+script = ExtResource("5_y0keg")
+hitboxes = Array[ExtResource("4_x3un8")]([SubResource("Resource_51hlv")])
+sprite = ExtResource("7_x3un8")
+time = 0.3
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
+
+[sub_resource type="Resource" id="Resource_t5fhb"]
+script = ExtResource("1_5ilsl")
+name = "SwordLMB2"
+steps = Array[ExtResource("2_ce377")]([SubResource("Resource_qclky")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_y0keg"]
+script = ExtResource("2_yw8mq")
+animations = Array[ExtResource("1_5ilsl")]([SubResource("Resource_q8xe3"), SubResource("Resource_t5fhb")])
+is_lmb_combo = true
+metadata/_custom_type_script = "uid://0sno5ifqeksg"
+
+[sub_resource type="Resource" id="Resource_rq1op"]
+script = ExtResource("9_1b5vu")
+sprite = ExtResource("10_k0rv6")
+time = 0.5
+metadata/_custom_type_script = "uid://vkxqsxwvpamw"
+
+[sub_resource type="Resource" id="Resource_0do7x"]
+script = ExtResource("1_5ilsl")
+name = "SwordRMB1"
+steps = Array[ExtResource("2_ce377")]([SubResource("Resource_rq1op")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_1b5vu"]
+script = ExtResource("2_yw8mq")
+animations = Array[ExtResource("1_5ilsl")]([SubResource("Resource_0do7x")])
+metadata/_custom_type_script = "uid://0sno5ifqeksg"
+
+[sub_resource type="Resource" id="Resource_k0rv6"]
+script = ExtResource("3_58qbj")
+lmbCombo = SubResource("Resource_y0keg")
+rmbCombo = SubResource("Resource_1b5vu")
+metadata/_custom_type_script = "uid://c3ci8sfelltm0"
+
+[sub_resource type="Resource" id="Resource_2wwfo"]
+script = ExtResource("12_oge4u")
+sprite = ExtResource("9_7bvih")
+metadata/_custom_type_script = "uid://s6cpynqg2j31"
+
+[sub_resource type="Resource" id="Resource_vxcx4"]
+script = ExtResource("1_5ilsl")
+name = "Player_Sword_Idle"
+steps = Array[ExtResource("2_ce377")]([SubResource("Resource_2wwfo")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_vktis"]
+script = ExtResource("15_7gi15")
+sprite = ExtResource("11_x3un8")
+metadata/_custom_type_script = "uid://dt1bajx5rqdol"
+
+[sub_resource type="Resource" id="Resource_x3un8"]
+script = ExtResource("1_5ilsl")
+name = "Player_Sword_Walk"
+steps = Array[ExtResource("2_ce377")]([SubResource("Resource_vktis")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[resource]
+script = ExtResource("1_a4m3r")
+name = "Sword"
+data = SubResource("Resource_k0rv6")
+idle_animation = SubResource("Resource_vxcx4")
+walking_animation = SubResource("Resource_x3un8")
+metadata/_custom_type_script = "uid://oil2083y1evj"

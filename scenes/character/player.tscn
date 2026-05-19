@@ -1,44 +1,18 @@
 [gd_scene format=3 uid="uid://11raepocuhsj"]
 
 [ext_resource type="Script" uid="uid://dm5hl5wv241bn" path="res://scripts/character/player.gd" id="1_vt0b6"]
-[ext_resource type="Resource" uid="uid://jkkjqba7m6ru" path="res://resources/weapontest.tres" id="2_1y732"]
 [ext_resource type="PackedScene" uid="uid://gq4r6rcldske" path="res://scenes/character/components/combat_manager.tscn" id="2_bnvp8"]
+[ext_resource type="Resource" uid="uid://ce2dtk07dghoi" path="res://resources/weapon/weapon_fist.tres" id="2_jb4us"]
 [ext_resource type="PackedScene" uid="uid://kd3pvne7p3k2" path="res://scenes/character/components/animation_manager.tscn" id="3_1y732"]
-[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="3_vreni"]
-[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="4_7r6u0"]
+[ext_resource type="Resource" uid="uid://exfs4ye6ivko" path="res://scenes/character/animations/player_default_walk.tres" id="3_vreni"]
+[ext_resource type="Resource" uid="uid://drvnbv57j20yt" path="res://scenes/character/animations/player_default_idle.tres" id="4_7r6u0"]
 [ext_resource type="PackedScene" uid="uid://kwa3sx5r2c74" path="res://scenes/character/components/player_aimer.tscn" id="4_erpy8"]
-[ext_resource type="Script" uid="uid://dt1bajx5rqdol" path="res://scripts/animation/steps/step_walk.gd" id="5_e5n5u"]
-[ext_resource type="Texture2D" uid="uid://bcvtnk2nw12qc" path="res://assets/character/player/dummy_player_3-4_walk.png" id="6_ba010"]
-[ext_resource type="Script" uid="uid://s6cpynqg2j31" path="res://scripts/animation/steps/step_idle.gd" id="7_jb4us"]
-[ext_resource type="Texture2D" uid="uid://c4e7afhwxoe83" path="res://assets/character/player/dummy_player_3-4_idle.png" id="8_ux0ro"]
 [ext_resource type="Resource" uid="uid://5orbfqnoq86g" path="res://resources/PlayerBody/Torso.tres" id="9_ba010"]
 [ext_resource type="PackedScene" uid="uid://c8vre0aetv6db" path="res://scenes/character/components/inventory_manager.tscn" id="12_e5n5u"]
 [ext_resource type="PackedScene" uid="uid://cvb8dtr4qpttl" path="res://scenes/character/components/health_manager.tscn" id="14_7r6u0"]
 [ext_resource type="PackedScene" uid="uid://cvg4i64j5k6af" path="res://scenes/ui/player_uis.tscn" id="14_e5n5u"]
 [ext_resource type="PackedScene" uid="uid://b7oy74hh74vd1" path="res://scenes/ui/ESC_menu.tscn" id="16_ba010"]
 [ext_resource type="PackedScene" uid="uid://cpvgacuhtjl05" path="res://scenes/ui/inventory_window.tscn" id="17_jb4us"]
-
-[sub_resource type="Resource" id="Resource_vhx6d"]
-script = ExtResource("5_e5n5u")
-sprite = ExtResource("6_ba010")
-metadata/_custom_type_script = "uid://dt1bajx5rqdol"
-
-[sub_resource type="Resource" id="Resource_2smwq"]
-script = ExtResource("3_vreni")
-name = "Player_Walk"
-steps = Array[ExtResource("4_7r6u0")]([SubResource("Resource_vhx6d")])
-metadata/_custom_type_script = "uid://8b4gvdp20r65"
-
-[sub_resource type="Resource" id="Resource_x06ku"]
-script = ExtResource("7_jb4us")
-sprite = ExtResource("8_ux0ro")
-metadata/_custom_type_script = "uid://s6cpynqg2j31"
-
-[sub_resource type="Resource" id="Resource_pygui"]
-script = ExtResource("3_vreni")
-name = "Player_Idle"
-steps = Array[ExtResource("4_7r6u0")]([SubResource("Resource_x06ku")])
-metadata/_custom_type_script = "uid://8b4gvdp20r65"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmtbp"]
 
@@ -56,10 +30,12 @@ radius = 1.5
 
 [node name="Player" type="CharacterBody3D" unique_id=1366285704]
 script = ExtResource("1_vt0b6")
+dash_speed_mult = 8
+dash_duration = 0.15
 speed = 60.0
-equippedWeapon = ExtResource("2_1y732")
-walking_animation = SubResource("Resource_2smwq")
-idle_animation = SubResource("Resource_pygui")
+equippedWeapon = ExtResource("2_jb4us")
+walking_animation = ExtResource("3_vreni")
+idle_animation = ExtResource("4_7r6u0")
 body = ExtResource("9_ba010")
 metadata/_custom_type_script = "uid://dm5hl5wv241bn"
 
@@ -98,3 +74,6 @@ input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ItemInteractionArea" unique_id=1166213953]
 shape = SubResource("CylinderShape3D_jb4us")
+
+[node name="DashDurationTimer" type="Timer" parent="." unique_id=875305218]
+one_shot = true

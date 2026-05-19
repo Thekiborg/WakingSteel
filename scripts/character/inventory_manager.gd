@@ -24,7 +24,10 @@ func get_healing_items_for(injury: Injury) -> Array[String]:
 
 func pick_up_item(item: NodeItem):
 	put(item.data)
-	WorldSyncronizer.despawn.rpc(item.get_path())
+	if multiplayer.is_server():
+		WorldSyncronizer.despawn(item.get_path())
+	else:
+		WorldSyncronizer.despawn.rpc(item.get_path())
 	
 	if parent is Player:
 		var p = parent as Player

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimationSet" format=3 uid="uid://exfs4ye6ivko"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_6swo7"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_5i6t6"]
+[ext_resource type="Script" uid="uid://dt1bajx5rqdol" path="res://scripts/animation/steps/step_walk.gd" id="3_ed2in"]
+[ext_resource type="Texture2D" uid="uid://bcvtnk2nw12qc" path="res://assets/character/player/dummy_player_3-4_walk.png" id="4_02qpt"]
+
+[sub_resource type="Resource" id="Resource_vhx6d"]
+script = ExtResource("3_ed2in")
+sprite = ExtResource("4_02qpt")
+metadata/_custom_type_script = "uid://dt1bajx5rqdol"
+
+[resource]
+script = ExtResource("1_6swo7")
+name = "Player_Walk"
+steps = Array[ExtResource("2_5i6t6")]([SubResource("Resource_vhx6d")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"

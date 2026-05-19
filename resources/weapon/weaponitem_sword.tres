@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://dsg8q3ec6ia4q"]
+
+[ext_resource type="Script" uid="uid://ddk7f4khhgws1" path="res://scripts/item/weapon_item.gd" id="1_h1fwp"]
+[ext_resource type="Texture2D" uid="uid://bce8sm6w5j32w" path="res://assets/weapons/SwordIcon.png" id="1_t705n"]
+[ext_resource type="Resource" uid="uid://be6syfks6u31w" path="res://resources/weapon/weapon_sword.tres" id="3_0spdo"]
+
+[resource]
+script = ExtResource("1_h1fwp")
+weapon = ExtResource("3_0spdo")
+id = "weaponitem_sword"
+name = "Sword"
+description = "A sword"
+icon = ExtResource("1_t705n")
+max_stack = 1
+metadata/_custom_type_script = "uid://ddk7f4khhgws1"

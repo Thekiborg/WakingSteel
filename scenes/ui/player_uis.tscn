@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvg4i64j5k6af"]
 
 [ext_resource type="Script" uid="uid://fnaxdj1dcv6" path="res://scripts/ui/player_ui_bridge.gd" id="1_7iwrj"]
-[ext_resource type="Texture2D" uid="uid://lputhf26ymty" path="res://assets/ui/main_menu_label.svg" id="2_38jrk"]
+[ext_resource type="Texture2D" uid="uid://du4gjdlumb1nx" path="res://assets/ui/HealthWindow/Button.png" id="2_7iwrj"]
 [ext_resource type="Script" uid="uid://c0jtsfc2p7pch" path="res://scripts/ui/open_health_window_button.gd" id="3_ybste"]
 [ext_resource type="PackedScene" uid="uid://q1x8faatrit7" path="res://scenes/ui/health_window.tscn" id="4_oht2n"]
 [ext_resource type="PackedScene" path="res://scenes/ui/healing_section.tscn" id="5_jo8l1"]
@@ -28,7 +28,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 focus_mode = 0
-icon = ExtResource("2_38jrk")
+icon = ExtResource("2_7iwrj")
 script = ExtResource("3_ybste")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1898214437]

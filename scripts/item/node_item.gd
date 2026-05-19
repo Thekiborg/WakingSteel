@@ -1,7 +1,9 @@
 extends Area3D
 class_name NodeItem
 
-@export var data: Item
+@export var data_id: String
+var data: Item:
+	get: return ResourceDictionary.items.get(data_id)
 
 @onready var keyboard_icon: Sprite3D = $KeyboardIcon
 @onready var item_icon: Sprite3D = $ItemIcon

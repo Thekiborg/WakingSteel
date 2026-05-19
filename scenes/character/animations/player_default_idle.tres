@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimationSet" format=3 uid="uid://drvnbv57j20yt"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_w534j"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_yxiht"]
+[ext_resource type="Script" uid="uid://s6cpynqg2j31" path="res://scripts/animation/steps/step_idle.gd" id="3_q6jvb"]
+[ext_resource type="Texture2D" uid="uid://c4e7afhwxoe83" path="res://assets/character/player/dummy_player_3-4_idle.png" id="4_36vko"]
+
+[sub_resource type="Resource" id="Resource_x06ku"]
+script = ExtResource("3_q6jvb")
+sprite = ExtResource("4_36vko")
+metadata/_custom_type_script = "uid://s6cpynqg2j31"
+
+[resource]
+script = ExtResource("1_w534j")
+name = "Player_Idle"
+steps = Array[ExtResource("2_yxiht")]([SubResource("Resource_x06ku")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"

@@ -19,8 +19,6 @@ var facing_right: bool:
 func _ready() -> void:
 	character = get_parent()
 	refresh_combos()
-	print("MAKE NO WEAPON DEFAULT TO FISTS
-	THE DEFAULT FIST IS DONE IT NEEDS ASSETS AND A WAY FOR THE PLAYER TO PICK ITEMS")
 	comboResetTimer.timeout.connect(_reset_combo_step)
 	
 	# I need the character to have it's onready variables before connecting

@@ -1,0 +1,115 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://gohrn621a5or"]
+
+[ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="1_lnk1o"]
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_u4xca"]
+[ext_resource type="Script" uid="uid://0sno5ifqeksg" path="res://scripts/weapon/combo_set.gd" id="2_ewxr3"]
+[ext_resource type="Texture2D" uid="uid://cpnm8rtrw6k07" path="res://assets/character/player/Spear/spear_player_3-4_LMB_1-1.png" id="3_q1lf0"]
+[ext_resource type="Script" uid="uid://c3ci8sfelltm0" path="res://scripts/weapon/weapon_data.gd" id="3_vdrqu"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="4_03sry"]
+[ext_resource type="Script" uid="uid://g8ec7h3hkg4h" path="res://scripts/weapon/weapon_hitbox_data.gd" id="4_het85"]
+[ext_resource type="Script" uid="uid://d4cbwg3fwfgk4" path="res://scripts/animation/steps/step_hitbox.gd" id="5_i7dkj"]
+[ext_resource type="Script" uid="uid://s6cpynqg2j31" path="res://scripts/animation/steps/step_idle.gd" id="5_qrq2p"]
+[ext_resource type="Texture2D" uid="uid://cvvx5ci8lx817" path="res://assets/character/player/Spear/spear_player_3-4_LMB_1-2.png" id="6_0toa0"]
+[ext_resource type="Texture2D" uid="uid://devp3orot6xhk" path="res://assets/character/player/Spear/spear_player_3-4_idle.png" id="6_koqc4"]
+[ext_resource type="Texture2D" uid="uid://dtgkayfa7pxhn" path="res://assets/character/player/Spear/spear_player_3-4_RMB_1-1.png" id="8_kpf4v"]
+[ext_resource type="Script" uid="uid://dt1bajx5rqdol" path="res://scripts/animation/steps/step_walk.gd" id="8_q1lf0"]
+[ext_resource type="Texture2D" uid="uid://dumoai6nrm46" path="res://assets/character/player/Spear/spear_player_3-4_RMB_1-2.png" id="9_cugii"]
+[ext_resource type="Texture2D" uid="uid://dhtxrj6o365lu" path="res://assets/character/player/Spear/spear_player_3-4_walk.png" id="9_het85"]
+
+[sub_resource type="Resource" id="Resource_8mtc1"]
+script = ExtResource("4_03sry")
+sprite = ExtResource("3_q1lf0")
+time = 0.25
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_cpb3n"]
+script = ExtResource("4_het85")
+position = Vector3(0, 0, 1)
+size = Vector3(0.7, 0.7, 2)
+metadata/_custom_type_script = "uid://g8ec7h3hkg4h"
+
+[sub_resource type="Resource" id="Resource_mf86g"]
+script = ExtResource("5_i7dkj")
+hitboxes = Array[ExtResource("4_het85")]([SubResource("Resource_cpb3n")])
+sprite = ExtResource("6_0toa0")
+time = 0.25
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
+
+[sub_resource type="Resource" id="Resource_6y4wp"]
+script = ExtResource("1_u4xca")
+name = "SpearLMB1"
+steps = Array[ExtResource("4_03sry")]([SubResource("Resource_8mtc1"), SubResource("Resource_mf86g")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_i7dkj"]
+script = ExtResource("2_ewxr3")
+animations = Array[ExtResource("1_u4xca")]([SubResource("Resource_6y4wp")])
+is_lmb_combo = true
+metadata/_custom_type_script = "uid://0sno5ifqeksg"
+
+[sub_resource type="Resource" id="Resource_vyuo7"]
+script = ExtResource("4_03sry")
+sprite = ExtResource("8_kpf4v")
+time = 0.3
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_vbyta"]
+script = ExtResource("4_het85")
+position = Vector3(0, 0, 1)
+size = Vector3(1.6, 2.5, 1)
+height = 0
+metadata/_custom_type_script = "uid://g8ec7h3hkg4h"
+
+[sub_resource type="Resource" id="Resource_4hd3d"]
+script = ExtResource("5_i7dkj")
+hitboxes = Array[ExtResource("4_het85")]([SubResource("Resource_vbyta")])
+sprite = ExtResource("9_cugii")
+time = 0.25
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
+
+[sub_resource type="Resource" id="Resource_vde86"]
+script = ExtResource("1_u4xca")
+name = "SpearRMB1"
+steps = Array[ExtResource("4_03sry")]([SubResource("Resource_vyuo7"), SubResource("Resource_4hd3d")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_0toa0"]
+script = ExtResource("2_ewxr3")
+animations = Array[ExtResource("1_u4xca")]([SubResource("Resource_vde86")])
+metadata/_custom_type_script = "uid://0sno5ifqeksg"
+
+[sub_resource type="Resource" id="Resource_kpf4v"]
+script = ExtResource("3_vdrqu")
+lmbCombo = SubResource("Resource_i7dkj")
+rmbCombo = SubResource("Resource_0toa0")
+metadata/_custom_type_script = "uid://c3ci8sfelltm0"
+
+[sub_resource type="Resource" id="Resource_cugii"]
+script = ExtResource("5_qrq2p")
+sprite = ExtResource("6_koqc4")
+metadata/_custom_type_script = "uid://s6cpynqg2j31"
+
+[sub_resource type="Resource" id="Resource_mquvk"]
+script = ExtResource("1_u4xca")
+name = "Player_Spear_Idle"
+steps = Array[ExtResource("4_03sry")]([SubResource("Resource_cugii")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_w84lj"]
+script = ExtResource("8_q1lf0")
+sprite = ExtResource("9_het85")
+metadata/_custom_type_script = "uid://dt1bajx5rqdol"
+
+[sub_resource type="Resource" id="Resource_2jh8i"]
+script = ExtResource("1_u4xca")
+name = "Player_Spear_Walk"
+steps = Array[ExtResource("4_03sry")]([SubResource("Resource_w84lj")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[resource]
+script = ExtResource("1_lnk1o")
+name = "Spear"
+data = SubResource("Resource_kpf4v")
+idle_animation = SubResource("Resource_mquvk")
+walking_animation = SubResource("Resource_2jh8i")
+metadata/_custom_type_script = "uid://oil2083y1evj"

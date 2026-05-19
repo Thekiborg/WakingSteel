@@ -76,6 +76,18 @@ stretch_mode = 3
 layout_mode = 2
 theme_override_constants/margin_top = 20
 
+[node name="ButtonEquip" type="Button" parent="MarginContainer/HBoxContainer/ActionButtons/MarginContainer/VBoxContainer" unique_id=1473977892]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "EQUIP"
+
+[node name="ButtonUnequip" type="Button" parent="MarginContainer/HBoxContainer/ActionButtons/MarginContainer/VBoxContainer" unique_id=654829549]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "UNEQUIP"
+
 [node name="ButtonDrop" type="Button" parent="MarginContainer/HBoxContainer/ActionButtons/MarginContainer/VBoxContainer" unique_id=44285348]
 unique_name_in_owner = true
 layout_mode = 2

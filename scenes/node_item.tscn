@@ -7,6 +7,14 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_ahkmm"]
 radius = 1.01
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ahkmm"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:data_id")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
 [node name="Area3D" type="Area3D" unique_id=271509965]
 collision_layer = 512
 collision_mask = 512
@@ -34,3 +42,6 @@ text = "Label
 [node name="ItemIcon" type="Sprite3D" parent="." unique_id=1413278720]
 billboard = 2
 texture = ExtResource("2_ahkmm")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=344989206]
+replication_config = SubResource("SceneReplicationConfig_ahkmm")

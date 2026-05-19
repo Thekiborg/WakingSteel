@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://sa5x88ynixmp"]
+
+[ext_resource type="Script" uid="uid://ddk7f4khhgws1" path="res://scripts/item/weapon_item.gd" id="1_mpp7q"]
+[ext_resource type="Texture2D" uid="uid://1773annh4h34" path="res://assets/weapons/SpearIcon.png" id="1_sgbc3"]
+[ext_resource type="Resource" uid="uid://gohrn621a5or" path="res://resources/weapon/weapon_spear.tres" id="3_1bt6t"]
+
+[resource]
+script = ExtResource("1_mpp7q")
+weapon = ExtResource("3_1bt6t")
+id = "weaponitem_spear"
+name = "Spear"
+description = "A spear"
+icon = ExtResource("1_sgbc3")
+max_stack = 1
+metadata/_custom_type_script = "uid://ddk7f4khhgws1"

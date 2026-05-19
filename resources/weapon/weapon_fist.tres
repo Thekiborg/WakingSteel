@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://ce2dtk07dghoi"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_ux8m7"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_ind36"]
+[ext_resource type="Texture2D" uid="uid://dspr7jgcl7jeu" path="res://assets/character/player/dummy_player_3-4_punch_1.png" id="3_mqmg5"]
+[ext_resource type="Texture2D" uid="uid://b2rdt2dcx3xwh" path="res://assets/character/player/dummy_player_3-4_punch_2.png" id="4_t3ftm"]
+[ext_resource type="Script" uid="uid://g8ec7h3hkg4h" path="res://scripts/weapon/weapon_hitbox_data.gd" id="5_siu6t"]
+[ext_resource type="Resource" uid="uid://b6p2etvaffjax" path="res://resources/hitboxtest.tres" id="6_xvd2b"]
+[ext_resource type="Script" uid="uid://d4cbwg3fwfgk4" path="res://scripts/animation/steps/step_hitbox.gd" id="7_g44yc"]
+[ext_resource type="Texture2D" uid="uid://blfok3inp88v1" path="res://assets/character/player/dummy_player_3-4_punch_3.png" id="8_qokys"]
+[ext_resource type="Script" uid="uid://0sno5ifqeksg" path="res://scripts/weapon/combo_set.gd" id="9_ioc30"]
+[ext_resource type="Texture2D" uid="uid://bcvtnk2nw12qc" path="res://assets/character/player/dummy_player_3-4_walk.png" id="10_6itt7"]
+[ext_resource type="Script" uid="uid://c3ci8sfelltm0" path="res://scripts/weapon/weapon_data.gd" id="11_ku673"]
+[ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="12_2kxvu"]
+
+[sub_resource type="Resource" id="Resource_tlygp"]
+script = ExtResource("2_ind36")
+sprite = ExtResource("3_mqmg5")
+time = 0.17
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_0e8nm"]
+script = ExtResource("2_ind36")
+sprite = ExtResource("4_t3ftm")
+time = 0.17
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_mw0jh"]
+script = ExtResource("7_g44yc")
+hitboxes = Array[ExtResource("5_siu6t")]([ExtResource("6_xvd2b")])
+sprite = ExtResource("8_qokys")
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
+
+[sub_resource type="Resource" id="Resource_fafbi"]
+script = ExtResource("1_ux8m7")
+name = "Fist_M1"
+steps = Array[ExtResource("2_ind36")]([SubResource("Resource_tlygp"), SubResource("Resource_0e8nm"), SubResource("Resource_mw0jh")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_ggeho"]
+script = ExtResource("9_ioc30")
+animations = Array[ExtResource("1_ux8m7")]([SubResource("Resource_fafbi")])
+is_lmb_combo = true
+metadata/_custom_type_script = "uid://0sno5ifqeksg"
+
+[sub_resource type="Resource" id="Resource_i1mu3"]
+script = ExtResource("2_ind36")
+sprite = ExtResource("10_6itt7")
+time = 0.1
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_pwy5p"]
+script = ExtResource("1_ux8m7")
+name = "Fist_M2"
+steps = Array[ExtResource("2_ind36")]([SubResource("Resource_i1mu3")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_h87ue"]
+script = ExtResource("9_ioc30")
+animations = Array[ExtResource("1_ux8m7")]([SubResource("Resource_pwy5p")])
+metadata/_custom_type_script = "uid://0sno5ifqeksg"
+
+[sub_resource type="Resource" id="Resource_virdb"]
+script = ExtResource("11_ku673")
+lmbCombo = SubResource("Resource_ggeho")
+rmbCombo = SubResource("Resource_h87ue")
+metadata/_custom_type_script = "uid://c3ci8sfelltm0"
+
+[resource]
+script = ExtResource("12_2kxvu")
+name = "Fist"
+data = SubResource("Resource_virdb")
+metadata/_custom_type_script = "uid://oil2083y1evj"

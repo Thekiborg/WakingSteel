@@ -13,4 +13,25 @@ func take_item(character_path: NodePath, item_id: String):
 	var item: Item = ResourceDictionary.items.get(item_id)
 	
 	var item_ind: int = character.inventory_manager.find_item(item.id)
-	character.inventory_manager.items.remove_at(item_ind)
+	if item_ind == -1:
+		print("-1? How?")
+	else:
+		character.inventory_manager.items.remove_at(item_ind)
+
+
+@rpc("any_peer", "call_local")
+func equip_weapon(character_path: NodePath, weapon_id: String):
+	var character: Player = get_node(character_path)
+	
+	if weapon_id == "null":
+		character.equippedWeapon = Preloads.WEAPON_FIST
+		character.idle_animation = Preloads.PLAYER_DEFAULT_IDLE
+		character.walking_animation = Preloads.PLAYER_DEFAULT_WALK
+	else:
+		var weapon: Weapon = ResourceDictionary.weapons.get(weapon_id)
+		character.equippedWeapon = weapon
+		character.walking_animation = weapon.walking_animation
+		character.idle_animation = weapon.idle_animation
+	character.combat_manager.refresh_combos()
+	
+	

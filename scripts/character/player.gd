@@ -11,6 +11,8 @@ class_name Player
 @onready var item_interaction_area: Area3D = $ItemInteractionArea
 @onready var dash_duration_timer: Timer = $DashDurationTimer
 @onready var essence_meter: EssenceMeter = $EssenceMeter
+@onready var revive_window: ReviveWindow = $ReviveWindow
+
 var essence_count: int
 var dashing: bool:
 	get: return dash_duration_timer.time_left != 0
@@ -33,6 +35,9 @@ func _ready() -> void:
 	player_uis.show()
 	camera.current = true
 	dash_duration_timer.timeout.connect(_dash_duration_ends)
+	revive_window.player = self
+	health_manager.died.connect(_died)
+	health_manager.revived.connect(_revived)
 	
 	inventory_manager.put(load("uid://yyy2tpi303ea"))
 	inventory_manager.put(load("uid://yyy2tpi303ea"))
@@ -129,4 +134,19 @@ func increase_essence(count: int):
 		int(self.name),
 		self.get_path(),
 		count)
+
+func _died() -> void:
+	player_uis.hide()
+	inventory_window.hide()
+	essence_meter.hide()
+	revive_window.show()
+
+func _revived() -> void:
+	can_input = true
+	can_move = true
+	visible = true
+	player_uis.show()
+	essence_meter.show()
+	revive_window.hide()
 	
+	print(health_manager.health)

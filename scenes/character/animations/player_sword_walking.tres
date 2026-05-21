@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimationSet" format=3 uid="uid://bkho64d8vrlwu"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_rscbp"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_7o6q2"]
+[ext_resource type="Script" uid="uid://dt1bajx5rqdol" path="res://scripts/animation/steps/step_walk.gd" id="3_1nv0b"]
+[ext_resource type="Texture2D" uid="uid://br5yxf525rk2u" path="res://assets/character/player/Sword/sword_player_3-4_walk.png" id="4_3jwpr"]
+
+[sub_resource type="Resource" id="Resource_vktis"]
+script = ExtResource("3_1nv0b")
+sprite = ExtResource("4_3jwpr")
+metadata/_custom_type_script = "uid://dt1bajx5rqdol"
+
+[resource]
+script = ExtResource("1_rscbp")
+name = "Player_Sword_Walk"
+steps = Array[ExtResource("2_7o6q2")]([SubResource("Resource_vktis")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"

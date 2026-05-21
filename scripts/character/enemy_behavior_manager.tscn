@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cradlut3afah2"]
+
+[ext_resource type="Script" uid="uid://dyir4vwkgwguf" path="res://scripts/character/enemy_behavior_manager.gd" id="1_lmj0l"]
+
+[node name="EnemyBehaviorManager" type="Node3D" unique_id=1518820281]
+script = ExtResource("1_lmj0l")
+
+[node name="curStateLabel" type="Label3D" parent="." unique_id=257398076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4692976, 0)
+billboard = 1
+text = "State: Null"

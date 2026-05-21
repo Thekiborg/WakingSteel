@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dnj2i2ron80e1"]
+
+[ext_resource type="Script" uid="uid://17sfep58pmnl" path="res://scripts/character/enemy.gd" id="1_3auu0"]
+[ext_resource type="Resource" uid="uid://be6syfks6u31w" path="res://resources/weapon/weapon_sword.tres" id="2_3auu0"]
+[ext_resource type="Resource" uid="uid://bkho64d8vrlwu" path="res://scenes/character/animations/player_sword_walking.tres" id="3_cxtd4"]
+[ext_resource type="Resource" uid="uid://dv6m0tuolg8wp" path="res://scenes/character/animations/player_sword_idle.tres" id="4_l0civ"]
+[ext_resource type="Resource" uid="uid://5orbfqnoq86g" path="res://resources/PlayerBody/Torso.tres" id="5_4o550"]
+[ext_resource type="PackedScene" uid="uid://gq4r6rcldske" path="res://scenes/character/components/combat_manager.tscn" id="7_37xxd"]
+[ext_resource type="PackedScene" uid="uid://c8vre0aetv6db" path="res://scenes/character/components/inventory_manager.tscn" id="8_nr6tb"]
+[ext_resource type="PackedScene" uid="uid://cvb8dtr4qpttl" path="res://scenes/character/components/health_manager.tscn" id="9_lgqbi"]
+[ext_resource type="PackedScene" uid="uid://cradlut3afah2" path="res://scripts/character/enemy_behavior_manager.tscn" id="10_cxtd4"]
+[ext_resource type="PackedScene" uid="uid://kd3pvne7p3k2" path="res://scenes/character/components/animation_manager.tscn" id="10_nsqit"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmtbp"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vreni"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:visible")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3auu0"]
+radius = 3.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_cxtd4"]
+
+[node name="Enemy" type="CharacterBody3D" unique_id=1366285704]
+script = ExtResource("1_3auu0")
+equippedWeapon = ExtResource("2_3auu0")
+walking_animation = ExtResource("3_cxtd4")
+idle_animation = ExtResource("4_l0civ")
+body = ExtResource("5_4o550")
+metadata/_custom_type_script = "uid://dm5hl5wv241bn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1984081668]
+shape = SubResource("CapsuleShape3D_wmtbp")
+
+[node name="CombatManager" parent="." unique_id=1485315924 instance=ExtResource("7_37xxd")]
+
+[node name="InventoryManager" parent="." unique_id=1936019842 instance=ExtResource("8_nr6tb")]
+
+[node name="HealthManager" parent="." unique_id=1663641551 instance=ExtResource("9_lgqbi")]
+
+[node name="AnimationManager" parent="." unique_id=822681886 instance=ExtResource("10_nsqit")]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1685377286]
+replication_config = SubResource("SceneReplicationConfig_vreni")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1185830355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2085985, 0)
+billboard = 1
+text = "Enemy (Bad Guy)"
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=913604240]
+collision_layer = 1073741824
+collision_mask = 1073741824
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=218826424]
+shape = SubResource("CylinderShape3D_3auu0")
+debug_color = Color(0.7, 0, 0, 0.41960785)
+
+[node name="EnemyBehaviorManager" parent="." unique_id=1518820281 instance=ExtResource("10_cxtd4")]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1970905743]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=989510232]
+transform = Transform3D(0.3280415, 0, 0, 0, 0.28036302, 0, 0, 0, 1.2105932, -0.06654501, -0.6343726, 0.5362334)
+mesh = SubResource("BoxMesh_cxtd4")
+
+[node name="TryAttackTimer" type="Timer" parent="." unique_id=717952124]

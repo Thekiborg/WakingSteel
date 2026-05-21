@@ -11,11 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://crvfi6wp36n5o" path="res://assets/character/player/Sword/sword_player_3-4_LMB_1-2.png" id="6_1b5vu"]
 [ext_resource type="Texture2D" uid="uid://dppvhji1y88k4" path="res://assets/character/player/Sword/sword_player_3-4_LMB_2-1.png" id="7_x3un8"]
 [ext_resource type="Script" uid="uid://vkxqsxwvpamw" path="res://scripts/animation/steps/step_block.gd" id="9_1b5vu"]
-[ext_resource type="Texture2D" uid="uid://lqa3akrdwsmb" path="res://assets/character/player/Sword/sword_player_3-4_idle.png" id="9_7bvih"]
 [ext_resource type="Texture2D" uid="uid://bjwaenufgkibl" path="res://assets/character/player/Sword/sword_player_3-4_RMB_1.png" id="10_k0rv6"]
-[ext_resource type="Texture2D" uid="uid://br5yxf525rk2u" path="res://assets/character/player/Sword/sword_player_3-4_walk.png" id="11_x3un8"]
-[ext_resource type="Script" uid="uid://s6cpynqg2j31" path="res://scripts/animation/steps/step_idle.gd" id="12_oge4u"]
-[ext_resource type="Script" uid="uid://dt1bajx5rqdol" path="res://scripts/animation/steps/step_walk.gd" id="15_7gi15"]
+[ext_resource type="Resource" uid="uid://dv6m0tuolg8wp" path="res://scenes/character/animations/player_sword_idle.tres" id="12_1b5vu"]
+[ext_resource type="Resource" uid="uid://bkho64d8vrlwu" path="res://scenes/character/animations/player_sword_walking.tres" id="14_k0rv6"]
 
 [sub_resource type="Resource" id="Resource_oge4u"]
 script = ExtResource("2_ce377")
@@ -27,6 +25,7 @@ metadata/_custom_type_script = "uid://b01hhuo1e3lee"
 script = ExtResource("4_x3un8")
 position = Vector3(0, 0, 1)
 size = Vector3(1.5, 2, 1.5)
+injuries = Array[String](["Injurytest"])
 produced_essence = 1
 metadata/_custom_type_script = "uid://g8ec7h3hkg4h"
 
@@ -47,6 +46,7 @@ metadata/_custom_type_script = "uid://8b4gvdp20r65"
 script = ExtResource("4_x3un8")
 position = Vector3(0, 0, 1)
 size = Vector3(2.5, 1.5, 1.5)
+injuries = Array[String](["Injurytest"])
 produced_essence = 1
 metadata/_custom_type_script = "uid://g8ec7h3hkg4h"
 
@@ -92,32 +92,10 @@ lmbCombo = SubResource("Resource_y0keg")
 rmbCombo = SubResource("Resource_1b5vu")
 metadata/_custom_type_script = "uid://c3ci8sfelltm0"
 
-[sub_resource type="Resource" id="Resource_2wwfo"]
-script = ExtResource("12_oge4u")
-sprite = ExtResource("9_7bvih")
-metadata/_custom_type_script = "uid://s6cpynqg2j31"
-
-[sub_resource type="Resource" id="Resource_vxcx4"]
-script = ExtResource("1_5ilsl")
-name = "Player_Sword_Idle"
-steps = Array[ExtResource("2_ce377")]([SubResource("Resource_2wwfo")])
-metadata/_custom_type_script = "uid://8b4gvdp20r65"
-
-[sub_resource type="Resource" id="Resource_vktis"]
-script = ExtResource("15_7gi15")
-sprite = ExtResource("11_x3un8")
-metadata/_custom_type_script = "uid://dt1bajx5rqdol"
-
-[sub_resource type="Resource" id="Resource_x3un8"]
-script = ExtResource("1_5ilsl")
-name = "Player_Sword_Walk"
-steps = Array[ExtResource("2_ce377")]([SubResource("Resource_vktis")])
-metadata/_custom_type_script = "uid://8b4gvdp20r65"
-
 [resource]
 script = ExtResource("1_a4m3r")
 name = "Sword"
 data = SubResource("Resource_k0rv6")
-idle_animation = SubResource("Resource_vxcx4")
-walking_animation = SubResource("Resource_x3un8")
+idle_animation = ExtResource("12_1b5vu")
+walking_animation = ExtResource("14_k0rv6")
 metadata/_custom_type_script = "uid://oil2083y1evj"

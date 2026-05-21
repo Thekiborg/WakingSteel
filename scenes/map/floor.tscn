@@ -1,10 +1,5 @@
 [gd_scene format=3 uid="uid://dxcao8ba77ixd"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ntyp6"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_8yhlk"]
-size = Vector2(20, 20)
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ntyp6"]
 
 [sub_resource type="Sky" id="Sky_8yhlk"]
@@ -14,15 +9,27 @@ sky_material = SubResource("ProceduralSkyMaterial_ntyp6")
 background_mode = 2
 sky = SubResource("Sky_8yhlk")
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_ntyp6"]
+vertices = PackedVector3Array(-9.5, 0.5, -9.5, -9.5, 0.5, 9.5, 9.5, 0.5, 9.5, 9.5, 0.5, -9.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ntyp6"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8yhlk"]
+size = Vector2(20, 20)
+
 [node name="Floor" type="Node3D" unique_id=1180001986]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1293465598]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1509498519]
-shape = SubResource("WorldBoundaryShape3D_ntyp6")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2065870957]
-mesh = SubResource("PlaneMesh_8yhlk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1376313685]
 environment = SubResource("Environment_w2ccv")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2074006405]
+navigation_mesh = SubResource("NavigationMesh_ntyp6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1293465598]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D" unique_id=1509498519]
+shape = SubResource("WorldBoundaryShape3D_ntyp6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D" unique_id=2065870957]
+mesh = SubResource("PlaneMesh_8yhlk")

@@ -13,7 +13,7 @@ func clear_hitboxes(parent_path: NodePath):
 
 @rpc("any_peer", "call_local")
 func spawn_hitboxes(parent_path: NodePath, lmb_combo: bool, animation_index: int, step_index: int):
-	var player:Player = get_node(parent_path)
+	var player:Character = get_node(parent_path)
 
 	var combo: ComboSet
 	if lmb_combo:

@@ -12,6 +12,8 @@ func start_server() -> Error:
 		multiplayer.peer_connected.connect(_peer_connected)
 		multiplayer.peer_disconnected.connect(_peer_disconnected)
 		_on_connected_to_server()
+		
+		WorldSyncronizer.spawn_enemy.rpc()
 		return OK
 	else:
 		return err

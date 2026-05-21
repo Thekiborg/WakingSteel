@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cvb8dtr4qpttl" path="res://scenes/character/components/health_manager.tscn" id="14_7r6u0"]
 [ext_resource type="PackedScene" uid="uid://b6iv2rib2gxu6" path="res://scenes/ui/essence_meter.tscn" id="14_ba010"]
 [ext_resource type="PackedScene" uid="uid://cvg4i64j5k6af" path="res://scenes/ui/player_uis.tscn" id="14_e5n5u"]
+[ext_resource type="PackedScene" uid="uid://by2owxdgvki0i" path="res://scenes/ui/revive_window.tscn" id="15_e5n5u"]
 [ext_resource type="PackedScene" uid="uid://b7oy74hh74vd1" path="res://scenes/ui/ESC_menu.tscn" id="16_ba010"]
 [ext_resource type="PackedScene" uid="uid://cpvgacuhtjl05" path="res://scenes/ui/inventory_window.tscn" id="17_jb4us"]
 
@@ -44,6 +45,8 @@ metadata/_custom_type_script = "uid://dm5hl5wv241bn"
 shape = SubResource("CapsuleShape3D_wmtbp")
 
 [node name="Aimer" parent="." unique_id=1236189717 instance=ExtResource("4_erpy8")]
+collision_layer = 134217728
+collision_mask = 134217728
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1922452493]
 transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.7660445, 0, 3.5603728, 3.752973)
@@ -69,6 +72,13 @@ visible = false
 visible = false
 
 [node name="EssenceMeter" parent="." unique_id=789218311 instance=ExtResource("14_ba010")]
+
+[node name="ReviveWindow" parent="." unique_id=1536791115 instance=ExtResource("15_e5n5u")]
+visible = false
+offset_left = -107.0
+offset_top = -56.0
+offset_right = 107.0
+offset_bottom = 56.0
 
 [node name="ItemInteractionArea" type="Area3D" parent="." unique_id=129239261]
 collision_layer = 512

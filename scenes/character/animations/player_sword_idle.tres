@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimationSet" format=3 uid="uid://dv6m0tuolg8wp"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_3662o"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_wggbs"]
+[ext_resource type="Script" uid="uid://s6cpynqg2j31" path="res://scripts/animation/steps/step_idle.gd" id="3_fwf3y"]
+[ext_resource type="Texture2D" uid="uid://lqa3akrdwsmb" path="res://assets/character/player/Sword/sword_player_3-4_idle.png" id="4_xl6na"]
+
+[sub_resource type="Resource" id="Resource_2wwfo"]
+script = ExtResource("3_fwf3y")
+sprite = ExtResource("4_xl6na")
+metadata/_custom_type_script = "uid://s6cpynqg2j31"
+
+[resource]
+script = ExtResource("1_3662o")
+name = "Player_Sword_Idle"
+steps = Array[ExtResource("2_wggbs")]([SubResource("Resource_2wwfo")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"

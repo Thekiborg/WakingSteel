@@ -19,6 +19,8 @@ var lethal_bodypart_destroyed:bool = false
 
 @onready var hurtbox: Area3D = $Hurtbox
 
+signal died
+signal revived
 
 func _ready() -> void:
 	print("FIX PROPER DEATH RIGHT NOW IT DOES NOTHING IT SHOULD AT LEAST MAKE YOU DISAPPEAR")
@@ -50,6 +52,9 @@ func _on_area_entered(area: Area3D) -> void:
 
 
 func try_take_damage(origin: Hitbox):
+	if health <= 0:
+		return
+	
 	var hit_pos: Globals.BodyPartPosition = get_hit_position(origin)
 	var hit_bodyparts = parent.get_potentially_hit_bodyparts(origin.height, hit_pos)
 	
@@ -99,6 +104,27 @@ func death() -> void:
 		p.visible = false
 	else:
 		parent.queue_free()
+	died.emit()
+
+
+func revive() -> void:
+	if parent is Player:
+		heal_all_bodyparts()
+	else:
+		pass
+	revived.emit()
+
+
+func heal_all_bodyparts() -> void:
+	for part in parent.get_all_bodyparts():
+		while not part.external_injuries.is_empty():
+			var injury = part.external_injuries[0]
+			part.heal_injury(true, injury.name)
+		while not part.internal_injuries.is_empty():
+			var injury = part.internal_injuries[0]
+			part.heal_injury(true, injury.name)
+	
+	lethal_bodypart_destroyed = false
 
 
 func _on_part_destroyed(body_part: BodyPart):

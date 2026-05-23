@@ -9,6 +9,8 @@ extends AspectRatioContainer
 @onready var button_back: Button = %ButtonBack
 @onready var start_error_label: Label = %StartErrorLabel
 
+var IP_REGEX = RegEx.create_from_string(r"^(((?!25?[6-9])[12]\d|[1-9])?\d\.?\b){4}$")
+
 func _ready() -> void:
 	button_start_game.pressed.connect(_start_game)
 	button_join.pressed.connect(_join_pressed)
@@ -19,7 +21,15 @@ func _ready() -> void:
 	port_field.text_changed.connect(_on_required_fields_text_changed)
 
 func _on_required_fields_text_changed(_new_text) -> void:
-	button_join_as_client.disabled = ip_field.text == "" or port_field.text == ""
+	button_join_as_client.disabled = _invalid_ip_field() or _invalid_port_field()
+
+func _invalid_ip_field() -> bool:
+	return (ip_field.text == ""
+			or IP_REGEX.search(ip_field.text) == null)
+
+func _invalid_port_field() -> bool:
+	return (port_field.text == ""
+			or int(port_field.text) < 1 or int(port_field.text) > 65535)
 
 func _start_game() -> void:
 	var err = NetworkHandler.start_server()
@@ -48,14 +58,23 @@ func _join_pressed() -> void:
 	button_back.show()
 	set_error("")
 
+
 func _join_game() -> void:
 	var ip = ip_field.text
 	var port = int(port_field.text)
+	
+	toggle_join_controls(true)
 	NetworkHandler.join_server(ip, port)
-	hide()
-	
-	
+
+
+func toggle_join_controls(disable: bool):
+	ip_field.editable = !disable
+	port_field.editable = !disable
+	button_join_as_client.disabled = disable
+
+
 func _go_back() -> void:
+	NetworkHandler.leave_server()
 	button_start_game.show()
 	button_join.show()
 	button_quit.show()

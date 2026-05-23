@@ -3,9 +3,11 @@ class_name Enemy
 
 
 @onready var detection_area: Area3D = $DetectionArea
+@onready var detection_area_shape: CollisionShape3D = $DetectionArea/DetectionAreaShape
 @onready var enemy_behavior_manager: EnemyBehaviorManager = $EnemyBehaviorManager
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var try_attack_timer: Timer = $TryAttackTimer
+@onready var rotation_node: Node3D = $RotationNode
 
 
 signal player_found
@@ -54,9 +56,18 @@ func _physics_process(delta: float) -> void:
 	var hor_movement_dir: Vector2 = Vector2.ZERO
 	var movement_dir:Vector3 = Vector3.ZERO
 	
-	if not navigation_agent.is_navigation_finished():	
-		movement_dir = global_position.direction_to(navigation_agent.get_next_path_position())
+	if not navigation_agent.is_navigation_finished():
+		var wantedPos: Vector3 = navigation_agent.get_next_path_position()
+		movement_dir = global_position.direction_to(wantedPos)
 		hor_movement_dir = Vector2(movement_dir.x, movement_dir.z)
+		wantedPos.y = global_position.y
+		if not rotation_node.global_position.is_equal_approx(wantedPos):
+			rotation_node.look_at(wantedPos, Vector3.UP, true)
+		
+		var detectionShape: CylinderShape3D = detection_area_shape.shape
+		var detectionArea = detectionShape.radius
+		if global_position.distance_to(aggrod_player.global_position) <= detectionArea / 2:
+			hor_movement_dir = Vector2.ZERO
 		#print(navigation_agent.is_target_reachable())
 		#print("gp", global_position)
 		#print("next",navigation_agent.get_next_path_position())
@@ -84,3 +95,6 @@ func _physics_process(delta: float) -> void:
 		0. if is_zero_approx(movement_dir.x) else hor_velocity.x,
 		velocity.y,
 		0. if is_zero_approx(movement_dir.y) else hor_velocity.y);
+
+func get_aimer() -> Node:
+	return rotation_node

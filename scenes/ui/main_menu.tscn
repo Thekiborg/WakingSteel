@@ -78,12 +78,14 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 placeholder_text = "Dirección IP"
+virtual_keyboard_type = 2
 
 [node name="PortField" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1664967105]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 placeholder_text = "Puerto"
+virtual_keyboard_type = 2
 
 [node name="ButtonJoinAsClient" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1323596996]
 unique_name_in_owner = true

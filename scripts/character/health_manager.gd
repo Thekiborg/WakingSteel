@@ -23,7 +23,6 @@ signal died
 signal revived
 
 func _ready() -> void:
-	print("FIX PROPER DEATH RIGHT NOW IT DOES NOTHING IT SHOULD AT LEAST MAKE YOU DISAPPEAR")
 	hurtbox.area_entered.connect(_on_area_entered)
 	parent = get_parent()
 	parent.part_destroyed.connect(_on_part_destroyed)
@@ -97,22 +96,11 @@ func notify_received_damage() -> void:
 
 
 func death() -> void:
-	if parent is Player:
-		var p = parent as Player
-		p.can_input = false
-		p.can_move = false
-		p.visible = false
-	else:
-		parent.queue_free()
-	died.emit()
+	WorldSyncronizer.sync_character_death.rpc(parent.get_path())
 
 
 func revive() -> void:
-	if parent is Player:
-		heal_all_bodyparts()
-	else:
-		pass
-	revived.emit()
+	WorldSyncronizer.sync_character_revival.rpc(parent.get_path())
 
 
 func heal_all_bodyparts() -> void:
@@ -130,3 +118,12 @@ func heal_all_bodyparts() -> void:
 func _on_part_destroyed(body_part: BodyPart):
 	if body_part.lethal:
 		lethal_bodypart_destroyed = true
+		
+
+func emit_died_signal() -> void:
+	# GDScript::reload: The signal "died" is declared but never explicitly used in the class.
+	died.emit()
+
+func emit_revived_signal() -> void:
+	# GDScript::reload: The signal "revived" is declared but never explicitly used in the class.
+	revived.emit()

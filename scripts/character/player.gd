@@ -13,6 +13,7 @@ class_name Player
 @onready var essence_meter: EssenceMeter = $EssenceMeter
 @onready var revive_window: ReviveWindow = $ReviveWindow
 
+
 var essence_count: int
 var dashing: bool:
 	get: return dash_duration_timer.time_left != 0
@@ -142,11 +143,6 @@ func _died() -> void:
 	revive_window.show()
 
 func _revived() -> void:
-	can_input = true
-	can_move = true
-	visible = true
 	player_uis.show()
 	essence_meter.show()
 	revive_window.hide()
-	
-	print(health_manager.health)

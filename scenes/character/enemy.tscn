@@ -57,7 +57,7 @@ text = "Enemy (Bad Guy)"
 collision_layer = 1073741824
 collision_mask = 1073741824
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=218826424]
+[node name="DetectionAreaShape" type="CollisionShape3D" parent="DetectionArea" unique_id=218826424]
 shape = SubResource("CylinderShape3D_3auu0")
 debug_color = Color(0.7, 0, 0, 0.41960785)
 
@@ -65,8 +65,11 @@ debug_color = Color(0.7, 0, 0, 0.41960785)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1970905743]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=989510232]
+[node name="TryAttackTimer" type="Timer" parent="." unique_id=717952124]
+
+[node name="RotationNode" type="Node3D" parent="." unique_id=2088096788]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RotationNode" unique_id=989510232]
 transform = Transform3D(0.3280415, 0, 0, 0, 0.28036302, 0, 0, 0, 1.2105932, -0.06654501, -0.6343726, 0.5362334)
 mesh = SubResource("BoxMesh_cxtd4")
-
-[node name="TryAttackTimer" type="Timer" parent="." unique_id=717952124]
+skeleton = NodePath("../..")

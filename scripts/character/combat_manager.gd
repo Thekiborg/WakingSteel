@@ -63,9 +63,6 @@ func _start_attack(animation:AnimationSet):
 
 
 func _on_animation_finished(last_anim: AnimationSet):
-	if last_anim.combo == null:
-		print("MULTIPLAYER ROTO SAFEGUARDED")
-		return
 	if last_anim.combo.is_lmb_combo:
 		curComboIndex = (curComboIndex + 1) % lmbCombo.animations.size()
 	else:

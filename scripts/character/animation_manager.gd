@@ -26,6 +26,10 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	curAnimation.end(character)
+	
+	if curAnimation is AnimationStepIdle or curAnimation is AnimationStepWalk:
+		return
+	
 	if _curAnimationIndex + 1 < _animation_set.steps_count:
 		AnimationSyncronizer.sync_animation_index.rpc(character.get_path(), _curAnimationIndex + 1)
 		animationTimer.start(curAnimation.time)

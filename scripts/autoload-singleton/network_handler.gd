@@ -5,6 +5,7 @@ const IP_ADDRESS = '127.0.0.1'
 
 var enet_peer := ENetMultiplayerPeer.new()
 
+
 func start_server() -> Error:
 	var err = enet_peer.create_server(PORT)
 	if err == OK:
@@ -35,6 +36,7 @@ func _peer_connected(peer_id: int) -> void:
 	
 	var baseplate = Preloads.FLOOR.instantiate()
 	get_tree().current_scene.add_child.call_deferred(baseplate)
+	get_tree().current_scene.get_node("MainMenu").hide()
 
 	var new_player = Preloads.PLAYER.instantiate()
 	new_player.name = str(peer_id)

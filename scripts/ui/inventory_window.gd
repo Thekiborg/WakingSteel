@@ -8,6 +8,7 @@ const BUTTONS_PER_ROW: int = 5
 @onready var left_padding: Control = %LeftPadding
 @export var action_buttons: PanelContainer
 @onready var action_item_label: Label = %ActionItemLabel
+@onready var action_item_description: Label = %ActionItemDescription
 @onready var action_item_icon: TextureRect = %ActionItemIcon
 @onready var button_drop: Button = %ButtonDrop
 @onready var button_equip: Button = %ButtonEquip
@@ -54,7 +55,10 @@ func show_item_actions(item: Item) -> void:
 		else:
 			button_equip.show()
 			button_drop.show()
+	else:
+		button_drop.show()
 	action_item_label.text = item.name
+	action_item_description.text = item.description
 	action_item_icon.texture = item.icon
 	last_picked_item = item
 

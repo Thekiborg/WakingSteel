@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cpvgacuhtjl05" path="res://scenes/ui/inventory_window.tscn" id="17_jb4us"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmtbp"]
+height = 3.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vreni"]
 properties/0/path = NodePath(".:position")

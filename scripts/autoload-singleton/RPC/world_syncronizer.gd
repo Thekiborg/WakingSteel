@@ -15,14 +15,12 @@ func spawn_item(pos: Vector3, item_id: String):
 	Globals.spawned_items.add_child(node, true)
 
 @rpc("authority", "call_local")
-func spawn_enemy():
-	print(multiplayer.get_remote_sender_id())
-	var enemy = Preloads.ENEMY.instantiate()
-	var erand_x = randf_range(-3., 3.)
-	var erand_z = randf_range(-3., 3.)
-	enemy.position = Vector3(erand_x, 2., erand_z)
+func spawn_enemy(pos: Vector3):
+	var enemy = Preloads.ENEMY.duplicate().instantiate()
+	enemy.position = pos
 	Globals.spawned_items.add_child(enemy)
-	
+
+
 @rpc("any_peer", "call_local")
 func sync_character_death(player_path: NodePath):
 	var character: Character = get_node(player_path)

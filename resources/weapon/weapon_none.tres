@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://dmq33pvlwjc3x"]
+
+[ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="1_0r0c2"]
+[ext_resource type="Script" uid="uid://c3ci8sfelltm0" path="res://scripts/weapon/weapon_data.gd" id="1_fpm5v"]
+[ext_resource type="Resource" uid="uid://dwiomabot76fh" path="res://scenes/character/animations/box_idle.tres" id="2_dtif3"]
+
+[sub_resource type="Resource" id="Resource_32e8o"]
+script = ExtResource("1_fpm5v")
+metadata/_custom_type_script = "uid://c3ci8sfelltm0"
+
+[resource]
+script = ExtResource("1_0r0c2")
+name = "None"
+data = SubResource("Resource_32e8o")
+idle_animation = ExtResource("2_dtif3")
+walking_animation = ExtResource("2_dtif3")
+metadata/_custom_type_script = "uid://oil2083y1evj"

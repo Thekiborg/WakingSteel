@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimationSet" format=3 uid="uid://dwiomabot76fh"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_atv6n"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_3187c"]
+[ext_resource type="Script" uid="uid://s6cpynqg2j31" path="res://scripts/animation/steps/step_idle.gd" id="3_qtort"]
+[ext_resource type="Texture2D" uid="uid://c77h2pyblf3bc" path="res://assets/character/Box.png" id="4_04x6u"]
+
+[sub_resource type="Resource" id="Resource_rplyu"]
+script = ExtResource("3_qtort")
+sprite = ExtResource("4_04x6u")
+metadata/_custom_type_script = "uid://s6cpynqg2j31"
+
+[resource]
+script = ExtResource("1_atv6n")
+name = "Box_Idle"
+steps = Array[ExtResource("2_3187c")]([SubResource("Resource_rplyu")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"

@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://b01hhuo1e3lee"
 script = ExtResource("4_x3un8")
 position = Vector3(0, 0, 1)
 size = Vector3(1.5, 2, 1.5)
-injuries = Array[String](["Injurytest"])
+injuries = Array[String](["abolladura"])
 produced_essence = 1
 metadata/_custom_type_script = "uid://g8ec7h3hkg4h"
 
@@ -46,7 +46,7 @@ metadata/_custom_type_script = "uid://8b4gvdp20r65"
 script = ExtResource("4_x3un8")
 position = Vector3(0, 0, 1)
 size = Vector3(2.5, 1.5, 1.5)
-injuries = Array[String](["Injurytest"])
+injuries = Array[String](["abolladura"])
 produced_essence = 1
 metadata/_custom_type_script = "uid://g8ec7h3hkg4h"
 

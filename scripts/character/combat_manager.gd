@@ -34,6 +34,8 @@ func refresh_combos() -> void:
 func lmb():
 	if not character.can_input:
 		return
+	if not lmbCombo:
+		return
 	
 	var animation:AnimationSet = lmbCombo.animations[min(lmbCombo.animations.size() - 1, curComboIndex)]
 	if character is Player:
@@ -45,6 +47,8 @@ func lmb():
 
 func rmb():
 	if not character.can_input:
+		return
+	if not rmbCombo:
 		return
 	
 	var animation:AnimationSet = rmbCombo.animations[min(rmbCombo.animations.size() - 1, curComboIndex)]

@@ -6,6 +6,7 @@ func add_injuries(character_path: NodePath, part_name: String, injuries: Array[S
 	var picked_part: BodyPart = character.find_bodypart(part_name)
 
 	for injuryname in injuries:
+		print(injuryname)
 		var injury: Resource = ResourceDictionary.injuries.get(injuryname)
 		picked_part.add_injury(injury.duplicate())
 

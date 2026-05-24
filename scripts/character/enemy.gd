@@ -8,6 +8,7 @@ class_name Enemy
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var try_attack_timer: Timer = $TryAttackTimer
 @onready var rotation_node: Node3D = $RotationNode
+@export var detection_radius: float = 2
 
 
 signal player_found
@@ -22,6 +23,7 @@ func _ready() -> void:
 	enemy_behavior_manager.enemy = self
 	enemy_behavior_manager.aggroed_player_changed.connect(_on_aggroed_changed)
 	try_attack_timer.timeout.connect(_try_attack)
+	(detection_area_shape.shape as CylinderShape3D).radius = detection_radius
 
 
 func _try_attack() -> void:
@@ -56,7 +58,7 @@ func _physics_process(delta: float) -> void:
 	var hor_movement_dir: Vector2 = Vector2.ZERO
 	var movement_dir:Vector3 = Vector3.ZERO
 	
-	if not navigation_agent.is_navigation_finished():
+	if not navigation_agent.is_navigation_finished() and enemy_behavior_manager.curState == EnemyBehaviorManager.States.Pursuing:
 		var wantedPos: Vector3 = navigation_agent.get_next_path_position()
 		movement_dir = global_position.direction_to(wantedPos)
 		hor_movement_dir = Vector2(movement_dir.x, movement_dir.z)

@@ -7,5 +7,6 @@ script = ExtResource("1_lmj0l")
 
 [node name="curStateLabel" type="Label3D" parent="." unique_id=257398076]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4692976, 0)
+visible = false
 billboard = 1
 text = "State: Null"

@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://gq4r6rcldske" path="res://scenes/character/components/combat_manager.tscn" id="7_37xxd"]
 [ext_resource type="PackedScene" uid="uid://c8vre0aetv6db" path="res://scenes/character/components/inventory_manager.tscn" id="8_nr6tb"]
 [ext_resource type="PackedScene" uid="uid://cvb8dtr4qpttl" path="res://scenes/character/components/health_manager.tscn" id="9_lgqbi"]
-[ext_resource type="PackedScene" uid="uid://cradlut3afah2" path="res://scripts/character/enemy_behavior_manager.tscn" id="10_cxtd4"]
+[ext_resource type="PackedScene" uid="uid://cradlut3afah2" path="res://scenes/character/components/enemy_behavior_manager.tscn" id="10_cxtd4"]
 [ext_resource type="PackedScene" uid="uid://kd3pvne7p3k2" path="res://scenes/character/components/animation_manager.tscn" id="10_nsqit"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmtbp"]
+resource_local_to_scene = true
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vreni"]
 properties/0/path = NodePath(".:position")
@@ -22,6 +23,7 @@ properties/1/spawn = true
 properties/1/replication_mode = 1
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3auu0"]
+resource_local_to_scene = true
 radius = 3.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_cxtd4"]
@@ -50,6 +52,7 @@ replication_config = SubResource("SceneReplicationConfig_vreni")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1185830355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2085985, 0)
+visible = false
 billboard = 1
 text = "Enemy (Bad Guy)"
 
@@ -71,5 +74,6 @@ debug_color = Color(0.7, 0, 0, 0.41960785)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RotationNode" unique_id=989510232]
 transform = Transform3D(0.3280415, 0, 0, 0, 0.28036302, 0, 0, 0, 1.2105932, -0.06654501, -0.6343726, 0.5362334)
+visible = false
 mesh = SubResource("BoxMesh_cxtd4")
 skeleton = NodePath("../..")

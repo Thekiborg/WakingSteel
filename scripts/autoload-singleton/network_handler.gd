@@ -14,7 +14,8 @@ func start_server() -> Error:
 		multiplayer.peer_disconnected.connect(_peer_disconnected)
 		_on_connected_to_server()
 		
-		WorldSyncronizer.spawn_enemy.rpc()
+		var baseplate = Preloads.MAP.duplicate().instantiate()
+		get_tree().current_scene.add_child.call_deferred(baseplate)
 		return OK
 	else:
 		return err
@@ -34,15 +35,11 @@ func _peer_connected(peer_id: int) -> void:
 	else:
 		print( peer_id, " connected")
 	
-	var baseplate = Preloads.FLOOR.instantiate()
-	get_tree().current_scene.add_child.call_deferred(baseplate)
 	get_tree().current_scene.get_node("MainMenu").hide()
 
 	var new_player = Preloads.PLAYER.instantiate()
 	new_player.name = str(peer_id)
-	var rand_x = randf_range(-3., 3.)
-	var rand_z = randf_range(-3., 3.)
-	new_player.position = Vector3(rand_x, 2., rand_z)
+	new_player.position = Vector3(-8., 2., 3.)
 	get_tree().current_scene.add_child(new_player)
 
 
@@ -73,7 +70,10 @@ func _on_connected_to_server() -> void:
 
 
 func clean_up_signals() -> void:
-	multiplayer.peer_connected.disconnect(_peer_connected)
-	multiplayer.peer_disconnected.disconnect(_peer_disconnected)
+	if multiplayer.connected_to_server.is_connected(_peer_connected):
+		multiplayer.peer_connected.disconnect(_peer_connected)
+	if multiplayer.connected_to_server.is_connected(_peer_disconnected):
+		multiplayer.peer_disconnected.disconnect(_peer_disconnected)
 	if multiplayer.connected_to_server.is_connected(_on_connected_to_server):
 		multiplayer.connected_to_server.disconnect(_on_connected_to_server)
+	

@@ -72,6 +72,16 @@ layout_mode = 2
 texture = ExtResource("3_7hyj8")
 stretch_mode = 3
 
+[node name="ActionItemDescription" type="Label" parent="MarginContainer/HBoxContainer/ActionButtons/MarginContainer/VBoxContainer" unique_id=866566634]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "ITEM IN QUESTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ActionButtons/MarginContainer/VBoxContainer" unique_id=446201996]
 layout_mode = 2
 theme_override_constants/margin_top = 20

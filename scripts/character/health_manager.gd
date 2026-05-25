@@ -105,13 +105,13 @@ func revive() -> void:
 
 func heal_all_bodyparts() -> void:
 	for part in parent.get_all_bodyparts():
+		part.forced_destroy = false
 		while not part.external_injuries.is_empty():
 			var injury = part.external_injuries[0]
 			part.heal_injury(true, injury.name)
 		while not part.internal_injuries.is_empty():
 			var injury = part.internal_injuries[0]
-			part.heal_injury(true, injury.name)
-	
+			part.heal_injury(false, injury.name)
 	lethal_bodypart_destroyed = false
 
 

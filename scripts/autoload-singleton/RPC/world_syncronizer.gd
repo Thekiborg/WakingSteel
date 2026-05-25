@@ -1,5 +1,7 @@
 extends Node
 
+const MAP = preload("uid://ddwe34x5yb0os")
+
 @rpc("any_peer", "call_remote")
 func despawn(item_path: NodePath):
 	var node: Node = get_node(item_path)
@@ -14,11 +16,11 @@ func spawn_item(pos: Vector3, item_id: String):
 	node.position = pos
 	Globals.spawned_items.add_child(node, true)
 
+
 @rpc("authority", "call_local")
-func spawn_enemy(pos: Vector3):
-	var enemy = Preloads.ENEMY.duplicate().instantiate()
-	enemy.position = pos
-	Globals.spawned_items.add_child(enemy)
+func create_world():
+	var world = MAP.instantiate()
+	Globals.spawned_items.add_child(world)
 
 
 @rpc("any_peer", "call_local")

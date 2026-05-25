@@ -10,9 +10,13 @@ class_name BodyPart
 @export var position:Globals.BodyPartPosition
 @export var lethal: bool
 @export var children:Array[BodyPart]
+var forced_destroy: bool
 var _health: float
 var health: float:
 	get:
+		if forced_destroy:
+			return 0
+		
 		var total_damage = 0
 		for injuryE in external_injuries:
 			total_damage += injuryE.damage
@@ -38,33 +42,32 @@ func add_injury(injury: Injury) -> void:
 
 
 func heal_injury(external: bool, injury: String) -> void:
-	var index
+	var index: int = -1
 	if external:
 		for i in len(external_injuries):
 			if external_injuries.get(i).name == injury:
 				index = i
 				break
-		external_injuries.remove_at(index)
+		if index:
+			external_injuries.remove_at(index)
 	else:
 		for i in len(internal_injuries):
 			if internal_injuries.get(i).name == injury:
 				index = i
 				break
-		internal_injuries.remove_at(index)
-
-
-func _damage(amount: float) -> void:
-	health -= amount
-	check_should_destroy()
+		if index != -1:
+			internal_injuries.remove_at(index)
 
 
 func recursively_destroy_children() -> void:
 	for child in children:
-		child._damage(INF)
+		child.forced_destroy = true
 
 
 func check_should_destroy() -> void:
 	if health <= 0:
-		part_destroyed.emit(self)
 		recursively_destroy_children()
+		part_destroyed.emit(self)
+		for child in children:
+			print(child.name, child.health)
 		

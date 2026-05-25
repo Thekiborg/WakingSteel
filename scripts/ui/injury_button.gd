@@ -10,7 +10,7 @@ func _init(button_injury: Injury, window: HealthWindow) -> void:
 	health_window = window
 	name = "button" + injury.name
 	icon = injury.icon
-	tooltip_text = injury.name
+	tooltip_text = injury.name + "\n" + injury.description
 	if injury.internal:
 		var stylebox: StyleBox = get_theme_stylebox("normal").duplicate()
 		stylebox.bg_color = "#ffe14d"

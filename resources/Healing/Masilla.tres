@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HealingItem" format=3 uid="uid://df2yys4dv6xy6"]
+
+[ext_resource type="Texture2D" uid="uid://c16ca1jalvocx" path="res://assets/items/masilla.png" id="1_7lsnm"]
+[ext_resource type="Script" uid="uid://cpnroa718irsw" path="res://scripts/item/healing_item.gd" id="1_hwtcq"]
+
+[resource]
+script = ExtResource("1_hwtcq")
+id = "masilla"
+name = "Masilla"
+description = "Inyector de masilla conductiva para tapar agujeros."
+icon = ExtResource("1_7lsnm")
+max_stack = 1
+metadata/_custom_type_script = "uid://cpnroa718irsw"

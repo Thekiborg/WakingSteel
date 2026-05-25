@@ -24,7 +24,7 @@ func _ready() -> void:
 	enemy_behavior_manager.aggroed_player_changed.connect(_on_aggroed_changed)
 	try_attack_timer.timeout.connect(_try_attack)
 	(detection_area_shape.shape as CylinderShape3D).radius = detection_radius
-
+	
 
 func _try_attack() -> void:
 	combat_manager.lmb()
@@ -34,6 +34,7 @@ func _on_aggroed_changed(player: Character) -> void:
 	aggrod_player = player
 	if aggrod_player:
 		navigation_agent.target_position = player.global_position
+		_try_attack()
 		try_attack_timer.start()
 	else:
 		navigation_agent.target_position = global_position

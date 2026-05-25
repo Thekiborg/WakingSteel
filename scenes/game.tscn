@@ -11,7 +11,7 @@ transform = Transform3D(1, 0, 0, 0, 0.45506322, 0.8904592, 0, -0.8904592, 0.4550
 script = ExtResource("1_uwrxv")
 
 [node name="WorldSpawner" type="MultiplayerSpawner" parent="." unique_id=1541580138]
-_spawnable_scenes = PackedStringArray("uid://j8ejvd2u8bfu", "uid://dnj2i2ron80e1")
+_spawnable_scenes = PackedStringArray("uid://j8ejvd2u8bfu", "uid://dnj2i2ron80e1", "uid://ddwe34x5yb0os")
 spawn_path = NodePath("../SpawnedItems")
 
 [node name="SpawnedItems" type="Node" parent="." unique_id=1156184171]

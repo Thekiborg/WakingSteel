@@ -3,21 +3,25 @@
 [ext_resource type="Script" uid="uid://bo4xn5d1dx0yl" path="res://scripts/autoload-singleton/resource_dictionary.gd" id="1_1xwit"]
 [ext_resource type="Resource" uid="uid://cn2mt512dwgv4" path="res://resources/Injuries/abolladura.tres" id="2_4iib6"]
 [ext_resource type="Script" uid="uid://byayv4msk2775" path="res://scripts/injury/injury.gd" id="2_jb8dv"]
+[ext_resource type="Resource" uid="uid://cuo0fs0hc10f" path="res://resources/Injuries/penetracion.tres" id="4_opt02"]
 [ext_resource type="Script" uid="uid://b236tc1owehkq" path="res://scripts/item/item.gd" id="4_vrvf0"]
 [ext_resource type="Resource" uid="uid://yyy2tpi303ea" path="res://resources/Healing/Plunger.tres" id="5_a3vsx"]
 [ext_resource type="Resource" uid="uid://dsg8q3ec6ia4q" path="res://resources/weapon/weaponitem_sword.tres" id="6_8nqxq"]
 [ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="6_a3vsx"]
 [ext_resource type="Resource" uid="uid://ce2dtk07dghoi" path="res://resources/weapon/weapon_fist.tres" id="7_2lb7d"]
 [ext_resource type="Resource" uid="uid://sa5x88ynixmp" path="res://resources/weapon/weaponitem_spear.tres" id="7_cxgq8"]
+[ext_resource type="Resource" uid="uid://df2yys4dv6xy6" path="res://resources/Healing/Masilla.tres" id="8_78xe0"]
 [ext_resource type="Resource" uid="uid://be6syfks6u31w" path="res://resources/weapon/weapon_sword.tres" id="9_51oxy"]
 [ext_resource type="Resource" uid="uid://gohrn621a5or" path="res://resources/weapon/weapon_spear.tres" id="11_78xe0"]
 
 [node name="ResourceDictionary" type="Node" unique_id=245447730]
 script = ExtResource("1_1xwit")
 injuries = Dictionary[String, ExtResource("2_jb8dv")]({
-"abolladura": ExtResource("2_4iib6")
+"abolladura": ExtResource("2_4iib6"),
+"penetracion": ExtResource("4_opt02")
 })
 items = Dictionary[String, ExtResource("4_vrvf0")]({
+"masilla": ExtResource("8_78xe0"),
 "plunger": ExtResource("5_a3vsx"),
 "weaponitem_spear": ExtResource("7_cxgq8"),
 "weaponitem_sword": ExtResource("6_8nqxq")

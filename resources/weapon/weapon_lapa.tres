@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://ntwduj8aqmkl"]
+
+[ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="1_6cxo1"]
+[ext_resource type="Resource" uid="uid://dkdyqw616maqg" path="res://scenes/character/animations/lapa_idle.tres" id="1_kk470"]
+
+[resource]
+script = ExtResource("1_6cxo1")
+name = "LapaSpikes"
+idle_animation = ExtResource("1_kk470")
+metadata/_custom_type_script = "uid://oil2083y1evj"

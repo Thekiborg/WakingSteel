@@ -42,7 +42,7 @@ func _ready() -> void:
 	
 	inventory_manager.put(load("uid://yyy2tpi303ea"))
 	inventory_manager.put(load("uid://yyy2tpi303ea"))
-	inventory_manager.put(load("uid://yyy2tpi303ea"))
+	inventory_manager.put(load("uid://df2yys4dv6xy6"))
 	inventory_manager.put(load("uid://dsg8q3ec6ia4q"))
 	inventory_manager.put(load("uid://sa5x88ynixmp"))
 

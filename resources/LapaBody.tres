@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BodyPart" format=3 uid="uid://b6u7ngsroygh3"]
+
+[ext_resource type="Script" uid="uid://cjsq7x6g6bsig" path="res://scripts/body/body_part.gd" id="1_nuoi6"]
+
+[resource]
+script = ExtResource("1_nuoi6")
+max_health = 100.0
+name = "Core"
+height = 1
+position = 1
+lethal = true
+metadata/_custom_type_script = "uid://cjsq7x6g6bsig"

@@ -7,15 +7,14 @@ var enet_peer := ENetMultiplayerPeer.new()
 
 
 func start_server() -> Error:
-	var err = enet_peer.create_server(PORT)
+	var err =  enet_peer.create_server(PORT)
 	if err == OK:
 		multiplayer.multiplayer_peer = enet_peer
 		multiplayer.peer_connected.connect(_peer_connected)
 		multiplayer.peer_disconnected.connect(_peer_disconnected)
 		_on_connected_to_server()
 		
-		var baseplate = Preloads.MAP.duplicate().instantiate()
-		get_tree().current_scene.add_child.call_deferred(baseplate)
+		WorldSyncronizer.create_world()
 		return OK
 	else:
 		return err
@@ -39,7 +38,9 @@ func _peer_connected(peer_id: int) -> void:
 
 	var new_player = Preloads.PLAYER.instantiate()
 	new_player.name = str(peer_id)
-	new_player.position = Vector3(-8., 2., 3.)
+	var x_cord = randf_range(-6.5, -8.5)
+	var z_cord = randf_range(2., 3.5)
+	new_player.position = Vector3(x_cord, 2., z_cord)
 	get_tree().current_scene.add_child(new_player)
 
 

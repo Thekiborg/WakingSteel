@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimationSet" format=3 uid="uid://dkdyqw616maqg"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_mwkvd"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_drn1k"]
+[ext_resource type="Script" uid="uid://s6cpynqg2j31" path="res://scripts/animation/steps/step_idle.gd" id="3_15856"]
+[ext_resource type="Texture2D" uid="uid://buiabsusxe81p" path="res://assets/character/Lapa_Idle.png" id="4_xym4h"]
+
+[sub_resource type="Resource" id="Resource_7ker2"]
+script = ExtResource("3_15856")
+sprite = ExtResource("4_xym4h")
+metadata/_custom_type_script = "uid://s6cpynqg2j31"
+
+[resource]
+script = ExtResource("1_mwkvd")
+name = "Lapa_Idle"
+steps = Array[ExtResource("2_drn1k")]([SubResource("Resource_7ker2")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"

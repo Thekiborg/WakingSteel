@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dppvhji1y88k4" path="res://assets/character/player/Sword/sword_player_3-4_LMB_2-1.png" id="7_x3un8"]
 [ext_resource type="Script" uid="uid://vkxqsxwvpamw" path="res://scripts/animation/steps/step_block.gd" id="9_1b5vu"]
 [ext_resource type="Texture2D" uid="uid://bjwaenufgkibl" path="res://assets/character/player/Sword/sword_player_3-4_RMB_1.png" id="10_k0rv6"]
-[ext_resource type="Resource" uid="uid://dv6m0tuolg8wp" path="res://scenes/character/animations/player_sword_idle.tres" id="12_1b5vu"]
-[ext_resource type="Resource" uid="uid://bkho64d8vrlwu" path="res://scenes/character/animations/player_sword_walking.tres" id="14_k0rv6"]
+[ext_resource type="Resource" uid="uid://dv6m0tuolg8wp" path="res://resources/animations/player_sword_idle.tres" id="12_1b5vu"]
+[ext_resource type="Resource" uid="uid://bkho64d8vrlwu" path="res://resources/animations/player_sword_walking.tres" id="14_k0rv6"]
 
 [sub_resource type="Resource" id="Resource_oge4u"]
 script = ExtResource("2_ce377")

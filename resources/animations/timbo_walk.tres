@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimationSet" format=3 uid="uid://dijfdrf3fjdx4"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_csxci"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_6kjlt"]
+[ext_resource type="Script" uid="uid://dt1bajx5rqdol" path="res://scripts/animation/steps/step_walk.gd" id="3_hmj8c"]
+[ext_resource type="Texture2D" uid="uid://byfd5tl2co3eg" path="res://assets/character/Timbos_Walk.png" id="4_4wd0q"]
+
+[sub_resource type="Resource" id="Resource_phrmi"]
+script = ExtResource("3_hmj8c")
+sprite = ExtResource("4_4wd0q")
+metadata/_custom_type_script = "uid://dt1bajx5rqdol"
+
+[resource]
+script = ExtResource("1_csxci")
+name = "Timbos_Walk"
+steps = Array[ExtResource("2_6kjlt")]([SubResource("Resource_phrmi")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"

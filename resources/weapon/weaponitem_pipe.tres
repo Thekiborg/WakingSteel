@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://dwhgu1lyx6v8n"]
+
+[ext_resource type="Script" uid="uid://ddk7f4khhgws1" path="res://scripts/item/weapon_item.gd" id="1_5rlk6"]
+[ext_resource type="Texture2D" uid="uid://4vo2tgvamsbw" path="res://assets/weapons/Pipe.png" id="1_ivfxm"]
+[ext_resource type="Resource" uid="uid://bl7rfiuuxmeg0" path="res://resources/weapon/weapon_pipe.tres" id="3_ps5q1"]
+
+[resource]
+script = ExtResource("1_5rlk6")
+weapon = ExtResource("3_ps5q1")
+id = "weaponitem_pipe"
+name = "Tubería"
+description = "Una vieja tubería."
+icon = ExtResource("1_ivfxm")
+metadata/_custom_type_script = "uid://ddk7f4khhgws1"

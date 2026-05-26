@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bl7rfiuuxmeg0"]
+
+[ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="1_lsep8"]
+
+[resource]
+script = ExtResource("1_lsep8")
+name = "Pipe"
+metadata/_custom_type_script = "uid://oil2083y1evj"

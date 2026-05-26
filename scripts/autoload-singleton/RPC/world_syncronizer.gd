@@ -2,15 +2,20 @@ extends Node
 
 const MAP = preload("uid://ddwe34x5yb0os")
 
-@rpc("any_peer", "call_remote")
+@rpc("any_peer", "call_local")
 func despawn(item_path: NodePath):
+	if !multiplayer.is_server():
+		return
 	var node: Node = get_node(item_path)
 	Globals.spawned_items.remove_child(node)
 	node.queue_free()
 
 
-@rpc("any_peer", "call_remote")
+@rpc("any_peer", "call_local")
 func spawn_item(pos: Vector3, item_id: String):
+	if !multiplayer.is_server():
+		return
+	
 	var node: NodeItem = Preloads.NODEITEM.instantiate()
 	node.data_id = item_id
 	node.position = pos

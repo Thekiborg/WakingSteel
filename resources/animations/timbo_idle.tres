@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimationSet" format=3 uid="uid://b5wv0vl8lwdcg"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_kws8e"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_2ulmu"]
+[ext_resource type="Script" uid="uid://s6cpynqg2j31" path="res://scripts/animation/steps/step_idle.gd" id="3_mrnhw"]
+[ext_resource type="Texture2D" uid="uid://ir8snkrlsftj" path="res://assets/character/Timbos_Idle.png" id="4_kkebq"]
+
+[sub_resource type="Resource" id="Resource_3hh47"]
+script = ExtResource("3_mrnhw")
+sprite = ExtResource("4_kkebq")
+metadata/_custom_type_script = "uid://s6cpynqg2j31"
+
+[resource]
+script = ExtResource("1_kws8e")
+name = "Timbos_Idle"
+steps = Array[ExtResource("2_2ulmu")]([SubResource("Resource_3hh47")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"

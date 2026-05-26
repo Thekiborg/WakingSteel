@@ -48,7 +48,7 @@ func heal_injury(external: bool, injury: String) -> void:
 			if external_injuries.get(i).name == injury:
 				index = i
 				break
-		if index:
+		if index != -1:
 			external_injuries.remove_at(index)
 	else:
 		for i in len(internal_injuries):
@@ -68,6 +68,3 @@ func check_should_destroy() -> void:
 	if health <= 0:
 		recursively_destroy_children()
 		part_destroyed.emit(self)
-		for child in children:
-			print(child.name, child.health)
-		

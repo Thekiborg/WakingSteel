@@ -12,7 +12,6 @@ var is_blocking: bool
 var is_dodging: bool
 
 var facing_right: bool:
-	# change rotation node
 	get: return Vector3.RIGHT.dot(character.get_aimer().global_basis.z) >= 0
 
 
@@ -38,6 +37,7 @@ func lmb():
 		return
 	
 	var animation:AnimationSet = lmbCombo.animations[min(lmbCombo.animations.size() - 1, curComboIndex)]
+	
 	if character is Player:
 		var player = character as Player
 		if animation.essence_cost > player.essence_count:
@@ -64,6 +64,7 @@ func _start_attack(animation:AnimationSet):
 	character.animation_manager.play_high_animation(animation, r)
 	character.facing_right = r
 	character.can_input = false
+	comboResetTimer.start(animation.total_time * 2)
 
 
 func _on_animation_finished(last_anim: AnimationSet):
@@ -74,7 +75,6 @@ func _on_animation_finished(last_anim: AnimationSet):
 	if character is Player:
 		var player = character as Player
 		player.increase_essence(-last_anim.essence_cost)
-	comboResetTimer.start()
 	character.can_input = true
 
 

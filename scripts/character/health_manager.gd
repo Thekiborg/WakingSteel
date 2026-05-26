@@ -69,7 +69,8 @@ func try_take_damage(origin: Hitbox):
 	var picked_body: BodyPart = hit_bodyparts.pick_random()
 	if picked_body.health <= 0:
 		var fallback_hit = parent.get_potentially_hit_bodyparts(origin.height, Globals.BodyPartPosition.CENTER)
-		picked_body = fallback_hit.pick_random()
+		if !fallback_hit.is_empty():
+			picked_body = fallback_hit.pick_random()
 	
 	HealthSyncronizer.add_injuries.rpc(parent.get_path(), picked_body.name, origin.injuries)
 	notify_received_damage()

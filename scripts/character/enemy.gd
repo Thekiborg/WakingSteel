@@ -30,15 +30,26 @@ func _try_attack() -> void:
 	combat_manager.lmb()
 
 
+func _start_attacking(player: Player) -> void:
+	navigation_agent.target_position = player.global_position
+	var detectionShape: CylinderShape3D = detection_area_shape.shape
+	var detectionArea = detectionShape.radius
+	if global_position.distance_to(aggrod_player.global_position) <= detectionArea / 2:
+		_try_attack()
+	try_attack_timer.start()
+
+
+func _stop_attacking() -> void:
+	navigation_agent.target_position = global_position
+	try_attack_timer.stop()
+
+
 func _on_aggroed_changed(player: Character) -> void:
 	aggrod_player = player
 	if aggrod_player:
-		navigation_agent.target_position = player.global_position
-		_try_attack()
-		try_attack_timer.start()
+		_start_attacking(player)
 	else:
-		navigation_agent.target_position = global_position
-		try_attack_timer.stop()
+		_stop_attacking()
 
 
 func _player_detected(area: Area3D) -> void:
@@ -54,7 +65,14 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if aggrod_player:
-		navigation_agent.target_position = aggrod_player.global_position
+		var detectionShape: CylinderShape3D = detection_area_shape.shape
+		var detectionArea = detectionShape.radius
+		if global_position.distance_to(aggrod_player.global_position) <= detectionArea / 2:
+			_start_attacking(aggrod_player)
+			return
+		else:
+			_stop_attacking()
+			navigation_agent.target_position = aggrod_player.global_position
 	
 	var hor_movement_dir: Vector2 = Vector2.ZERO
 	var movement_dir:Vector3 = Vector3.ZERO
@@ -66,11 +84,6 @@ func _physics_process(delta: float) -> void:
 		wantedPos.y = global_position.y
 		if not rotation_node.global_position.is_equal_approx(wantedPos):
 			rotation_node.look_at(wantedPos, Vector3.UP, true)
-		
-		var detectionShape: CylinderShape3D = detection_area_shape.shape
-		var detectionArea = detectionShape.radius
-		if global_position.distance_to(aggrod_player.global_position) <= detectionArea / 2:
-			hor_movement_dir = Vector2.ZERO
 		#print(navigation_agent.is_target_reachable())
 		#print("gp", global_position)
 		#print("next",navigation_agent.get_next_path_position())

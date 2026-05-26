@@ -12,7 +12,9 @@
 [ext_resource type="Resource" uid="uid://sa5x88ynixmp" path="res://resources/weapon/weaponitem_spear.tres" id="7_cxgq8"]
 [ext_resource type="Resource" uid="uid://df2yys4dv6xy6" path="res://resources/Healing/Masilla.tres" id="8_78xe0"]
 [ext_resource type="Resource" uid="uid://be6syfks6u31w" path="res://resources/weapon/weapon_sword.tres" id="9_51oxy"]
+[ext_resource type="Resource" uid="uid://dwhgu1lyx6v8n" path="res://resources/weapon/weaponitem_pipe.tres" id="10_vhi1b"]
 [ext_resource type="Resource" uid="uid://gohrn621a5or" path="res://resources/weapon/weapon_spear.tres" id="11_78xe0"]
+[ext_resource type="Resource" uid="uid://bl7rfiuuxmeg0" path="res://resources/weapon/weapon_pipe.tres" id="14_dijw2"]
 
 [node name="ResourceDictionary" type="Node" unique_id=245447730]
 script = ExtResource("1_1xwit")
@@ -23,11 +25,13 @@ injuries = Dictionary[String, ExtResource("2_jb8dv")]({
 items = Dictionary[String, ExtResource("4_vrvf0")]({
 "masilla": ExtResource("8_78xe0"),
 "plunger": ExtResource("5_a3vsx"),
+"weaponitem_pipe": ExtResource("10_vhi1b"),
 "weaponitem_spear": ExtResource("7_cxgq8"),
 "weaponitem_sword": ExtResource("6_8nqxq")
 })
 weapons = Dictionary[String, ExtResource("6_a3vsx")]({
 "Fist": ExtResource("7_2lb7d"),
+"Pipe": ExtResource("14_dijw2"),
 "Spear": ExtResource("11_78xe0"),
 "Sword": ExtResource("9_51oxy")
 })

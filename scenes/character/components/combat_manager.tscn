@@ -7,3 +7,4 @@ script = ExtResource("1_hbadi")
 metadata/_custom_type_script = "uid://ccclq21mvdv0v"
 
 [node name="ComboResetTimer" type="Timer" parent="." unique_id=716951464]
+one_shot = true

@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Injury" format=3 uid="uid://cn2mt512dwgv4"]
 
-[ext_resource type="Texture2D" uid="uid://lputhf26ymty" path="res://assets/ui/main_menu_label.svg" id="2_lr2xw"]
+[ext_resource type="Texture2D" uid="uid://drsebtlortg8y" path="res://assets/InjuryAbollar.png" id="1_jxsui"]
 [ext_resource type="Script" uid="uid://byayv4msk2775" path="res://scripts/injury/injury.gd" id="3_g4sni"]
 
 [resource]
 script = ExtResource("3_g4sni")
-icon = ExtResource("2_lr2xw")
+icon = ExtResource("1_jxsui")
 name = "Abolladura"
 description = "Hundimiento en esta parte del cuerpo"
 damage = 10.0

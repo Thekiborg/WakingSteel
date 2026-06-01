@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponHitboxData" format=3 uid="uid://dnlqvku5hdpmj"]
+
+[ext_resource type="AudioStream" uid="uid://rh1hrfgcucm5" path="res://assets/audio/BluntHit.mp3" id="1_hh6hq"]
+[ext_resource type="Script" uid="uid://g8ec7h3hkg4h" path="res://scripts/weapon/weapon_hitbox_data.gd" id="1_t53sm"]
+
+[resource]
+script = ExtResource("1_t53sm")
+size = Vector3(5, 5, 5)
+injuries = Array[String](["abolladura"])
+height = 2
+hit_sound = ExtResource("1_hh6hq")
+metadata/_custom_type_script = "uid://g8ec7h3hkg4h"

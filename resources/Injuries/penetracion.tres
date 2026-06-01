@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Injury" format=3 uid="uid://cuo0fs0hc10f"]
 
 [ext_resource type="Script" uid="uid://byayv4msk2775" path="res://scripts/injury/injury.gd" id="1_x0c3m"]
-[ext_resource type="Texture2D" uid="uid://lputhf26ymty" path="res://assets/ui/main_menu_label.svg" id="1_x0p8v"]
+[ext_resource type="Texture2D" uid="uid://bgcr710cgd1dk" path="res://assets/InjuryPenetrate.png" id="1_x0p8v"]
 
 [resource]
 script = ExtResource("1_x0c3m")

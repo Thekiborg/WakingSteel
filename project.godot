@@ -39,6 +39,10 @@ folder_colors={
 "res://scenes/ui/": "green"
 }
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 player=""

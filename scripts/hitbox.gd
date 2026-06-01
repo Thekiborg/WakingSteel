@@ -22,6 +22,7 @@ var bypasses_dodge:bool:
 	get: return data.bypassesDodge
 
 @onready var collisionShape: CollisionShape3D = $CollisionShape3D
+@onready var audio: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 func set_shape_size(newSize: Vector3) -> void:
 	collisionShape.shape.size = newSize
@@ -31,6 +32,9 @@ func has_hit_character(character: CharacterBody3D) -> bool:
 
 func register_hit_character(character: CharacterBody3D) -> void:
 	hitCharacters.append(character)
+	if data.hit_sound:
+		audio.stream = data.hit_sound
+		audio.play()
 	if parentCharacter is Player:
 		var player: Player = parentCharacter as Player
 		player.increase_essence(data.produced_essence)

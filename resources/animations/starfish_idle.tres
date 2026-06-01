@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimationSet" format=3 uid="uid://ci2n8pv2cqjnb"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_6qv5q"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_om30t"]
+[ext_resource type="Script" uid="uid://s6cpynqg2j31" path="res://scripts/animation/steps/step_idle.gd" id="3_qce46"]
+[ext_resource type="Texture2D" uid="uid://diat8g07pjypc" path="res://assets/character/Starfish_Idle.png" id="4_oabdc"]
+
+[sub_resource type="Resource" id="Resource_hq1dh"]
+script = ExtResource("3_qce46")
+sprite = ExtResource("4_oabdc")
+metadata/_custom_type_script = "uid://s6cpynqg2j31"
+
+[resource]
+script = ExtResource("1_6qv5q")
+name = "Starfish_Idle"
+steps = Array[ExtResource("2_om30t")]([SubResource("Resource_hq1dh")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"

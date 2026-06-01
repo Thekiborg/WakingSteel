@@ -25,7 +25,7 @@ func _on_player_found(area: Area3D) -> void:
 	if area.get_parent() is HealthManager:
 		var health_manager: HealthManager = area.get_parent() as HealthManager
 		var player: Character = health_manager.parent
-		if player != enemy:
+		if player is Player and player != enemy:
 			print(player.name, " found")
 			update_state(States.Pursuing)
 			aggroed_player_changed.emit(player)

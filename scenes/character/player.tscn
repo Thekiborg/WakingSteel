@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cvg4i64j5k6af" path="res://scenes/ui/player_uis.tscn" id="14_e5n5u"]
 [ext_resource type="PackedScene" uid="uid://by2owxdgvki0i" path="res://scenes/ui/revive_window.tscn" id="15_e5n5u"]
 [ext_resource type="PackedScene" uid="uid://b7oy74hh74vd1" path="res://scenes/ui/ESC_menu.tscn" id="16_ba010"]
+[ext_resource type="AudioStream" uid="uid://dykykie85vcho" path="res://assets/audio/PlayerDash.mp3" id="16_jb4us"]
+[ext_resource type="AudioStream" uid="uid://uplxsorsojg7" path="res://assets/audio/PlayerMovement.ogg" id="16_ux0ro"]
 [ext_resource type="PackedScene" uid="uid://cpvgacuhtjl05" path="res://scenes/ui/inventory_window.tscn" id="17_jb4us"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmtbp"]
@@ -28,13 +30,14 @@ properties/1/spawn = true
 properties/1/replication_mode = 1
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jb4us"]
-height = 2.8
-radius = 1.5
+height = 4.0
+radius = 2.409
 
 [node name="Player" type="CharacterBody3D" unique_id=1366285704]
 script = ExtResource("1_vt0b6")
 dash_speed_mult = 8
 dash_duration = 0.15
+dash_cooldown = 1.0
 speed = 60.0
 equippedWeapon = ExtResource("2_jb4us")
 walking_animation = ExtResource("3_vreni")
@@ -91,3 +94,15 @@ shape = SubResource("CylinderShape3D_jb4us")
 
 [node name="DashDurationTimer" type="Timer" parent="." unique_id=875305218]
 one_shot = true
+
+[node name="DashCooldownTimer" type="Timer" parent="." unique_id=1220192502]
+one_shot = true
+
+[node name="WalkingAudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=828883534]
+stream = ExtResource("16_ux0ro")
+volume_db = -8.0
+autoplay = true
+
+[node name="DashAudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1672192822]
+stream = ExtResource("16_jb4us")
+volume_db = -12.0

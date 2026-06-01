@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cjct7n1sos2xn" path="res://assets/character/Lapa_LMB_2.png" id="4_5nosg"]
 [ext_resource type="Script" uid="uid://g8ec7h3hkg4h" path="res://scripts/weapon/weapon_hitbox_data.gd" id="5_xjbub"]
 [ext_resource type="Script" uid="uid://d4cbwg3fwfgk4" path="res://scripts/animation/steps/step_hitbox.gd" id="6_2obtq"]
+[ext_resource type="AudioStream" uid="uid://rh1hrfgcucm5" path="res://assets/audio/BluntHit.mp3" id="6_k8g5r"]
 [ext_resource type="Texture2D" uid="uid://dl8ym5a7pwxgb" path="res://assets/character/Lapa_LMB_3.png" id="7_iajx2"]
 [ext_resource type="Script" uid="uid://0sno5ifqeksg" path="res://scripts/weapon/combo_set.gd" id="8_1wjiq"]
 [ext_resource type="Script" uid="uid://c3ci8sfelltm0" path="res://scripts/weapon/weapon_data.gd" id="9_kkss0"]
@@ -26,6 +27,7 @@ metadata/_custom_type_script = "uid://b01hhuo1e3lee"
 script = ExtResource("5_xjbub")
 size = Vector3(4, 4, 4)
 injuries = Array[String](["penetracion"])
+hit_sound = ExtResource("6_k8g5r")
 metadata/_custom_type_script = "uid://g8ec7h3hkg4h"
 
 [sub_resource type="Resource" id="Resource_tj65i"]
@@ -37,7 +39,7 @@ metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
 [sub_resource type="Resource" id="Resource_kdi7j"]
 script = ExtResource("2_k8g5r")
 sprite = ExtResource("7_iajx2")
-time = 0.5
+time = 0.75
 metadata/_custom_type_script = "uid://b01hhuo1e3lee"
 
 [sub_resource type="Resource" id="Resource_gu33m"]

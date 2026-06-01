@@ -9,6 +9,7 @@ class_name Enemy
 @onready var try_attack_timer: Timer = $TryAttackTimer
 @onready var rotation_node: Node3D = $RotationNode
 @export var detection_radius: float = 2
+@export var animation_scale: Vector3 = Vector3.ONE
 
 
 signal player_found
@@ -24,17 +25,20 @@ func _ready() -> void:
 	enemy_behavior_manager.aggroed_player_changed.connect(_on_aggroed_changed)
 	try_attack_timer.timeout.connect(_try_attack)
 	(detection_area_shape.shape as CylinderShape3D).radius = detection_radius
+	animation_manager.scale = animation_scale
+	walking_audio_player.stream_paused = true
 	
 
 func _try_attack() -> void:
-	combat_manager.lmb()
+	if can_input:
+		combat_manager.lmb()
 
 
 func _start_attacking(player: Player) -> void:
 	navigation_agent.target_position = player.global_position
 	var detectionShape: CylinderShape3D = detection_area_shape.shape
 	var detectionArea = detectionShape.radius
-	if global_position.distance_to(aggrod_player.global_position) <= detectionArea / 2:
+	if global_position.distance_to(aggrod_player.global_position) <= (detectionArea / 3) * 2:
 		_try_attack()
 	try_attack_timer.start()
 
@@ -62,13 +66,15 @@ func _player_lost(area: Area3D) -> void:
 
 func _physics_process(delta: float) -> void:
 	if not can_move:
+		walking_audio_player.stream_paused = true
 		return
 	
 	if aggrod_player:
 		var detectionShape: CylinderShape3D = detection_area_shape.shape
 		var detectionArea = detectionShape.radius
-		if global_position.distance_to(aggrod_player.global_position) <= detectionArea / 2:
+		if global_position.distance_to(aggrod_player.global_position) <= (detectionArea / 3) * 2:
 			_start_attacking(aggrod_player)
+			walking_audio_player.stream_paused = true
 			return
 		else:
 			_stop_attacking()
@@ -100,8 +106,11 @@ func _physics_process(delta: float) -> void:
 		if (hor_movement_dir.x < 0):
 			facing_right = false;
 		animation_manager.try_play_low_animation(Globals.LowAnimationType.WALK, facing_right)
+		if speed > 0:
+			walking_audio_player.stream_paused = false
 	else:
 		animation_manager.try_play_low_animation(Globals.LowAnimationType.IDLE, facing_right)
+		walking_audio_player.stream_paused = true
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta;

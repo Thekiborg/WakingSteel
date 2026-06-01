@@ -1,0 +1,10 @@
+Sonidos de pixabay.com y mixkit
+Pixabay.com: Los dos golpes y el dash y el movimiento de jugador
+Mixkit.co: El movimiento de los enemigos y el dash
+https://carbonova.itch.io/minimalist-warehouse-set
+https://zbynekdev.itch.io/stylized-garden-pack-3
+
+https://docs.godotengine.org/en/stable/
+https://godotforums.org/
+https://www.reddit.com/r/godot/
+https://caaz.me/godot/

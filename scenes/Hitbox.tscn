@@ -13,3 +13,7 @@ script = ExtResource("1_ldxio")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=197322267]
 shape = SubResource("BoxShape3D_ldxio")
 debug_color = Color(1, 0, 0, 0.69803923)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1444919441]
+volume_db = -10.0
+max_polyphony = 5

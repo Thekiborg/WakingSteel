@@ -7,12 +7,14 @@ class_name Character
 @export var walking_animation:AnimationSet
 @export var idle_animation:AnimationSet
 @export var body:BodyPart
+@export var stagger_time:float = 0.5
+@export var movement_sound: AudioStream
 
 @onready var combat_manager: CombatManager = $CombatManager
 @onready var animation_manager: AnimationManager = $AnimationManager
 @onready var health_manager: HealthManager = $HealthManager
 @onready var inventory_manager: InventoryManager = $InventoryManager
-
+@onready var walking_audio_player: AudioStreamPlayer3D = $WalkingAudioPlayer
 
 var can_input:bool
 var can_move:bool

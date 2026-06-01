@@ -16,8 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://k862csg8co4q" path="res://assets/ui/HealthWindow/RightCalf.png" id="13_t00pq"]
 
 [node name="HealthWindow" type="AspectRatioContainer" unique_id=1853771099]
-offset_right = 1154.0
-offset_bottom = 646.0
+offset_left = 442.0
+offset_top = -155.0
+offset_right = 1596.0
+offset_bottom = 491.0
 mouse_filter = 2
 stretch_mode = 1
 script = ExtResource("1_8gfkb")
@@ -104,15 +106,19 @@ body_part_name = "RightCalf"
 [node name="InjuriesPanelContainer" type="PanelContainer" parent="." unique_id=451386772]
 layout_mode = 2
 size_flags_horizontal = 8
+mouse_filter = 2
 theme_override_styles/panel = ExtResource("2_1ep73")
 
 [node name="VScrollBar" type="VScrollBar" parent="InjuriesPanelContainer" unique_id=1859614053]
 layout_mode = 2
 size_flags_horizontal = 8
+mouse_filter = 2
 
 [node name="InjuriesScrollContainer" type="ScrollContainer" parent="InjuriesPanelContainer" unique_id=1127045557]
 custom_minimum_size = Vector2(115, 0)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="InjuryContainer" type="VBoxContainer" parent="InjuriesPanelContainer/InjuriesScrollContainer" unique_id=1609479670]
 layout_mode = 2
+mouse_filter = 2

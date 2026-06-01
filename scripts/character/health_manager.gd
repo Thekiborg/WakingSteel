@@ -16,7 +16,7 @@ var health: float:
 var parent:Character
 var lethal_bodypart_destroyed:bool = false
 
-
+@onready var stagger_timer: Timer = $StaggerTimer
 @onready var hurtbox: Area3D = $Hurtbox
 
 signal died
@@ -26,6 +26,11 @@ func _ready() -> void:
 	hurtbox.area_entered.connect(_on_area_entered)
 	parent = get_parent()
 	parent.part_destroyed.connect(_on_part_destroyed)
+	stagger_timer.timeout.connect(_on_timer_timeout)
+
+
+func _on_timer_timeout() -> void:
+	HealthSyncronizer.set_move_and_input.rpc(parent.get_path(), true)
 
 
 func _on_area_entered(area: Area3D) -> void:
@@ -53,7 +58,7 @@ func _on_area_entered(area: Area3D) -> void:
 func try_take_damage(origin: Hitbox):
 	if health <= 0:
 		return
-	
+
 	var hit_pos: Globals.BodyPartPosition = get_hit_position(origin)
 	var hit_bodyparts = parent.get_potentially_hit_bodyparts(origin.height, hit_pos)
 	
@@ -62,7 +67,11 @@ func try_take_damage(origin: Hitbox):
 	if hit_bodyparts.is_empty():
 		hit_bodyparts = parent.get_potentially_hit_bodyparts(origin.height, Globals.BodyPartPosition.CENTER)
 		if hit_bodyparts.is_empty():
-			return
+			hit_bodyparts = parent.get_potentially_hit_bodyparts(Globals.BodyPartHeight.MIDDLE, hit_pos)
+			if hit_bodyparts.is_empty():
+				hit_bodyparts = parent.get_potentially_hit_bodyparts(Globals.BodyPartHeight.MIDDLE, Globals.BodyPartPosition.CENTER)
+				if hit_bodyparts.is_empty():
+					return
 	
 	# If the bodypart found is broken
 	# we try to get the center part as well
@@ -92,6 +101,8 @@ func get_hit_position(origin: Hitbox) -> Globals.BodyPartPosition:
 
 
 func notify_received_damage() -> void:
+	HealthSyncronizer.set_move_and_input.rpc(parent.get_path(), false)
+	stagger_timer.start(parent.stagger_time)
 	if health <= 0:
 		death()
 

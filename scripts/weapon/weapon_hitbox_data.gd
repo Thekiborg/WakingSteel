@@ -9,3 +9,4 @@ class_name WeaponHitboxData
 @export var bypassesDodge:bool
 @export var bypassesBlock:bool
 @export var produced_essence: int
+@export var hit_sound: AudioStream

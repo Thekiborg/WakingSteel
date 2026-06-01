@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cvb8dtr4qpttl" path="res://scenes/character/components/health_manager.tscn" id="9_lgqbi"]
 [ext_resource type="PackedScene" uid="uid://cradlut3afah2" path="res://scenes/character/components/enemy_behavior_manager.tscn" id="10_cxtd4"]
 [ext_resource type="PackedScene" uid="uid://kd3pvne7p3k2" path="res://scenes/character/components/animation_manager.tscn" id="10_nsqit"]
+[ext_resource type="AudioStream" uid="uid://bekv0byxhpoef" path="res://assets/audio/MeatMovement.mp3" id="11_l0civ"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmtbp"]
 resource_local_to_scene = true
@@ -77,3 +78,8 @@ transform = Transform3D(0.3280415, 0, 0, 0, 0.28036302, 0, 0, 0, 1.2105932, -0.0
 visible = false
 mesh = SubResource("BoxMesh_cxtd4")
 skeleton = NodePath("../..")
+
+[node name="WalkingAudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=956661628]
+stream = ExtResource("11_l0civ")
+volume_db = -8.0
+autoplay = true

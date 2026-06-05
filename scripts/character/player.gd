@@ -15,6 +15,7 @@ class_name Player
 @onready var essence_meter: EssenceMeter = $EssenceMeter
 @onready var revive_window: ReviveWindow = $ReviveWindow
 @onready var dash_audio_player: AudioStreamPlayer3D = $DashAudioPlayer
+@onready var inventory_manager: InventoryManager = $InventoryManager
 
 
 var essence_count: int
@@ -31,6 +32,9 @@ func _ready() -> void:
 		set_physics_process(false)
 		item_interaction_area.monitorable = false
 		item_interaction_area.monitoring = false
+		walking_audio_player.playing = false
+		walking_audio_player.autoplay = false
+		walking_audio_player.stream_paused = true
 		return
 	
 	walking_audio_player.stream_paused = true

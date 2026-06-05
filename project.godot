@@ -31,14 +31,6 @@ ResourceDictionary="*uid://b6bt6lonqeoln"
 InventorySyncronizer="*uid://bwi736btmhvy2"
 WorldSyncronizer="*uid://dp67axjsausjl"
 
-[file_customization]
-
-folder_colors={
-"res://assets/ui/": "green",
-"res://scenes/character/": "red",
-"res://scenes/ui/": "green"
-}
-
 [filesystem]
 
 import/blender/enabled=false

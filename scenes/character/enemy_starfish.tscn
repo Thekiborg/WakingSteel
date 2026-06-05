@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d1m6bi61e1p7c"]
+
+[ext_resource type="PackedScene" uid="uid://dnj2i2ron80e1" path="res://scenes/character/enemy.tscn" id="1_xifcd"]
+[ext_resource type="Resource" uid="uid://ci2n8pv2cqjnb" path="res://resources/animations/starfish_idle.tres" id="2_oht6u"]
+[ext_resource type="Resource" uid="uid://bc2pbnlbxupqe" path="res://resources/StarfishBody.tres" id="3_y0nid"]
+[ext_resource type="AudioStream" uid="uid://bekv0byxhpoef" path="res://assets/audio/MeatMovement.mp3" id="4_3y3b2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jv1xj"]
+resource_local_to_scene = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bku75"]
+resource_local_to_scene = true
+radius = 3.0
+
+[node name="Enemy" unique_id=1366285704 instance=ExtResource("1_xifcd")]
+walking_animation = ExtResource("2_oht6u")
+idle_animation = ExtResource("2_oht6u")
+body = ExtResource("3_y0nid")
+stagger_time = 0.25
+movement_sound = ExtResource("4_3y3b2")
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1984081668]
+shape = SubResource("CapsuleShape3D_jv1xj")
+
+[node name="DetectionAreaShape" parent="DetectionArea" parent_id_path=PackedInt32Array(913604240) index="0" unique_id=218826424]
+shape = SubResource("CylinderShape3D_bku75")

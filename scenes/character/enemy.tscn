@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://dv6m0tuolg8wp" path="res://resources/animations/player_sword_idle.tres" id="4_l0civ"]
 [ext_resource type="Resource" uid="uid://5orbfqnoq86g" path="res://resources/PlayerBody/Torso.tres" id="5_4o550"]
 [ext_resource type="PackedScene" uid="uid://gq4r6rcldske" path="res://scenes/character/components/combat_manager.tscn" id="7_37xxd"]
-[ext_resource type="PackedScene" uid="uid://c8vre0aetv6db" path="res://scenes/character/components/inventory_manager.tscn" id="8_nr6tb"]
 [ext_resource type="PackedScene" uid="uid://cvb8dtr4qpttl" path="res://scenes/character/components/health_manager.tscn" id="9_lgqbi"]
 [ext_resource type="PackedScene" uid="uid://cradlut3afah2" path="res://scenes/character/components/enemy_behavior_manager.tscn" id="10_cxtd4"]
 [ext_resource type="PackedScene" uid="uid://kd3pvne7p3k2" path="res://scenes/character/components/animation_manager.tscn" id="10_nsqit"]
@@ -41,8 +40,6 @@ metadata/_custom_type_script = "uid://dm5hl5wv241bn"
 shape = SubResource("CapsuleShape3D_wmtbp")
 
 [node name="CombatManager" parent="." unique_id=1485315924 instance=ExtResource("7_37xxd")]
-
-[node name="InventoryManager" parent="." unique_id=1936019842 instance=ExtResource("8_nr6tb")]
 
 [node name="HealthManager" parent="." unique_id=1663641551 instance=ExtResource("9_lgqbi")]
 

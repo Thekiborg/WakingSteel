@@ -1,34 +1,14 @@
 [gd_scene format=3 uid="uid://ddwe34x5yb0os"]
 
-[ext_resource type="Script" uid="uid://bs7vijpwihq2h" path="res://scenes/map/MapItemSpawner.gd" id="1_7ker2"]
+[ext_resource type="Script" uid="uid://bs7vijpwihq2h" path="res://scripts/MapItemSpawner.gd" id="1_7ker2"]
 [ext_resource type="Texture2D" uid="uid://cwtfgxws5mlmm" path="res://assets/FloorTex.png" id="1_67q7k"]
 [ext_resource type="Texture2D" uid="uid://b3imlriaudwme" path="res://assets/WallTex.png" id="2_g78ii"]
 [ext_resource type="PackedScene" uid="uid://dnj2i2ron80e1" path="res://scenes/character/enemy.tscn" id="3_ptdsb"]
 [ext_resource type="Resource" uid="uid://dmq33pvlwjc3x" path="res://resources/weapon/weapon_none.tres" id="4_v8b5d"]
 [ext_resource type="Resource" uid="uid://dwiomabot76fh" path="res://resources/animations/box_idle.tres" id="5_5joo8"]
 [ext_resource type="Resource" uid="uid://n2vt124nu6lk" path="res://resources/BoxBody.tres" id="6_gy5db"]
-[ext_resource type="Resource" uid="uid://c8n7jufeq2grc" path="res://resources/animations/lapa_attacks.tres" id="7_gu33m"]
-[ext_resource type="Resource" uid="uid://dkdyqw616maqg" path="res://resources/animations/lapa_idle.tres" id="7_ytaf1"]
-[ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="11_6b4eq"]
-[ext_resource type="Resource" uid="uid://5jmgf11n6ctv" path="res://resources/animations/timbos_attacks.tres" id="11_7ker2"]
-[ext_resource type="Resource" uid="uid://b6u7ngsroygh3" path="res://resources/LapaBody.tres" id="12_n1tpa"]
-[ext_resource type="Script" uid="uid://cjsq7x6g6bsig" path="res://scripts/body/body_part.gd" id="15_6b4eq"]
-[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="16_1co7d"]
-[ext_resource type="Resource" uid="uid://b5wv0vl8lwdcg" path="res://resources/animations/timbo_idle.tres" id="16_epn21"]
 [ext_resource type="PackedScene" uid="uid://cuhd4aqm503au" path="res://assets/models/GardenPack_3/table_2.tscn" id="16_hw8ob"]
-[ext_resource type="Resource" uid="uid://ci2n8pv2cqjnb" path="res://resources/animations/starfish_idle.tres" id="16_n1tpa"]
 [ext_resource type="PackedScene" uid="uid://lnwcljvwingx" path="res://assets/models/Blocky_MinimalWarehouse_Pack/Meshes/MESH_Shelf_Warehouse_Simple.tscn" id="17_3hh47"]
-[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="17_tj65i"]
-[ext_resource type="Texture2D" uid="uid://crdoxf63qmnvy" path="res://assets/character/Starfish_LMB_1.png" id="18_kdi7j"]
-[ext_resource type="Resource" uid="uid://dijfdrf3fjdx4" path="res://resources/animations/timbo_walk.tres" id="18_p6umq"]
-[ext_resource type="Script" uid="uid://g8ec7h3hkg4h" path="res://scripts/weapon/weapon_hitbox_data.gd" id="19_phrmi"]
-[ext_resource type="Script" uid="uid://d4cbwg3fwfgk4" path="res://scripts/animation/steps/step_hitbox.gd" id="20_hw8ob"]
-[ext_resource type="Resource" uid="uid://dnlqvku5hdpmj" path="res://resources/weapon/starfish_hitboxdata.tres" id="20_kdi7j"]
-[ext_resource type="Texture2D" uid="uid://diat8g07pjypc" path="res://assets/character/Starfish_Idle.png" id="21_3hh47"]
-[ext_resource type="Script" uid="uid://0sno5ifqeksg" path="res://scripts/weapon/combo_set.gd" id="22_hrl6b"]
-[ext_resource type="Script" uid="uid://c3ci8sfelltm0" path="res://scripts/weapon/weapon_data.gd" id="23_bea7u"]
-[ext_resource type="Texture2D" uid="uid://i8erb7tyo147" path="res://assets/character/Starfish_LMB_2.png" id="23_phrmi"]
-[ext_resource type="Texture2D" uid="uid://b6dk3vtxrw1q7" path="res://assets/character/Starfish_LMB_3.png" id="24_phrmi"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ntyp6"]
 vertices = PackedVector3Array(-3.2494888, 0.6386522, -28.894592, -2.2494888, 0.6386522, -29.144592, -2.2494888, 0.6386522, -30.144592, -10.499489, 0.6386522, -27.644592, -3.2494888, 0.6386522, -27.394592, -0.74948883, 0.6386522, -43.144592, -10.499489, 0.6386522, -43.144592, -0.49948883, 0.6386522, -30.394592, 37.25051, 0.6386522, -30.394592, 37.50051, 0.6386522, -43.144592, 38.75051, 0.6386522, -30.394592, 39.00051, 0.6386522, -29.144592, 58.50051, 0.6386522, -29.144592, 58.50051, 0.6386522, -43.144592, 33.75051, 6.3886523, -28.644592, 38.00051, 6.3886523, -28.894592, 38.00051, 6.3886523, -29.394592, 33.25051, 6.3886523, -28.894592, 33.50051, 6.3886523, -9.644592, 28.000511, 6.3886523, -9.394592, 28.500511, 6.3886523, -8.644592, 39.50051, 6.3886523, -8.894592, 40.50051, 6.3886523, -8.894592, 55.25051, 6.3886523, -8.894592, 55.25051, 6.3886523, -9.394592, 33.75051, 6.3886523, -9.644592, 28.000511, 6.3886523, -0.8945923, 28.750511, 6.3886523, -1.3945923, 40.25051, 6.3886523, -0.8945923, 39.75051, 6.3886523, -1.6445923, -1.2494888, 6.3886523, -29.394592, -1.2494888, 6.3886523, -28.894592, 56.00051, 0.6386522, -10.394592, 56.25051, 0.6386522, -9.644592, 57.25051, 0.6386522, -9.394592, 57.25051, 0.6386522, -7.6445923, 58.50051, 0.6386522, -7.8945923, 38.75051, 0.6386522, -27.894592, 34.75051, 0.6386522, -27.894592, 34.75051, 0.6386522, -10.394592, -1.9994888, 6.3886523, 0.3554077, -1.9994888, 6.3886523, -28.144592, -2.2494888, 6.3886523, -0.3945923, -9.499489, 6.3886523, 0.3554077, -9.499489, 6.3886523, -0.14459229, -0.99948883, 0.6386522, -8.894592, 1.2505112, 0.6386522, -8.394592, 1.5005112, 0.6386522, -10.394592, -0.99948883, 0.6386522, -27.894592, 24.500511, 0.6386522, -10.394592, 24.750511, 0.6386522, -8.394592, 27.000511, 0.6386522, -8.394592, 27.250511, 0.6386522, -10.394592, 32.50051, 0.6386522, -27.894592, 32.50051, 0.6386522, -10.394592, -10.499489, 0.6386522, -0.8945923, -3.2494888, 0.6386522, -1.1445923, 9.500511, 6.3886523, 0.3554077, 9.500511, 6.3886523, -0.14459229, 2.7505112, 6.3886523, -0.3945923, 2.2505112, 6.3886523, 0.3554077, 2.2505112, 6.3886523, -9.394592, 2.7505112, 6.3886523, -9.394592, 3.7505112, 4.8886523, -9.394592, 3.7505112, 4.8886523, -8.894592, 22.500511, 4.8886523, -8.894592, 22.500511, 4.8886523, -9.394592, -3.2494888, 0.6386522, 9.355408, 3.5005112, 0.6386522, 9.355408, 3.5005112, 0.6386522, 1.3554077, 1.2505112, 0.6386522, 1.1054077, -0.99948883, 0.6386522, 1.1054077, -3.2494888, 0.6386522, 1.3554077, 27.250511, 0.6386522, 0.105407715, 24.750511, 0.6386522, 3.8554077, 39.25051, 0.6386522, 3.8554077, 39.25051, 0.6386522, 0.105407715, 8.750511, 0.6386522, -1.1445923, 9.000511, 0.6386522, -7.8945923, 3.7505112, 0.6386522, -7.8945923, 3.7505112, 0.6386522, -1.1445923, 10.250511, 0.6386522, -1.1445923, 10.500511, 0.6386522, 0.105407715, 11.500511, 0.6386522, 0.3554077, 11.500511, 0.6386522, 5.1054077, 14.000511, 0.6386522, 5.1054077, 14.250511, 0.6386522, 3.8554077, 22.500511, 0.6386522, 3.8554077, 22.500511, 0.6386522, -7.8945923, 29.500511, 0.6386522, -7.8945923, 29.500511, 0.6386522, -2.3945923, 38.75051, 0.6386522, -2.3945923, 38.75051, 0.6386522, -7.8945923, 41.25051, 0.6386522, 4.1054077, 41.25051, 0.6386522, -0.14459229, 55.00051, 0.6386522, 8.105408, 55.00051, 0.6386522, -7.8945923, 41.25051, 0.6386522, 8.105408, 41.25051, 0.6386522, -7.8945923, 41.25051, 0.6386522, 14.355408, 40.25051, 0.6386522, 14.605408, 40.25051, 0.6386522, 25.855408, 56.25051, 0.6386522, 10.605408, 41.25051, 0.6386522, 10.605408, 57.25051, 0.6386522, 9.855408, 58.50051, 0.6386522, 25.855408, -10.499489, 6.3886523, 1.1054077, -10.499489, 6.3886523, 9.605408, -9.999489, 6.3886523, 9.605408, -9.999489, 6.3886523, 1.1054077, -8.999489, 0.6386522, 1.3554077, -8.999489, 0.6386522, 9.355408, 9.250511, 0.6386522, 9.355408, 9.250511, 0.6386522, 1.3554077, 15.000511, 4.6386523, 4.8554077, 15.000511, 4.6386523, 5.3554077, 22.500511, 4.6386523, 5.3554077, 22.500511, 4.6386523, 4.8554077, 24.750511, 4.6386523, 4.8554077, 24.750511, 4.6386523, 5.3554077, 39.00051, 4.6386523, 5.3554077, 39.00051, 4.6386523, 4.8554077, 11.500511, 0.6386522, 10.355408, 10.750511, 0.6386522, 10.605408, 10.500511, 0.6386522, 11.855408, 14.250511, 0.6386522, 6.3554077, 8.500511, 0.6386522, 11.855408, 8.500511, 0.6386522, 25.855408, 22.500511, 0.6386522, 9.105408, 22.500511, 0.6386522, 6.3554077, 22.250511, 0.6386522, 25.855408, 29.500511, 0.6386522, 8.105408, 39.00051, 0.6386522, 8.105408, 39.00051, 0.6386522, 6.3554077, 24.750511, 0.6386522, 6.3554077, 22.750511, 0.6386522, 9.605408, 30.750511, 0.6386522, 25.855408, 31.000511, 0.6386522, 10.605408, 29.250511, 0.6386522, 10.355408, 24.750511, 0.6386522, 9.355408, 30.250511, 4.6386523, 9.105408, 30.250511, 4.6386523, 9.605408, 39.00051, 4.6386523, 9.605408, 39.00051, 4.6386523, 9.105408, 41.25051, 4.6386523, 9.105408, 41.25051, 4.6386523, 9.605408, 55.00051, 4.6386523, 9.605408, 55.00051, 4.6386523, 9.105408, -9.499489, 5.1386523, 10.605408, 9.750511, 5.1386523, 10.855408, 9.500511, 5.1386523, 10.355408, 39.00051, 0.6386522, 14.355408, 39.00051, 0.6386522, 10.605408, -10.499489, 0.6386522, 11.605408, -10.499489, 0.6386522, 25.855408)
@@ -71,14 +51,6 @@ uv1_scale = Vector3(12, 2, 2)
 [sub_resource type="BoxMesh" id="BoxMesh_4yt6b"]
 material = SubResource("StandardMaterial3D_hgphw")
 
-[sub_resource type="Resource" id="Resource_nsk17"]
-script = ExtResource("11_6b4eq")
-name = "LapaSpike"
-data = ExtResource("7_gu33m")
-idle_animation = ExtResource("7_ytaf1")
-walking_animation = ExtResource("7_ytaf1")
-metadata/_custom_type_script = "uid://oil2083y1evj"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yajg5"]
 albedo_texture = ExtResource("2_g78ii")
 uv1_scale = Vector3(27, 2, 1)
@@ -94,47 +66,6 @@ proximity_fade_distance = 5.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_48h8m"]
 material = SubResource("StandardMaterial3D_qfku7")
-
-[sub_resource type="Resource" id="Resource_p6umq"]
-script = ExtResource("11_6b4eq")
-name = "TimboPipe"
-data = ExtResource("11_7ker2")
-idle_animation = ExtResource("16_epn21")
-walking_animation = ExtResource("18_p6umq")
-metadata/_custom_type_script = "uid://oil2083y1evj"
-
-[sub_resource type="Resource" id="Resource_n1tpa"]
-script = ExtResource("15_6b4eq")
-max_health = 40.0
-name = "Ojo"
-height = 1
-position = 1
-lethal = true
-metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
-
-[sub_resource type="Resource" id="Resource_cxeog"]
-script = ExtResource("15_6b4eq")
-max_health = 40.0
-name = "Tentaculo"
-position = 1
-metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
-
-[sub_resource type="Resource" id="Resource_5einw"]
-script = ExtResource("15_6b4eq")
-max_health = 60.0
-name = "Pie"
-position = 1
-metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
-
-[sub_resource type="Resource" id="Resource_epn21"]
-script = ExtResource("15_6b4eq")
-max_health = 60.0
-name = "TimbosBody"
-height = 1
-position = 1
-lethal = true
-children = Array[ExtResource("15_6b4eq")]([SubResource("Resource_n1tpa"), SubResource("Resource_cxeog"), SubResource("Resource_5einw")])
-metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0e3jb"]
 albedo_texture = ExtResource("2_g78ii")
@@ -162,160 +93,6 @@ distance_fade_mode = 1
 
 [sub_resource type="BoxMesh" id="BoxMesh_u1hfc"]
 material = SubResource("StandardMaterial3D_ujv8u")
-
-[sub_resource type="Resource" id="Resource_kulg6"]
-script = ExtResource("17_tj65i")
-sprite = ExtResource("18_kdi7j")
-time = 0.45
-metadata/_custom_type_script = "uid://b01hhuo1e3lee"
-
-[sub_resource type="Resource" id="Resource_gj0jd"]
-script = ExtResource("20_hw8ob")
-hitboxes = Array[ExtResource("19_phrmi")]([ExtResource("20_kdi7j")])
-sprite = ExtResource("21_3hh47")
-metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
-
-[sub_resource type="Resource" id="Resource_oj3rt"]
-script = ExtResource("17_tj65i")
-sprite = ExtResource("21_3hh47")
-time = 0.4
-metadata/_custom_type_script = "uid://b01hhuo1e3lee"
-
-[sub_resource type="Resource" id="Resource_udg0r"]
-script = ExtResource("16_1co7d")
-name = "Starfish_LMB_1"
-steps = Array[ExtResource("17_tj65i")]([SubResource("Resource_kulg6"), SubResource("Resource_gj0jd"), SubResource("Resource_oj3rt")])
-metadata/_custom_type_script = "uid://8b4gvdp20r65"
-
-[sub_resource type="Resource" id="Resource_hw8ob"]
-script = ExtResource("17_tj65i")
-sprite = ExtResource("23_phrmi")
-time = 0.1
-metadata/_custom_type_script = "uid://b01hhuo1e3lee"
-
-[sub_resource type="Resource" id="Resource_3hh47"]
-script = ExtResource("20_hw8ob")
-hitboxes = Array[ExtResource("19_phrmi")]([ExtResource("20_kdi7j")])
-sprite = ExtResource("21_3hh47")
-metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
-
-[sub_resource type="Resource" id="Resource_hrl6b"]
-script = ExtResource("17_tj65i")
-sprite = ExtResource("21_3hh47")
-time = 0.1
-metadata/_custom_type_script = "uid://b01hhuo1e3lee"
-
-[sub_resource type="Resource" id="Resource_8abi6"]
-script = ExtResource("17_tj65i")
-sprite = ExtResource("24_phrmi")
-time = 0.1
-metadata/_custom_type_script = "uid://b01hhuo1e3lee"
-
-[sub_resource type="Resource" id="Resource_osh6r"]
-script = ExtResource("20_hw8ob")
-hitboxes = Array[ExtResource("19_phrmi")]([ExtResource("20_kdi7j")])
-sprite = ExtResource("21_3hh47")
-metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
-
-[sub_resource type="Resource" id="Resource_1k2by"]
-script = ExtResource("17_tj65i")
-sprite = ExtResource("21_3hh47")
-time = 0.1
-metadata/_custom_type_script = "uid://b01hhuo1e3lee"
-
-[sub_resource type="Resource" id="Resource_hirm6"]
-script = ExtResource("17_tj65i")
-sprite = ExtResource("23_phrmi")
-time = 0.1
-metadata/_custom_type_script = "uid://b01hhuo1e3lee"
-
-[sub_resource type="Resource" id="Resource_il4qx"]
-script = ExtResource("20_hw8ob")
-hitboxes = Array[ExtResource("19_phrmi")]([ExtResource("20_kdi7j")])
-sprite = ExtResource("21_3hh47")
-metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
-
-[sub_resource type="Resource" id="Resource_rc8us"]
-script = ExtResource("17_tj65i")
-sprite = ExtResource("21_3hh47")
-time = 0.1
-metadata/_custom_type_script = "uid://b01hhuo1e3lee"
-
-[sub_resource type="Resource" id="Resource_jn4jp"]
-script = ExtResource("17_tj65i")
-sprite = ExtResource("24_phrmi")
-time = 0.1
-metadata/_custom_type_script = "uid://b01hhuo1e3lee"
-
-[sub_resource type="Resource" id="Resource_2nfya"]
-script = ExtResource("20_hw8ob")
-hitboxes = Array[ExtResource("19_phrmi")]([ExtResource("20_kdi7j")])
-sprite = ExtResource("21_3hh47")
-metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
-
-[sub_resource type="Resource" id="Resource_leu7p"]
-script = ExtResource("17_tj65i")
-sprite = ExtResource("21_3hh47")
-time = 2.3
-metadata/_custom_type_script = "uid://b01hhuo1e3lee"
-
-[sub_resource type="Resource" id="Resource_bea7u"]
-script = ExtResource("16_1co7d")
-name = "Starfish_LMB_2"
-steps = Array[ExtResource("17_tj65i")]([SubResource("Resource_hw8ob"), SubResource("Resource_3hh47"), SubResource("Resource_hrl6b"), SubResource("Resource_8abi6"), SubResource("Resource_osh6r"), SubResource("Resource_1k2by"), SubResource("Resource_hirm6"), SubResource("Resource_il4qx"), SubResource("Resource_rc8us"), SubResource("Resource_jn4jp"), SubResource("Resource_2nfya"), SubResource("Resource_leu7p")])
-metadata/_custom_type_script = "uid://8b4gvdp20r65"
-
-[sub_resource type="Resource" id="Resource_ub56e"]
-script = ExtResource("22_hrl6b")
-animations = Array[ExtResource("16_1co7d")]([SubResource("Resource_udg0r"), SubResource("Resource_bea7u")])
-is_lmb_combo = true
-metadata/_custom_type_script = "uid://0sno5ifqeksg"
-
-[sub_resource type="Resource" id="Resource_dcw27"]
-script = ExtResource("23_bea7u")
-lmbCombo = SubResource("Resource_ub56e")
-metadata/_custom_type_script = "uid://c3ci8sfelltm0"
-
-[sub_resource type="Resource" id="Resource_cnix0"]
-script = ExtResource("11_6b4eq")
-name = "StarfishTentacles"
-data = SubResource("Resource_dcw27")
-idle_animation = ExtResource("7_ytaf1")
-walking_animation = ExtResource("7_ytaf1")
-metadata/_custom_type_script = "uid://oil2083y1evj"
-
-[sub_resource type="Resource" id="Resource_phrmi"]
-script = ExtResource("15_6b4eq")
-max_health = 100.0
-name = "LeftTentacle"
-height = 1
-position = 2
-metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
-
-[sub_resource type="Resource" id="Resource_kceui"]
-script = ExtResource("15_6b4eq")
-max_health = 100.0
-name = "RightTentacle"
-height = 1
-metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
-
-[sub_resource type="Resource" id="Resource_wghfh"]
-script = ExtResource("15_6b4eq")
-max_health = 50.0
-name = "Foot?"
-height = 2
-position = 1
-metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
-
-[sub_resource type="Resource" id="Resource_x00jg"]
-script = ExtResource("15_6b4eq")
-max_health = 380.0
-name = "StarfishBody"
-height = 1
-position = 1
-lethal = true
-children = Array[ExtResource("15_6b4eq")]([SubResource("Resource_phrmi"), SubResource("Resource_kceui"), SubResource("Resource_wghfh")])
-metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
 
 [sub_resource type="Environment" id="Environment_yajg5"]
 background_mode = 1
@@ -516,16 +293,6 @@ spot_range = 1000.0
 spot_attenuation = 0.5
 spot_angle = 80.0
 
-[node name="Lapa" parent="NavigationRegion3D/StaticBody3D/CorridorStartingDining" unique_id=831465083 instance=ExtResource("3_ptdsb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018262744, 2.902868, -5.5564823)
-detection_radius = 4.0
-speed = 0.0
-equippedWeapon = SubResource("Resource_nsk17")
-walking_animation = ExtResource("7_ytaf1")
-idle_animation = ExtResource("7_ytaf1")
-body = ExtResource("12_n1tpa")
-stagger_time = 1.0
-
 [node name="DiningRoom" type="Node" parent="NavigationRegion3D/StaticBody3D" unique_id=1061534324]
 
 [node name="WallW1" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D/DiningRoom" unique_id=1158712053]
@@ -653,26 +420,6 @@ spot_range = 1000.0
 spot_attenuation = 0.5
 spot_angle = 75.0
 
-[node name="Lapa" parent="NavigationRegion3D/StaticBody3D/DiningRoom" unique_id=2122002030 instance=ExtResource("3_ptdsb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.806065, 3.562462, -12.878103)
-detection_radius = 4.0
-speed = 0.0
-equippedWeapon = SubResource("Resource_nsk17")
-walking_animation = ExtResource("7_ytaf1")
-idle_animation = ExtResource("7_ytaf1")
-body = ExtResource("12_n1tpa")
-stagger_time = 1.0
-
-[node name="Timbos" parent="NavigationRegion3D/StaticBody3D/DiningRoom" unique_id=500962841 instance=ExtResource("3_ptdsb")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 28.97093, 2.9228594, -24.130491)
-detection_radius = 3.0
-speed = 61.0
-equippedWeapon = SubResource("Resource_p6umq")
-walking_animation = ExtResource("18_p6umq")
-idle_animation = ExtResource("16_epn21")
-body = SubResource("Resource_epn21")
-stagger_time = 0.75
-
 [node name="Table" parent="NavigationRegion3D/StaticBody3D/DiningRoom" unique_id=1532345752 instance=ExtResource("16_hw8ob")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.3989882, 0, -22.29098)
 
@@ -799,16 +546,6 @@ spot_range = 1000.0
 spot_attenuation = 0.5
 spot_angle = 60.0
 
-[node name="Lapa" parent="NavigationRegion3D/StaticBody3D/CorridorDiningBoss" unique_id=1180901116 instance=ExtResource("3_ptdsb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.817753, 3.3436296, 1.931447)
-detection_radius = 4.0
-speed = 0.0
-equippedWeapon = SubResource("Resource_nsk17")
-walking_animation = ExtResource("7_ytaf1")
-idle_animation = ExtResource("7_ytaf1")
-body = ExtResource("12_n1tpa")
-stagger_time = 1.0
-
 [node name="MESH_Shelf_Warehouse_Simple" parent="NavigationRegion3D/StaticBody3D/CorridorDiningBoss" unique_id=2046856072 instance=ExtResource("17_3hh47")]
 transform = Transform3D(-1.3113416e-08, 0, -0.29999998, 0, 0.29999998, 0, 0.29999998, 0, -1.3113416e-08, 34.500957, 4.7683716e-07, 0.9048104)
 
@@ -894,16 +631,6 @@ shadow_enabled = true
 spot_range = 1000.0
 spot_attenuation = 0.5
 spot_angle = 75.0
-
-[node name="Starfih" parent="NavigationRegion3D/StaticBody3D/BossRoom" unique_id=1475441673 instance=ExtResource("3_ptdsb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.77238, 4.8678164, 1.793966)
-detection_radius = 6.0
-animation_scale = Vector3(2, 2, 2)
-equippedWeapon = SubResource("Resource_cnix0")
-walking_animation = ExtResource("16_n1tpa")
-idle_animation = ExtResource("16_n1tpa")
-body = SubResource("Resource_x00jg")
-stagger_time = 0.25
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=599203173]
 environment = SubResource("Environment_yajg5")

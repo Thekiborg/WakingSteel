@@ -69,9 +69,6 @@ replication_config = SubResource("SceneReplicationConfig_vreni")
 [node name="player_uis" parent="." unique_id=429831818 instance=ExtResource("14_e5n5u")]
 visible = false
 
-[node name="ESCmenu" parent="." unique_id=626963176 instance=ExtResource("16_ba010")]
-visible = false
-
 [node name="InventoryWindow" parent="." unique_id=454519245 instance=ExtResource("17_jb4us")]
 visible = false
 
@@ -83,6 +80,9 @@ offset_left = -107.0
 offset_top = -56.0
 offset_right = 107.0
 offset_bottom = 56.0
+
+[node name="ESCmenu" parent="." unique_id=626963176 instance=ExtResource("16_ba010")]
+visible = false
 
 [node name="ItemInteractionArea" type="Area3D" parent="." unique_id=129239261]
 collision_layer = 512

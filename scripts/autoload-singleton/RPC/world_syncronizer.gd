@@ -1,6 +1,5 @@
 extends Node
 
-const MAP = preload("uid://ddwe34x5yb0os")
 
 @rpc("any_peer", "call_local")
 func despawn(item_path: NodePath):
@@ -21,10 +20,34 @@ func spawn_item(pos: Vector3, item_id: String):
 	node.position = pos
 	Globals.spawned_items.add_child(node, true)
 
+func spawn_lapa(pos: Vector3):
+	if !multiplayer.is_server():
+		return
+	
+	var node: Enemy = Preloads.ENEMY_LAPA.instantiate()
+	node.position = pos
+	Globals.spawned_items.add_child(node, true)
+
+func spawn_timbo(pos: Vector3):
+	if !multiplayer.is_server():
+		return
+	
+	var node: Enemy = Preloads.ENEMY_TIMBO.instantiate()
+	node.position = pos
+	Globals.spawned_items.add_child(node, true)
+
+func spawn_starfish(pos: Vector3):
+	if !multiplayer.is_server():
+		return
+	
+	var node: Enemy = Preloads.ENEMY_STARFISH.instantiate()
+	node.position = pos
+	Globals.spawned_items.add_child(node, true)
+
 
 @rpc("authority", "call_local")
 func create_world():
-	var world = MAP.instantiate()
+	var world = Preloads.MAP.instantiate()
 	Globals.spawned_items.add_child(world)
 
 

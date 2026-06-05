@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="BodyPart" format=3 uid="uid://cy175v4340nov"]
+
+[ext_resource type="Script" uid="uid://cjsq7x6g6bsig" path="res://scripts/body/body_part.gd" id="1_m4woy"]
+
+[sub_resource type="Resource" id="Resource_n1tpa"]
+script = ExtResource("1_m4woy")
+max_health = 40.0
+name = "Ojo"
+height = 1
+position = 1
+lethal = true
+metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
+
+[sub_resource type="Resource" id="Resource_cxeog"]
+script = ExtResource("1_m4woy")
+max_health = 40.0
+name = "Tentaculo"
+position = 1
+metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
+
+[sub_resource type="Resource" id="Resource_5einw"]
+script = ExtResource("1_m4woy")
+max_health = 60.0
+name = "Pie"
+position = 1
+metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
+
+[resource]
+script = ExtResource("1_m4woy")
+max_health = 60.0
+name = "TimbosBody"
+height = 1
+position = 1
+lethal = true
+children = Array[ExtResource("1_m4woy")]([SubResource("Resource_n1tpa"), SubResource("Resource_cxeog"), SubResource("Resource_5einw")])
+metadata/_custom_type_script = "uid://cjsq7x6g6bsig"

@@ -104,6 +104,7 @@ script = ExtResource("4_3f0lq")
 body_part_name = "RightCalf"
 
 [node name="InjuriesPanelContainer" type="PanelContainer" parent="." unique_id=451386772]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 2

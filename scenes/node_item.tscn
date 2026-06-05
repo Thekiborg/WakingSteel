@@ -24,8 +24,6 @@ script = ExtResource("1_8ypwh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2020380632]
 shape = SubResource("SphereShape3D_ahkmm")
 
-[node name="NodeItem" type="Node3D" parent="." unique_id=1788213066]
-
 [node name="KeyboardIcon" type="Sprite3D" parent="." unique_id=556960052]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3927464, 0)
 visible = false

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7oy74hh74vd1"]
 
 [ext_resource type="Script" uid="uid://bebhy7rp32sd6" path="res://scripts/ui/esc_menu.gd" id="1_e5ckr"]
-[ext_resource type="Texture2D" uid="uid://lputhf26ymty" path="res://assets/ui/main_menu_label.svg" id="2_nnd1p"]
+[ext_resource type="Texture2D" uid="uid://ccygri5bmkfvx" path="res://assets/ui/MenuTitle.png" id="2_e5ckr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sl1te"]
 bg_color = Color(0.21, 0.21, 0.21, 1)
@@ -44,7 +44,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=997969512]
 layout_mode = 2
-texture = ExtResource("2_nnd1p")
+texture = ExtResource("2_e5ckr")
 
 [node name="ButtonReturnToGame" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1783144363]
 unique_name_in_owner = true

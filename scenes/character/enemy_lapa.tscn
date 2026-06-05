@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://buw85j7uoggxj"]
+
+[ext_resource type="PackedScene" uid="uid://dnj2i2ron80e1" path="res://scenes/character/enemy.tscn" id="1_f7iai"]
+[ext_resource type="Resource" uid="uid://c8n7jufeq2grc" path="res://resources/animations/lapa_attacks.tres" id="2_gxfoe"]
+[ext_resource type="Resource" uid="uid://dkdyqw616maqg" path="res://resources/animations/lapa_idle.tres" id="3_eh64t"]
+[ext_resource type="Script" uid="uid://oil2083y1evj" path="res://scripts/weapon/weapon.gd" id="4_xmhl4"]
+[ext_resource type="Resource" uid="uid://b6u7ngsroygh3" path="res://resources/LapaBody.tres" id="5_r1pxg"]
+
+[sub_resource type="Resource" id="Resource_ekfun"]
+script = ExtResource("4_xmhl4")
+name = "LapaSpike"
+data = ExtResource("2_gxfoe")
+idle_animation = ExtResource("3_eh64t")
+walking_animation = ExtResource("3_eh64t")
+metadata/_custom_type_script = "uid://oil2083y1evj"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pqu3o"]
+resource_local_to_scene = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gbod4"]
+resource_local_to_scene = true
+radius = 3.0
+
+[node name="Enemy" unique_id=1366285704 instance=ExtResource("1_f7iai")]
+detection_radius = 4.0
+speed = 0.0
+equippedWeapon = SubResource("Resource_ekfun")
+walking_animation = ExtResource("3_eh64t")
+idle_animation = ExtResource("3_eh64t")
+body = ExtResource("5_r1pxg")
+stagger_time = 1.0
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1984081668]
+shape = SubResource("CapsuleShape3D_pqu3o")
+
+[node name="DetectionAreaShape" parent="DetectionArea" parent_id_path=PackedInt32Array(913604240) index="0" unique_id=218826424]
+shape = SubResource("CylinderShape3D_gbod4")

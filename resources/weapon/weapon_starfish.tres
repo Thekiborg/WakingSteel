@@ -1,0 +1,126 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dncxughvks8em"]
+
+[ext_resource type="Script" uid="uid://8b4gvdp20r65" path="res://scripts/animation/animation_set.gd" id="1_kmxeh"]
+[ext_resource type="Script" uid="uid://b01hhuo1e3lee" path="res://scripts/animation/animation_step.gd" id="2_lhojx"]
+[ext_resource type="Texture2D" uid="uid://crdoxf63qmnvy" path="res://assets/character/Starfish_LMB_1.png" id="3_7l4kg"]
+[ext_resource type="Script" uid="uid://g8ec7h3hkg4h" path="res://scripts/weapon/weapon_hitbox_data.gd" id="4_cgkwo"]
+[ext_resource type="Resource" uid="uid://dnlqvku5hdpmj" path="res://resources/weapon/starfish_hitboxdata.tres" id="5_thcvp"]
+[ext_resource type="Script" uid="uid://d4cbwg3fwfgk4" path="res://scripts/animation/steps/step_hitbox.gd" id="6_gk5wi"]
+[ext_resource type="Texture2D" uid="uid://diat8g07pjypc" path="res://assets/character/Starfish_Idle.png" id="7_o1gd7"]
+[ext_resource type="Texture2D" uid="uid://i8erb7tyo147" path="res://assets/character/Starfish_LMB_2.png" id="8_ekwse"]
+[ext_resource type="Texture2D" uid="uid://b6dk3vtxrw1q7" path="res://assets/character/Starfish_LMB_3.png" id="9_h0ndh"]
+[ext_resource type="Script" uid="uid://0sno5ifqeksg" path="res://scripts/weapon/combo_set.gd" id="10_xmqp8"]
+[ext_resource type="Script" uid="uid://c3ci8sfelltm0" path="res://scripts/weapon/weapon_data.gd" id="11_jspjf"]
+
+[sub_resource type="Resource" id="Resource_kulg6"]
+script = ExtResource("2_lhojx")
+sprite = ExtResource("3_7l4kg")
+time = 0.45
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_gj0jd"]
+script = ExtResource("6_gk5wi")
+hitboxes = Array[ExtResource("4_cgkwo")]([ExtResource("5_thcvp")])
+sprite = ExtResource("7_o1gd7")
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
+
+[sub_resource type="Resource" id="Resource_oj3rt"]
+script = ExtResource("2_lhojx")
+sprite = ExtResource("7_o1gd7")
+time = 0.4
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_udg0r"]
+script = ExtResource("1_kmxeh")
+name = "Starfish_LMB_1"
+steps = Array[ExtResource("2_lhojx")]([SubResource("Resource_kulg6"), SubResource("Resource_gj0jd"), SubResource("Resource_oj3rt")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_hw8ob"]
+script = ExtResource("2_lhojx")
+sprite = ExtResource("8_ekwse")
+time = 0.1
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_3hh47"]
+script = ExtResource("6_gk5wi")
+hitboxes = Array[ExtResource("4_cgkwo")]([ExtResource("5_thcvp")])
+sprite = ExtResource("7_o1gd7")
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
+
+[sub_resource type="Resource" id="Resource_hrl6b"]
+script = ExtResource("2_lhojx")
+sprite = ExtResource("7_o1gd7")
+time = 0.1
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_8abi6"]
+script = ExtResource("2_lhojx")
+sprite = ExtResource("9_h0ndh")
+time = 0.1
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_osh6r"]
+script = ExtResource("6_gk5wi")
+hitboxes = Array[ExtResource("4_cgkwo")]([ExtResource("5_thcvp")])
+sprite = ExtResource("7_o1gd7")
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
+
+[sub_resource type="Resource" id="Resource_1k2by"]
+script = ExtResource("2_lhojx")
+sprite = ExtResource("7_o1gd7")
+time = 0.1
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_hirm6"]
+script = ExtResource("2_lhojx")
+sprite = ExtResource("8_ekwse")
+time = 0.1
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_il4qx"]
+script = ExtResource("6_gk5wi")
+hitboxes = Array[ExtResource("4_cgkwo")]([ExtResource("5_thcvp")])
+sprite = ExtResource("7_o1gd7")
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
+
+[sub_resource type="Resource" id="Resource_rc8us"]
+script = ExtResource("2_lhojx")
+sprite = ExtResource("7_o1gd7")
+time = 0.1
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_jn4jp"]
+script = ExtResource("2_lhojx")
+sprite = ExtResource("9_h0ndh")
+time = 0.1
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_2nfya"]
+script = ExtResource("6_gk5wi")
+hitboxes = Array[ExtResource("4_cgkwo")]([ExtResource("5_thcvp")])
+sprite = ExtResource("7_o1gd7")
+metadata/_custom_type_script = "uid://d4cbwg3fwfgk4"
+
+[sub_resource type="Resource" id="Resource_leu7p"]
+script = ExtResource("2_lhojx")
+sprite = ExtResource("7_o1gd7")
+time = 2.3
+metadata/_custom_type_script = "uid://b01hhuo1e3lee"
+
+[sub_resource type="Resource" id="Resource_bea7u"]
+script = ExtResource("1_kmxeh")
+name = "Starfish_LMB_2"
+steps = Array[ExtResource("2_lhojx")]([SubResource("Resource_hw8ob"), SubResource("Resource_3hh47"), SubResource("Resource_hrl6b"), SubResource("Resource_8abi6"), SubResource("Resource_osh6r"), SubResource("Resource_1k2by"), SubResource("Resource_hirm6"), SubResource("Resource_il4qx"), SubResource("Resource_rc8us"), SubResource("Resource_jn4jp"), SubResource("Resource_2nfya"), SubResource("Resource_leu7p")])
+metadata/_custom_type_script = "uid://8b4gvdp20r65"
+
+[sub_resource type="Resource" id="Resource_ub56e"]
+script = ExtResource("10_xmqp8")
+animations = Array[ExtResource("1_kmxeh")]([SubResource("Resource_udg0r"), SubResource("Resource_bea7u")])
+is_lmb_combo = true
+metadata/_custom_type_script = "uid://0sno5ifqeksg"
+
+[resource]
+script = ExtResource("11_jspjf")
+lmbCombo = SubResource("Resource_ub56e")
+metadata/_custom_type_script = "uid://c3ci8sfelltm0"

@@ -8,3 +8,5 @@ https://docs.godotengine.org/en/stable/
 https://godotforums.org/
 https://www.reddit.com/r/godot/
 https://caaz.me/godot/
+https://www.youtube.com/watch?v=NvG08tA06xQ&t
+https://stackoverflow.com/questions/5284147/validating-ipv4-addresses-with-regexp

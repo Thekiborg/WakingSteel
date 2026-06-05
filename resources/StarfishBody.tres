@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="BodyPart" format=3 uid="uid://bc2pbnlbxupqe"]
+
+[ext_resource type="Script" uid="uid://cjsq7x6g6bsig" path="res://scripts/body/body_part.gd" id="1_ysmk7"]
+
+[sub_resource type="Resource" id="Resource_phrmi"]
+script = ExtResource("1_ysmk7")
+max_health = 100.0
+name = "LeftTentacle"
+height = 1
+position = 2
+metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
+
+[sub_resource type="Resource" id="Resource_kceui"]
+script = ExtResource("1_ysmk7")
+max_health = 100.0
+name = "RightTentacle"
+height = 1
+metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
+
+[sub_resource type="Resource" id="Resource_wghfh"]
+script = ExtResource("1_ysmk7")
+max_health = 50.0
+name = "Foot?"
+height = 2
+position = 1
+metadata/_custom_type_script = "uid://cjsq7x6g6bsig"
+
+[resource]
+script = ExtResource("1_ysmk7")
+max_health = 380.0
+name = "StarfishBody"
+height = 1
+position = 1
+lethal = true
+children = Array[ExtResource("1_ysmk7")]([SubResource("Resource_phrmi"), SubResource("Resource_kceui"), SubResource("Resource_wghfh")])
+metadata/_custom_type_script = "uid://cjsq7x6g6bsig"

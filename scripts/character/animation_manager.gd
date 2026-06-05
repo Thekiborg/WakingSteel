@@ -12,7 +12,13 @@ var _facing_right: bool
 var _override_low_animations: bool
 
 var curAnimation:AnimationStep:
-	get: return _animation_set.steps[_curAnimationIndex]
+	get:
+		if _curAnimationIndex > _animation_set.steps_count:
+			print("It happened")
+			print(_animation_set.name)
+			print(_curAnimationIndex)
+			_curAnimationIndex = max(_animation_set.steps_count - 1, 0)
+		return _animation_set.steps[_curAnimationIndex]
 
 
 signal animation_finished(animation_set: AnimationSet)

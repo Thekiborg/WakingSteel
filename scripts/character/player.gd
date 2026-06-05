@@ -47,7 +47,14 @@ func _ready() -> void:
 	revive_window.player = self
 	health_manager.died.connect(_died)
 	health_manager.revived.connect(_revived)
+	main_menu.hidden.connect(_main_menu_hidden)
 
+func _main_menu_hidden() -> void:
+	can_move = true
+	can_input = true
+	essence_meter.show()
+	
+	
 func _enter_tree() -> void:
 	set_multiplayer_authority(int(name))
 
@@ -128,6 +135,9 @@ func _input(event: InputEvent) -> void:
 		return
 		
 	if event.is_action_released("open-esc-menu"):
+		can_move = false
+		can_input = false
+		essence_meter.hide()
 		main_menu.show()
 	if event.is_action_pressed("open-inventory"):
 		inventory_window.hide_item_actions()
